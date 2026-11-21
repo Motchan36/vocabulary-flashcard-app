@@ -152,6 +152,11 @@
   .board-correct { margin-left: auto; text-align: right; flex-shrink: 0; }
   .board-correct b { font-family: "Baloo 2", sans-serif; font-size: 26px; font-weight: 800; }
   .board-correct span { display: block; font-size: 11px; color: #6b6350; }
+  .profile-avatar { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--ink); object-fit: cover; background: #efe8d2; flex-shrink: 0; }
+  .profile-avatar-fallback { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--ink); background: var(--yellow); color: var(--ink); display: flex; align-items: center; justify-content: center; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 26px; flex-shrink: 0; }
+  .profile-row { display: flex; gap: 14px; align-items: center; margin: 12px 0; }
+  .board-avatar { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--ink); object-fit: cover; flex-shrink: 0; background: #efe8d2; }
+  .acct-icon img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
   .board-empty { text-align: center; color: #77704f; padding: 28px 0; font-size: 14px; line-height: 1.7; }
   /* 単語テスト */
   .grade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
@@ -355,7 +360,19 @@
         <div>ログイン中： <b id="acctName"></b></div>
         <div class="board-stats" id="acctEmail"></div>
         <p class="board-note">単語テストの結果はこの名前で記録され、「リーダーボード（みんな）」に反映されます。</p>
-        <div class="row"><button id="logoutBtn" type="button">ログアウト</button></div>
+        <div class="profile-row">
+          <img id="profileAvatarPreview" class="profile-avatar hidden" alt="プロフィール写真">
+          <div id="profileAvatarFallback" class="profile-avatar-fallback">?</div>
+          <div>
+            <label for="profilePhotoInput">プロフィール写真</label>
+            <input id="profilePhotoInput" type="file" accept="image/*">
+            <p class="board-note">選ぶとすぐに変更されます（自動で小さくして保存）。</p>
+          </div>
+        </div>
+        <label for="profileNameInput">表示名（リーダーボードに出る名前）</label>
+        <input id="profileNameInput" maxlength="20">
+        <div class="row"><button id="profileSaveBtn" type="button" class="primary">名前を保存</button><button id="logoutBtn" type="button">ログアウト</button></div>
+        <p id="profileMsg" class="acct-msg"></p>
         <p id="acctMsg2" class="acct-msg"></p>
       </div>
     </div>
@@ -868,6 +885,7 @@ async function syncScoreOnline(correct, total) {
     await sb.from("scores").upsert({
       user_id: sbUser.id,
       name: sbDisplayName(),
+      avatar_url: sbAvatarUrl() || null,
       correct: cur.correct + correct,
       answered: cur.answered + total,
       tests: cur.tests + 1,
@@ -880,7 +898,7 @@ function boardRowsHtml(rows) {
   return rows.map((r, i) => {
     const rate = r.answered ? Math.round(r.correct / r.answered * 100) : 0;
     return '<div class="board-row' + (r.me ? " me" : "") + '">' +
-      '<div class="board-rank">' + (i + 1) + '</div>' +
+      '<div class="board-rank">' + (i + 1) + '</div>' + (r.avatar ? '<img class="board-avatar" src="' + escapeHtml(r.avatar) + '" alt="">' : '') +
       '<div><div class="board-name">' + escapeHtml(r.name) + (r.me ? "<small>いまの名前</small>" : "") + '</div>' +
       '<div class="board-stats">挑戦 ' + r.answered + '問 ・ 正答率 ' + rate + '% ・ テスト ' + r.tests + '回 ・ ベスト ' + r.best + '問正解</div></div>' +
       '<div class="board-correct"><b>' + r.correct + '</b><span>単語 正解</span></div></div>';
@@ -893,12 +911,12 @@ async function renderBoard() {
   if (!loggedIn) { $("boardList").innerHTML = ""; return; }
   $("boardMeName").textContent = sbDisplayName();
   $("boardList").innerHTML = '<div class="board-empty">読み込み中…</div>';
-  const { data, error } = await sb.from("scores").select("user_id,name,correct,answered,tests,best").order("correct", { ascending: false }).limit(100);
+  const { data, error } = await sb.from("scores").select("user_id,name,avatar_url,correct,answered,tests,best").order("correct", { ascending: false }).limit(100);
   if (error || !data) {
     $("boardList").innerHTML = '<div class="board-empty">読み込めませんでした。通信環境を確認して、もう一度開いてください。</div>';
     return;
   }
-  const rows = data.map(r => ({ name: r.name, correct: r.correct, answered: r.answered, tests: r.tests, best: r.best, me: r.user_id === sbUser.id }));
+  const rows = data.map(r => ({ name: r.name, avatar: r.avatar_url, correct: r.correct, answered: r.answered, tests: r.tests, best: r.best, me: r.user_id === sbUser.id }));
   $("boardList").innerHTML = '<p class="howto-lead">みんなのリーダーボード（オンライン・全端末共通）</p>' + (rows.length ? boardRowsHtml(rows) : '<div class="board-empty">まだ記録がありません。<br>単語テストを受けると、ここに表示されます。</div>');
 }
 // --- アカウント：Supabase Auth ---
@@ -923,6 +941,22 @@ function acctErr(e) {
   if (/Email not confirmed/i.test(m)) return "メール確認が終わっていません。届いたコードを入力してください。";
   return m;
 }
+function sbAvatarUrl() {
+  return (sbUser && sbUser.user_metadata && sbUser.user_metadata.avatar_url) || "";
+}
+function renderAvatarBits() {
+  const url = sbAvatarUrl();
+  const img = $("profileAvatarPreview"), fb = $("profileAvatarFallback");
+  if (img && fb) {
+    if (url) { img.src = url; img.classList.remove("hidden"); fb.classList.add("hidden"); }
+    else { img.classList.add("hidden"); fb.classList.remove("hidden"); fb.textContent = (sbDisplayName() || "?").slice(0, 1).toUpperCase(); }
+  }
+  const btn = $("acctIconBtn");
+  if (btn) {
+    if (url) btn.innerHTML = '<img src="' + escapeHtml(url) + '" alt="アカウント">';
+    else if (!btn.querySelector("svg")) btn.innerHTML = '<svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="#14332e" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.6-3.9 4.9-5.4 7.5-5.4s5.9 1.5 7.5 5.4"/></svg>';
+  }
+}
 function renderAccount() {
   const loggedIn = !!sbUser;
   $("acctLoggedOut").classList.toggle("hidden", loggedIn);
@@ -931,6 +965,9 @@ function renderAccount() {
   if (loggedIn) {
     $("acctName").textContent = sbDisplayName();
     $("acctEmail").textContent = sbUser.email || "";
+    const ni = $("profileNameInput");
+    if (ni && document.activeElement !== ni) ni.value = sbDisplayName();
+    renderAvatarBits();
   }
   if (!sb) acctMsg("アカウント機能を読み込めませんでした。通信環境を確認して再読み込みしてください。", false);
 }
@@ -1002,6 +1039,50 @@ $("verifyBtn").addEventListener("click", async () => {
   $("verifyCode").value = "";
   await refreshAuth();
   acctMsg(sbDisplayName() + " としてログインしました。", true, true);
+});
+$("profileSaveBtn").addEventListener("click", async () => {
+  if (!sb || !sbUser) return;
+  const name = $("profileNameInput").value.trim();
+  const msg = $("profileMsg");
+  if (!name) { msg.textContent = "名前を入力してください。"; msg.className = "acct-msg err"; return; }
+  const { error } = await sb.auth.updateUser({ data: { display_name: name } });
+  if (error) { msg.textContent = acctErr(error); msg.className = "acct-msg err"; return; }
+  try { await sb.from("scores").update({ name }).eq("user_id", sbUser.id); } catch (e) {}
+  await refreshAuth();
+  msg.textContent = "名前を「" + name + "」に変更しました。";
+  msg.className = "acct-msg ok";
+});
+$("profilePhotoInput").addEventListener("change", async e => {
+  const file = e.target.files[0];
+  e.target.value = "";
+  const msg = $("profileMsg");
+  if (!file || !sb || !sbUser) return;
+  msg.textContent = "写真をアップロード中…"; msg.className = "acct-msg";
+  try {
+    const bmp = await createImageBitmap(file);
+    const size = 256;
+    const canvas = document.createElement("canvas");
+    canvas.width = size; canvas.height = size;
+    const ctx = canvas.getContext("2d");
+    const scale = Math.max(size / bmp.width, size / bmp.height);
+    const w = bmp.width * scale, h = bmp.height * scale;
+    ctx.drawImage(bmp, (size - w) / 2, (size - h) / 2, w, h);
+    const blob = await new Promise(res => canvas.toBlob(res, "image/jpeg", 0.85));
+    if (!blob) throw new Error("image");
+    const path = sbUser.id + "/avatar.jpg";
+    const up = await sb.storage.from("avatars").upload(path, blob, { upsert: true, contentType: "image/jpeg" });
+    if (up.error) throw up.error;
+    const url = SB_URL + "/storage/v1/object/public/avatars/" + path + "?t=" + Date.now();
+    const { error } = await sb.auth.updateUser({ data: { avatar_url: url } });
+    if (error) throw error;
+    try { await sb.from("scores").update({ avatar_url: url }).eq("user_id", sbUser.id); } catch (e2) {}
+    await refreshAuth();
+    msg.textContent = "プロフィール写真を変更しました。";
+    msg.className = "acct-msg ok";
+  } catch (err) {
+    msg.textContent = "写真を変更できませんでした。別の画像で試してください。";
+    msg.className = "acct-msg err";
+  }
 });
 $("logoutBtn").addEventListener("click", async () => {
   if (!sb) return;
