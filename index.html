@@ -9,10 +9,11 @@
   body { font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; margin: 0; background: #f3f6f3; color: #223; }
   .layout { display: flex; align-items: stretch; max-width: 1060px; margin: 0 auto; }
   .sidebar { width: 232px; flex-shrink: 0; background: #fff; border-right: 1px solid #dde5dd; padding: 20px 14px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 14px; }
-  .brand { display: flex; gap: 10px; align-items: center; padding: 2px 6px 12px; border-bottom: 1px solid #eef2ee; }
+  .brand { display: flex; gap: 10px; align-items: center; padding: 2px 6px 12px; border: none; border-bottom: 1px solid #eef2ee; background: none; cursor: pointer; width: 100%; text-align: left; font: inherit; color: inherit; border-radius: 0; }
+  .brand:hover { background: #f2f7ee; }
   .brand-logo { font-size: 28px; }
-  .brand-name { font-weight: 700; font-size: 16px; line-height: 1.3; }
-  .brand-sub { font-size: 11px; color: #889; }
+  .brand-name { font-weight: 700; font-size: 16px; line-height: 1.3; display: block; }
+  .brand-sub { font-size: 11px; color: #889; display: block; }
   .sidebar .tabs { flex-direction: column; margin: 0; }
   .sidebar .tabs button { text-align: left; width: 100%; border-color: transparent; background: transparent; font-size: 15px; padding: 12px 12px; }
   .sidebar .tabs button:hover { background: #f2f7ee; }
@@ -103,7 +104,7 @@
 <body>
 <div class="layout">
   <aside class="sidebar">
-    <div class="brand"><span class="brand-logo">🖼️</span><div><div class="brand-name">絵で覚える単語帳</div><div class="brand-sub">Picture Vocabulary</div></div></div>
+    <button type="button" class="brand" id="brandHome" title="ホームに戻る"><span class="brand-logo">🖼️</span><span><span class="brand-name">絵で覚える単語帳</span><span class="brand-sub">Picture Vocabulary</span></span></button>
   <div class="tabs" role="tablist">
     <button id="tabStudy" type="button" class="active">🏠 ホーム</button>
     <button id="tabTest" type="button">📝 単語テスト</button>
@@ -730,6 +731,7 @@ function render() {
     '<button type="button" data-del="' + i + '">削除</button></div>').join("") ||
     '<p class="empty">まだ単語がありません。</p>';
 }
+$("brandHome").addEventListener("click", () => { setMode("study"); window.scrollTo({ top: 0, behavior: "smooth" }); });
 $("tabStudy").addEventListener("click", () => setMode("study"));
 $("tabGallery").addEventListener("click", () => setMode("gallery"));
 $("tabTest").addEventListener("click", () => setMode("test"));
