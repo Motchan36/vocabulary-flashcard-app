@@ -31,6 +31,18 @@
   .choices button.correct { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
   .choices button.wrong { background: #fbe9e7; border-color: #d88; }
   .feedback { padding: 0 20px 16px; font-size: 14px; min-height: 20px; }
+  /* アウトプット：単語を見て、合う絵を選ぶ */
+  .out-head { padding: 20px 20px 4px; text-align: center; }
+  .out-word { font-size: 38px; font-weight: 700; margin-top: 6px; }
+  .out-score { font-size: 13px; color: #667; margin-top: 8px; }
+  .out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 14px 16px 6px; }
+  .out-option { border: 2px solid #dde5dd; border-radius: 14px; overflow: hidden; padding: 0; background: #fff; cursor: pointer; text-align: center; }
+  .out-option .opic { min-height: 118px; display: flex; align-items: center; justify-content: center; font-size: 62px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
+  .out-option .opic img { width: 100%; height: 118px; object-fit: cover; display: block; }
+  .out-option .olabel { display: block; padding: 8px 6px; font-size: 12px; color: #889; }
+  .out-option.correct { border-color: #2e5e3a; box-shadow: 0 0 0 2px #2e5e3a inset; }
+  .out-option.wrong { border-color: #d88; opacity: .55; }
+  .out-option:disabled { cursor: default; }
   .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
   button { padding: 11px 16px; font-size: 15px; border-radius: 10px; border: 1px solid #c4cfc4; background: #fff; cursor: pointer; }
   button.primary { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
@@ -68,6 +80,7 @@
   <div class="tabs" role="tablist">
     <button id="tabStudy" type="button" class="active">絵から連想</button>
     <button id="tabQuiz" type="button">絵あてクイズ</button>
+    <button id="tabOutput" type="button">単語から絵を選ぶ</button>
     <button id="tabGallery" type="button">絵のギャラリー</button>
   </div>
 
@@ -95,6 +108,30 @@
       <button id="revealBtn" type="button" class="primary">単語を見る</button>
       <button id="nextBtn" type="button">次の絵 →</button>
       <button id="shuffleBtn" type="button">シャッフル</button>
+    </div>
+  </div>
+
+  <!-- アウトプット：単語を見て、イメージに合う絵を4つから選ぶ -->
+  <div id="outputArea" class="hidden">
+    <div class="scene">
+      <div class="out-head">
+        <div style="font-size:14px;color:#667">この単語のイメージはどれ？</div>
+        <div class="out-word" id="outWord"></div>
+        <div class="out-score" id="outScore"></div>
+      </div>
+      <div class="out-grid" id="outGrid"></div>
+      <div class="feedback" id="outFeedback"></div>
+      <div class="answer" id="outAnswer">
+        <div class="word" id="outAnsWord"></div>
+        <div class="meaning" id="outAnsMeaning"></div>
+        <div class="assoc" id="outAnsAssoc"></div>
+        <div class="example" id="outAnsExample"></div>
+      </div>
+    </div>
+    <p class="count" id="outCount"></p>
+    <div class="row">
+      <button id="outNextBtn" type="button" class="primary">次の単語 →</button>
+      <button id="outResetBtn" type="button">スコアをリセット</button>
     </div>
   </div>
 
@@ -140,8 +177,15 @@ let words = [];
 try { words = JSON.parse(localStorage.getItem(KEY) || "null") || null; } catch (e) { words = null; }
 if (!words) { words = SAMPLES.slice(); save(); }
 let index = 0;
-let mode = "study"; // study | quiz | gallery
+let mode = "study"; // study | quiz | output | gallery
 let revealed = false;
+// アウトプット（単語→絵を選ぶ）の状態
+let outQuestion = null;
+let outOptions = [];
+let outAnswered = false;
+let outAttempts = 0;
+let outCorrect = 0;
+let outStreak = 0;
 
 const $ = id => document.getElementById(id);
 function save() { localStorage.setItem(KEY, JSON.stringify(words)); }
@@ -155,14 +199,83 @@ function setMode(m) {
   mode = m; revealed = false;
   $("tabStudy").classList.toggle("active", m === "study");
   $("tabQuiz").classList.toggle("active", m === "quiz");
+  $("tabOutput").classList.toggle("active", m === "output");
   $("tabGallery").classList.toggle("active", m === "gallery");
-  $("studyArea").classList.toggle("hidden", m === "gallery");
+  $("studyArea").classList.toggle("hidden", m === "gallery" || m === "output");
+  $("outputArea").classList.toggle("hidden", m !== "output");
   $("gallery").classList.toggle("show", m === "gallery");
   $("promptText").textContent = m === "quiz"
     ? "この絵が表す単語はどれ？ 選んでください。"
     : "この絵から連想する英単語は？ 頭の中で言ってみてから答えを見てください。";
   $("revealBtn").classList.toggle("hidden", m === "quiz");
+  if (m === "output" && !outQuestion) newOutputQuestion();
   render();
+  if (m === "output") renderOutput();
+}
+// --- アウトプット：英単語を見て、イメージに合う絵を4つから選ぶ ---
+function newOutputQuestion() {
+  outAnswered = false;
+  if (!words.length) { outQuestion = null; outOptions = []; return; }
+  let next = words[Math.floor(Math.random() * words.length)];
+  if (words.length > 1 && outQuestion && next.word === outQuestion.word) {
+    next = words[(words.indexOf(next) + 1) % words.length];
+  }
+  outQuestion = next;
+  const others = words.filter(w => w.word !== next.word).sort(() => Math.random() - 0.5).slice(0, 3);
+  outOptions = others.concat([next]).sort(() => Math.random() - 0.5);
+}
+function renderOutput() {
+  const grid = $("outGrid");
+  grid.innerHTML = "";
+  if (!outQuestion) {
+    $("outWord").textContent = "単語がありません";
+    $("outScore").textContent = "";
+    $("outCount").textContent = "下のフォームから単語を追加してください。選択肢を4つ出すには4語以上あるとより楽しめます。";
+    $("outAnswer").classList.remove("show");
+    return;
+  }
+  $("outWord").textContent = outQuestion.word;
+  $("outScore").textContent = "正解 " + outCorrect + " / " + outAttempts + " 問" + (outStreak > 1 ? "　" + outStreak + "連続正解中" : "");
+  $("outCount").textContent = words.length + "語から出題中";
+  outOptions.forEach(o => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "out-option";
+    b.style.setProperty("--c1", o.c1 || "#dcefe0");
+    b.style.setProperty("--c2", o.c2 || "#f6ecd2");
+    b.innerHTML = '<span class="opic">' + (o.image ? '<img src="' + escapeHtml(o.image) + '" alt="選択肢の絵">' : escapeHtml(o.emoji || "🖼️")) + '</span><span class="olabel">このイメージ？</span>';
+    b.addEventListener("click", () => {
+      if (outAnswered) return;
+      if (o.word === outQuestion.word) {
+        outAnswered = true;
+        outAttempts++; outCorrect++; outStreak++;
+        b.classList.add("correct");
+        grid.querySelectorAll(".out-option").forEach(x => { x.disabled = true; });
+        $("outFeedback").textContent = "正解！ そのイメージです。";
+        renderOutputAnswer();
+        $("outScore").textContent = "正解 " + outCorrect + " / " + outAttempts + " 問" + (outStreak > 1 ? "　" + outStreak + "連続正解中" : "");
+      } else {
+        b.classList.add("wrong");
+        b.disabled = true;
+        outStreak = 0;
+        if (!b.dataset.counted) { b.dataset.counted = "1"; outAttempts++; }
+        $("outFeedback").textContent = "ちがうイメージです。単語の意味を思い浮かべて、もう一度選んでみてください。";
+        $("outScore").textContent = "正解 " + outCorrect + " / " + outAttempts + " 問";
+      }
+    });
+    grid.appendChild(b);
+  });
+  if (!outAnswered) { $("outFeedback").textContent = ""; $("outAnswer").classList.remove("show"); }
+}
+function renderOutputAnswer() {
+  const c = outQuestion;
+  if (!c) return;
+  $("outAnswer").classList.add("show");
+  $("outAnsWord").textContent = c.word;
+  $("outAnsMeaning").textContent = c.meaning + (c.scene ? " — " + c.scene : "");
+  $("outAnsAssoc").textContent = c.assoc ? "連想： " + c.assoc : "";
+  $("outAnsAssoc").style.display = c.assoc ? "block" : "none";
+  $("outAnsExample").textContent = c.example || "";
 }
 function renderChoices(current) {
   const box = $("choices");
@@ -235,7 +348,10 @@ function render() {
 }
 $("tabStudy").addEventListener("click", () => setMode("study"));
 $("tabQuiz").addEventListener("click", () => setMode("quiz"));
+$("tabOutput").addEventListener("click", () => setMode("output"));
 $("tabGallery").addEventListener("click", () => setMode("gallery"));
+$("outNextBtn").addEventListener("click", () => { newOutputQuestion(); renderOutput(); });
+$("outResetBtn").addEventListener("click", () => { outAttempts = 0; outCorrect = 0; outStreak = 0; newOutputQuestion(); renderOutput(); });
 $("revealBtn").addEventListener("click", () => { revealed = !revealed; const c = filtered()[index]; renderAnswer(c); $("revealBtn").textContent = revealed ? "単語を隠す" : "単語を見る"; });
 $("nextBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index + 1) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
 $("prevBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index - 1 + n) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
@@ -255,12 +371,14 @@ $("addForm").addEventListener("submit", e => {
     scene: $("newScene").value.trim(), assoc: $("newAssoc").value.trim(),
     example: $("newExample").value.trim(), c1: "#dcefe0", c2: "#f6ecd2"
   });
-  save(); e.target.reset(); $("search").value = ""; index = 0; revealed = false; render();
+  save(); e.target.reset(); $("search").value = ""; index = 0; revealed = false; outQuestion = null; render();
+  if (mode === "output") { newOutputQuestion(); renderOutput(); }
 });
 $("list").addEventListener("click", e => {
   const b = e.target.closest("[data-del]");
   if (!b) return;
-  words.splice(Number(b.dataset.del), 1); save(); index = 0; revealed = false; render();
+  words.splice(Number(b.dataset.del), 1); save(); index = 0; revealed = false; outQuestion = null; render();
+  if (mode === "output") { newOutputQuestion(); renderOutput(); }
 });
 render();
 </script>
