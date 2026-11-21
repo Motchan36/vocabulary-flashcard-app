@@ -187,7 +187,7 @@
     <div class="side-note">登録した単語: <b id="sideCount">0</b>語<br>アカウント: <b id="sideAcct">未ログイン</b><br>データはこのブラウザに保存されます。</div>
   </aside>
   <main class="main">
-  <p class="sub">カードをめくるのではなく、まず絵（場面）を見て単語を連想します。イメージと結びつけて覚える単語帳です。単語には英検の級の目安が付いていて、「単語テスト」では級ごとにテストできます。データはこのブラウザに保存されます。</p>
+  <p class="sub" id="subIntro">カードをめくるのではなく、まず絵（場面）を見て単語を連想します。イメージと結びつけて覚える単語帳です。単語には英検の級の目安が付いていて、「単語テスト」では級ごとにテストできます。データはこのブラウザに保存されます。</p>
 
   <input class="search" id="search" type="search" placeholder="単語・意味で検索…" aria-label="検索">
 
@@ -205,30 +205,6 @@
       </div>
     </section>
 
-  <form id="addForm">
-    <h2>単語を追加</h2>
-    <p>ポイントは「絵で思い出せること」。場面の説明と、絵と単語をつなぐ連想メモを書くと覚えやすくなります。画像URLを入れると、その画像が絵として表示されます（空欄なら絵文字が絵になります）。</p>
-    <label for="newWord">単語（英語）</label>
-    <input id="newWord" required placeholder="例：waterfall">
-    <label for="newMeaning">意味（日本語）</label>
-    <input id="newMeaning" required placeholder="例：滝">
-    <label for="newEmoji">絵文字（絵の代わり）</label>
-    <input id="newEmoji" placeholder="例：💧">
-    <label for="newImage">画像URL（任意）</label>
-    <input id="newImage" type="url" placeholder="https://…">
-    <label for="newScene">場面の説明（絵を見て思い浮かべる情景）</label>
-    <textarea id="newScene" rows="2" placeholder="例：崖から大量の水が落ちている"></textarea>
-    <label for="newAssoc">連想メモ（絵と単語のつながり）</label>
-    <textarea id="newAssoc" rows="2" placeholder="例：water（水）＋ fall（落ちる）＝ 水が落ちる → 滝"></textarea>
-    <label for="newExample">例文（任意）</label>
-    <textarea id="newExample" rows="2" placeholder="例：The waterfall was beautiful."></textarea>
-    <label for="newGrade">英検の目安（単語テストの級分け用）</label>
-    <select id="newGrade">
-      <option value="">未分類</option>
-      <option>5級</option><option>4級</option><option>3級</option><option>準2級</option><option>2級</option><option>準1級</option><option>1級</option>
-    </select>
-    <div class="row"><button type="submit" class="primary">追加する</button><button type="button" id="exportAddedBtn">追加した単語を保存（JSON）</button><button type="button" id="importAddedBtn">JSONから読み込む</button><input type="file" id="importFile" accept="application/json,.json" hidden></div><p class="muted">追加した単語はこのブラウザだけに保存されます（他の端末には出ません）。ブラウザのデータを消すと一緒に消えてしまうので、ときどき上のボタンでバックアップを保存してください。</p>
-  </form>
 
   <!-- 学習エリア：絵から連想 -->
   <div id="studyArea">
@@ -404,10 +380,6 @@
   <div class="gallery" id="gallery"></div>
 
 
-  <div class="list">
-    <h2>登録した単語</h2>
-    <div id="list"></div>
-  </div>
   </main>
 </div>
 <script>
@@ -583,17 +555,8 @@ const SAMPLES = [
   { word: "expedition", meaning: "探検、遠征", emoji: "🧭", image: "", scene: "コンパスと地図を手に、未知の土地へ向かう本格的な旅。", assoc: "未知への本格的な旅 → expedition", example: "The expedition reached the South Pole.", eiken: "1級", c1: "#d7ecff", c2: "#ffe7c7" }
 ];
 const GRADES = ["5級", "4級", "3級", "準2級", "2級", "準1級", "1級"];
-let words = [];
-try { words = JSON.parse(localStorage.getItem(KEY) || "null") || null; } catch (e) { words = null; }
-if (!words) { words = SAMPLES.slice(); save(); }
-else {
-  // 既存データへの移行：新しいサンプル単語を追加し、級（英検目安）を補完する
-  const byWord = {};
-  SAMPLES.forEach(s => { byWord[s.word.toLowerCase()] = s; });
-  words.forEach(w => { const s = byWord[String(w.word || "").toLowerCase()]; if (s && !w.eiken) w.eiken = s.eiken; });
-  SAMPLES.forEach(s => { if (!words.some(w => String(w.word || "").toLowerCase() === s.word.toLowerCase())) words.push(s); });
-  save();
-}
+let words = SAMPLES.slice();
+try { localStorage.removeItem(KEY); } catch (e) {}
 let index = 0;
 let mode = "study"; // study | quiz | output | gallery
 let revealed = false;
@@ -606,7 +569,6 @@ let outCorrect = 0;
 let outStreak = 0;
 
 const $ = id => document.getElementById(id);
-function save() { localStorage.setItem(KEY, JSON.stringify(words)); }
 function escapeHtml(s) { return String(s || "").replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])); }
 function filtered() {
   const q = $("search").value.trim().toLowerCase();
@@ -622,6 +584,8 @@ function setMode(m) {
   $("tabAccount").classList.toggle("active", m === "account");
   $("acctIconBtn").classList.toggle("active", m === "account");
   $("homeArea").classList.toggle("hidden", m !== "study");
+  $("subIntro").classList.toggle("hidden", m !== "study");
+  $("search").classList.toggle("hidden", m !== "study");
   $("outputArea").classList.toggle("hidden", m !== "output");
   $("testArea").classList.toggle("hidden", m !== "test");
   $("boardArea").classList.toggle("hidden", m !== "board");
@@ -892,11 +856,6 @@ function render() {
     (w.image ? '<img src="' + escapeHtml(w.image) + '" alt="">' : escapeHtml(w.emoji || "🖼️")) +
     '</div><div class="gword"><b>' + escapeHtml(w.word) + '</b><span>' + escapeHtml(w.meaning) + '</span></div></div>').join("") ||
     '<p class="empty">まだ単語がありません。</p>';
-  // 一覧
-  $("list").innerHTML = words.map((w, i) =>
-    '<div class="item"><div>' + escapeHtml(w.emoji || "🖼️") + ' <b>' + escapeHtml(w.word) + '</b>　<span>' + escapeHtml(w.meaning) + '</span>' + (w.eiken ? '<span class="grade-badge">英検 ' + escapeHtml(w.eiken) + '</span>' : "") + '</div>' +
-    '<button type="button" data-del="' + i + '">削除</button></div>').join("") ||
-    '<p class="empty">まだ単語がありません。</p>';
 }
 $("brandHome").addEventListener("click", () => { setMode("study"); window.scrollTo({ top: 0, behavior: "smooth" }); });
 // --- リーダーボード：名前ごとにテスト結果を記録 ---
@@ -1112,74 +1071,13 @@ $("outResetBtn").addEventListener("click", () => { outAttempts = 0; outCorrect =
 $("revealBtn").addEventListener("click", () => { revealed = !revealed; const c = filtered()[index]; renderAnswer(c); $("revealBtn").textContent = revealed ? "単語を隠す" : "単語を見る"; });
 $("nextBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index + 1) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
 $("prevBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index - 1 + n) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
-$("shuffleBtn").addEventListener("click", () => { words.sort(() => Math.random() - 0.5); save(); index = 0; revealed = false; render(); });
+$("shuffleBtn").addEventListener("click", () => { words.sort(() => Math.random() - 0.5); index = 0; revealed = false; render(); });
 $("search").addEventListener("input", () => { index = 0; revealed = false; render(); });
 $("gallery").addEventListener("click", e => {
   const g = e.target.closest("[data-word]");
   if (!g) return;
   const i = filtered().findIndex(w => w.word === g.dataset.word);
   if (i >= 0) { index = i; setMode("study"); }
-});
-$("exportAddedBtn").addEventListener("click", () => {
-  const sampleWords = new Set(SAMPLES.map(s => s.word.toLowerCase()));
-  const added = words.filter(w => !sampleWords.has(w.word.toLowerCase()));
-  if (!added.length) { alert("まだ追加した単語がありません。"); return; }
-  const blob = new Blob([JSON.stringify(added, null, 2)], { type: "application/json" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "vocab-added-words.json";
-  a.click();
-  URL.revokeObjectURL(a.href);
-});
-$("importAddedBtn").addEventListener("click", () => $("importFile").click());
-$("importFile").addEventListener("change", e => {
-  const file = e.target.files[0];
-  e.target.value = "";
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const data = JSON.parse(reader.result);
-      if (!Array.isArray(data)) throw new Error("not an array");
-      const existing = new Set(words.map(w => w.word.toLowerCase()));
-      let addedCount = 0, skipped = 0;
-      data.forEach(item => {
-        if (!item || typeof item.word !== "string" || typeof item.meaning !== "string" || !item.word.trim() || !item.meaning.trim()) { skipped++; return; }
-        if (existing.has(item.word.toLowerCase())) { skipped++; return; }
-        existing.add(item.word.toLowerCase());
-        words.push({
-          word: item.word.trim(), meaning: item.meaning.trim(),
-          emoji: item.emoji || "\u{1F5BC}\uFE0F", image: item.image || "",
-          scene: item.scene || "", assoc: item.assoc || "",
-          example: item.example || "", eiken: item.eiken || "",
-          c1: item.c1 || "#dcefe0", c2: item.c2 || "#f6ecd2"
-        });
-        addedCount++;
-      });
-      if (addedCount) { save(); index = 0; revealed = false; render(); }
-      alert(addedCount ? addedCount + "語を読み込みました。" + (skipped ? "（重複・形式違いの " + skipped + " 件は除きました）" : "") : "読み込める単語がありませんでした。ファイルの内容を確認してください。");
-    } catch (err) {
-      alert("ファイルを読み込めませんでした。保存ボタンで書き出したJSONファイルを選んでください。");
-    }
-  };
-  reader.readAsText(file);
-});
-$("addForm").addEventListener("submit", e => {
-  e.preventDefault();
-  words.unshift({
-    word: $("newWord").value.trim(), meaning: $("newMeaning").value.trim(),
-    emoji: $("newEmoji").value.trim() || "🖼️", image: $("newImage").value.trim(),
-    scene: $("newScene").value.trim(), assoc: $("newAssoc").value.trim(),
-    example: $("newExample").value.trim(), eiken: $("newGrade").value, c1: "#dcefe0", c2: "#f6ecd2"
-  });
-  save(); e.target.reset(); $("search").value = ""; index = 0; revealed = false; outQuestion = null; render();
-  if (mode === "output") { newOutputQuestion(); renderOutput(); }
-});
-$("list").addEventListener("click", e => {
-  const b = e.target.closest("[data-del]");
-  if (!b) return;
-  words.splice(Number(b.dataset.del), 1); save(); index = 0; revealed = false; outQuestion = null; render();
-  if (mode === "output") { newOutputQuestion(); renderOutput(); }
 });
 render();
 </script>
