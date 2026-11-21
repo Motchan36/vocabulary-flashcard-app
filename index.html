@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>絵で覚える単語帳 — Picture Vocabulary</title>
+<title>絵単Pin（Eta）— 絵から連想して覚える単語帳</title>
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <style>
   * { box-sizing: border-box; }
   body { font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; margin: 0; background: #f3f6f3; color: #223; }
@@ -12,6 +14,7 @@
   .brand { display: flex; gap: 10px; align-items: center; padding: 2px 6px 12px; border: none; border-bottom: 1px solid #eef2ee; background: none; cursor: pointer; width: 100%; text-align: left; font: inherit; color: inherit; border-radius: 0; }
   .brand:hover { background: #f2f7ee; }
   .brand-logo { font-size: 28px; }
+  .brand-icon { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; display: block; box-shadow: 0 1px 4px rgba(20,60,50,.25); }
   .brand-name { font-weight: 700; font-size: 16px; line-height: 1.3; display: block; }
   .brand-sub { font-size: 11px; color: #889; display: block; }
   .sidebar .tabs { flex-direction: column; margin: 0; }
@@ -115,7 +118,7 @@
 <body>
 <div class="layout">
   <aside class="sidebar">
-    <button type="button" class="brand" id="brandHome" title="ホームに戻る"><span class="brand-logo">🖼️</span><span><span class="brand-name">絵で覚える単語帳</span><span class="brand-sub">Picture Vocabulary</span></span></button>
+    <button type="button" class="brand" id="brandHome" title="ホームに戻る"><img class="brand-icon" src="icon.png" alt="絵単Pinのアイコン"><span><span class="brand-name">絵単Pin</span><span class="brand-sub">Eta</span></span></button>
   <div class="tabs" role="tablist">
     <button id="tabStudy" type="button" class="active">🏠 ホーム</button>
     <button id="tabTest" type="button">📝 単語テスト</button>
