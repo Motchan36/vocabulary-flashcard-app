@@ -159,7 +159,7 @@ Images are from Wikimedia Commons (freely licensed) unless noted as AI-generated
 - drought: [File:Drought.jpg](https://commons.wikimedia.org/wiki/File:Drought.jpg) — Tomas Castelazo — CC BY 3.0
 - tsunami: [File:Tsunami by hokusai 19th century.jpg](https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg) — Katsushika Hokusai — Public domain
 - monsoon: [File:Mumbai-rains.jpg](https://commons.wikimedia.org/wiki/File:Mumbai-rains.jpg) — Rakesh Krishna Kumar from Mumbai, India — CC BY-SA 2.0
-- gravity: [File:Skydiver in Freefall Wearing Bright Green Suit.jpg](https://commons.wikimedia.org/wiki/File:Skydiver_in_Freefall_Wearing_Bright_Green_Suit.jpg) — Rstpch — CC BY-SA 4.0
+- gravity: [File:Astronaut-in-space.jpg](https://commons.wikimedia.org/wiki/File:Astronaut-in-space.jpg) — NASA (cropped) — Public domain
 - labyrinth: [File:Chenonceau maze, aerial view.jpg](https://commons.wikimedia.org/wiki/File:Chenonceau_maze,_aerial_view.jpg) — Lieven Smits — CC BY-SA 3.0
 - mirage: AI-generated image
 - oasis: [File:Liwa Oasis palm trees with the desert view.jpg](https://commons.wikimedia.org/wiki/File:Liwa_Oasis_palm_trees_with_the_desert_view.jpg) — Josephyousry — CC BY-SA 4.0
