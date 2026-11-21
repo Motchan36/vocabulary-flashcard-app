@@ -189,7 +189,7 @@
   <main class="main">
   <p class="sub" id="subIntro">カードをめくるのではなく、まず絵（場面）を見て単語を連想します。イメージと結びつけて覚える単語帳です。単語には英検の級の目安が付いていて、「単語テスト」では級ごとにテストできます。データはこのブラウザに保存されます。</p>
 
-  <input class="search" id="search" type="search" placeholder="単語・意味で検索…" aria-label="検索">
+  
 
 
   <div id="homeArea">
@@ -571,9 +571,7 @@ let outStreak = 0;
 const $ = id => document.getElementById(id);
 function escapeHtml(s) { return String(s || "").replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])); }
 function filtered() {
-  const q = $("search").value.trim().toLowerCase();
-  if (!q) return words;
-  return words.filter(w => (w.word + " " + w.meaning + " " + (w.scene || "")).toLowerCase().includes(q));
+  return words;
 }
 function setMode(m) {
   mode = m; revealed = false;
@@ -585,7 +583,6 @@ function setMode(m) {
   $("acctIconBtn").classList.toggle("active", m === "account");
   $("homeArea").classList.toggle("hidden", m !== "study");
   $("subIntro").classList.toggle("hidden", m !== "study");
-  $("search").classList.toggle("hidden", m !== "study");
   $("outputArea").classList.toggle("hidden", m !== "output");
   $("testArea").classList.toggle("hidden", m !== "test");
   $("boardArea").classList.toggle("hidden", m !== "board");
@@ -1072,7 +1069,6 @@ $("revealBtn").addEventListener("click", () => { revealed = !revealed; const c =
 $("nextBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index + 1) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
 $("prevBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index - 1 + n) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
 $("shuffleBtn").addEventListener("click", () => { words.sort(() => Math.random() - 0.5); index = 0; revealed = false; render(); });
-$("search").addEventListener("input", () => { index = 0; revealed = false; render(); });
 $("gallery").addEventListener("click", e => {
   const g = e.target.closest("[data-word]");
   if (!g) return;
