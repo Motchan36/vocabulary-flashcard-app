@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <style>
   :root {
     --ink: #14332e;
@@ -122,6 +123,11 @@
   .howto-body { padding: 10px 12px 12px; font-size: 13px; line-height: 1.65; color: #44543f; }
   .howto-body b { display: block; font-size: 14px; color: var(--ink); margin-bottom: 2px; }
   .howto-body p { margin: 0; }
+  /* アカウント */
+  .acct-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .acct-msg { font-size: 13.5px; font-weight: 700; line-height: 1.6; margin: 12px 0 0; min-height: 20px; }
+  .acct-msg.ok { color: #0d5a4e; }
+  .acct-msg.err { color: #b3402a; }
   /* リーダーボード */
   .board-me { background: var(--card); border: 2px solid var(--ink); border-radius: 14px; padding: 14px 16px; box-shadow: 3px 3px 0 rgba(20,51,46,.8); font-size: 14px; }
   .board-me b { font-size: 16px; }
@@ -171,8 +177,9 @@
     <button id="tabTest" type="button">単語テスト</button>
     <button id="tabGallery" type="button">絵のギャラリー</button>
     <button id="tabBoard" type="button">リーダーボード</button>
+    <button id="tabAccount" type="button">アカウント</button>
   </div>
-    <div class="side-note">登録した単語: <b id="sideCount">0</b>語<br>データはこのブラウザに保存されます。</div>
+    <div class="side-note">登録した単語: <b id="sideCount">0</b>語<br>アカウント: <b id="sideAcct">未ログイン</b><br>データはこのブラウザに保存されます。</div>
   </aside>
   <main class="main">
   <p class="sub">カードをめくるのではなく、まず絵（場面）を見て単語を連想します。イメージと結びつけて覚える単語帳です。単語には英検の級の目安が付いていて、「単語テスト」では級ごとにテストできます。データはこのブラウザに保存されます。</p>
@@ -319,6 +326,59 @@
   </div>
 
   <!-- ギャラリー -->
+  <!-- アカウント：Supabase Auth（メール＋パスワード／ワンタイムコード） -->
+  <div id="accountArea" class="hidden">
+    <h2>アカウント</h2>
+    <div id="acctLoggedOut">
+      <p class="howto-lead">ログインすると、単語テストの結果があなたの名前で記録され、どの端末からでも「みんなのリーダーボード」で競えます。</p>
+      <div class="board-me">
+        <div class="acct-tabs">
+          <button id="acctTabLogin" type="button" class="primary">ログイン</button>
+          <button id="acctTabSignup" type="button">新規登録</button>
+          <button id="acctTabOtp" type="button">コードでログイン</button>
+        </div>
+        <div id="acctLoginForm">
+          <label for="loginEmail">メールアドレス</label>
+          <input id="loginEmail" type="email" autocomplete="email" placeholder="例：you@example.com">
+          <label for="loginPass">パスワード</label>
+          <input id="loginPass" type="password" autocomplete="current-password">
+          <div class="row"><button id="loginBtn" type="button" class="primary">ログイン</button></div>
+        </div>
+        <div id="acctSignupForm" class="hidden">
+          <label for="suName">表示名（リーダーボードに出る名前）</label>
+          <input id="suName" maxlength="20" placeholder="例：マーク">
+          <label for="suEmail">メールアドレス</label>
+          <input id="suEmail" type="email" autocomplete="email" placeholder="例：you@example.com">
+          <label for="suPass">パスワード（6文字以上）</label>
+          <input id="suPass" type="password" autocomplete="new-password">
+          <div class="row"><button id="signupBtn" type="button" class="primary">登録して確認メールを送る</button></div>
+          <p class="board-note">登録すると確認メールが届きます。メール内のリンクを開くと登録が完了します。メールに6桁コードが表示されている場合は、下のコード欄に入力しても完了できます。</p>
+        </div>
+        <div id="acctOtpForm" class="hidden">
+          <label for="otpEmail">メールアドレス</label>
+          <input id="otpEmail" type="email" autocomplete="email" placeholder="例：you@example.com">
+          <div class="row"><button id="otpSendBtn" type="button" class="primary">ログイン用メールを送る</button></div>
+          <p class="board-note">パスワードなしで、メールに届くリンク（または6桁コード）だけでログインできます。初めての方はアカウントが自動で作られます（表示名はメールアドレスから自動設定されます）。</p>
+        </div>
+        <div id="acctVerify" class="hidden">
+          <label for="verifyCode">メールに届いた6桁コード（表示されている場合）</label>
+          <input id="verifyCode" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="例：123456">
+          <div class="row"><button id="verifyBtn" type="button" class="primary">コードを確認する</button></div>
+        </div>
+        <p id="acctMsg" class="acct-msg"></p>
+      </div>
+    </div>
+    <div id="acctLoggedIn" class="hidden">
+      <div class="board-me">
+        <div>ログイン中： <b id="acctName"></b></div>
+        <div class="board-stats" id="acctEmail"></div>
+        <p class="board-note">単語テストの結果はこの名前で記録され、「リーダーボード（みんな）」に反映されます。</p>
+        <div class="row"><button id="logoutBtn" type="button">ログアウト</button></div>
+        <p id="acctMsg2" class="acct-msg"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- リーダーボード：単語テストの正解数を名前ごとに記録 -->
   <div id="boardArea" class="hidden">
     <h2>リーダーボード</h2>
@@ -554,10 +614,12 @@ function setMode(m) {
   $("tabTest").classList.toggle("active", m === "test");
   $("tabGallery").classList.toggle("active", m === "gallery");
   $("tabBoard").classList.toggle("active", m === "board");
+  $("tabAccount").classList.toggle("active", m === "account");
   $("homeArea").classList.toggle("hidden", m !== "study");
   $("outputArea").classList.toggle("hidden", m !== "output");
   $("testArea").classList.toggle("hidden", m !== "test");
   $("boardArea").classList.toggle("hidden", m !== "board");
+  $("accountArea").classList.toggle("hidden", m !== "account");
   if (m === "board") renderBoard();
   $("gallery").classList.toggle("show", m === "gallery");
   if (m === "test") showTestHome();
@@ -851,28 +913,169 @@ function recordTestResult(correct, total) {
   p.correct += correct; p.answered += total; p.tests += 1;
   if (correct > p.best) p.best = correct;
   saveBoard();
+  syncScoreOnline(correct, total);
 }
-function renderBoard() {
+async function syncScoreOnline(correct, total) {
+  if (!sb || !sbUser) return;
+  try {
+    const { data } = await sb.from("scores").select("correct,answered,tests,best").eq("user_id", sbUser.id).maybeSingle();
+    const cur = data || { correct: 0, answered: 0, tests: 0, best: 0 };
+    await sb.from("scores").upsert({
+      user_id: sbUser.id,
+      name: sbDisplayName(),
+      correct: cur.correct + correct,
+      answered: cur.answered + total,
+      tests: cur.tests + 1,
+      best: Math.max(cur.best, correct),
+      updated_at: new Date().toISOString()
+    });
+  } catch (e) { /* オンライン同期に失敗してもローカル記録は残す */ }
+}
+function boardRowsHtml(rows) {
+  return rows.map((r, i) => {
+    const rate = r.answered ? Math.round(r.correct / r.answered * 100) : 0;
+    return '<div class="board-row' + (r.me ? " me" : "") + '">' +
+      '<div class="board-rank">' + (i + 1) + '</div>' +
+      '<div><div class="board-name">' + escapeHtml(r.name) + (r.me ? "<small>いまの名前</small>" : "") + '</div>' +
+      '<div class="board-stats">挑戦 ' + r.answered + '問 ・ 正答率 ' + rate + '% ・ テスト ' + r.tests + '回 ・ ベスト ' + r.best + '問正解</div></div>' +
+      '<div class="board-correct"><b>' + r.correct + '</b><span>単語 正解</span></div></div>';
+  }).join("");
+}
+function renderBoardLocal() {
   ensurePlayer(board.me);
   $("boardMeName").textContent = board.me;
   const sel = $("boardPlayerSelect");
   sel.innerHTML = Object.keys(board.players).map(n => '<option value="' + escapeHtml(n) + '"' + (n === board.me ? " selected" : "") + '>' + escapeHtml(n) + '</option>').join("");
-  const rows = Object.entries(board.players).map(([name, p]) => ({ name, ...p }))
+  const rows = Object.entries(board.players).map(([name, p]) => ({ name, me: name === board.me, ...p }))
     .sort((a, b) => b.correct - a.correct || (b.answered ? b.correct / b.answered : 0) - (a.answered ? a.correct / a.answered : 0) || b.tests - a.tests);
   const totalAnswered = rows.reduce((s, r) => s + r.answered, 0);
   if (!totalAnswered) {
     $("boardList").innerHTML = '<div class="board-empty">まだ記録がありません。<br>単語テストを受けると、ここに正解数が表示されます。</div>';
     return;
   }
-  $("boardList").innerHTML = rows.map((r, i) => {
-    const rate = r.answered ? Math.round(r.correct / r.answered * 100) : 0;
-    return '<div class="board-row' + (r.name === board.me ? " me" : "") + '">' +
-      '<div class="board-rank">' + (i + 1) + '</div>' +
-      '<div><div class="board-name">' + escapeHtml(r.name) + (r.name === board.me ? "<small>いまの名前</small>" : "") + '</div>' +
-      '<div class="board-stats">挑戦 ' + r.answered + '問 ・ 正答率 ' + rate + '% ・ テスト ' + r.tests + '回 ・ ベスト ' + r.best + '問正解</div></div>' +
-      '<div class="board-correct"><b>' + r.correct + '</b><span>単語 正解</span></div></div>';
-  }).join("");
+  $("boardList").innerHTML = boardRowsHtml(rows);
 }
+async function renderBoard() {
+  renderBoardLocal();
+  if (sb && sbUser) {
+    const { data, error } = await sb.from("scores").select("user_id,name,correct,answered,tests,best").order("correct", { ascending: false }).limit(100);
+    if (!error && data) {
+      const rows = data.map(r => ({ name: r.name, correct: r.correct, answered: r.answered, tests: r.tests, best: r.best, me: r.user_id === sbUser.id }));
+      $("boardList").innerHTML = '<p class="howto-lead">みんなのリーダーボード（オンライン・全端末共通）</p>' + (rows.length ? boardRowsHtml(rows) : '<div class="board-empty">まだオンラインの記録がありません。<br>ログインして単語テストを受けると、ここに表示されます。</div>');
+    }
+  }
+}
+// --- アカウント：Supabase Auth ---
+const SB_URL = "https://ntamgvjdcmikngwiqggn.supabase.co";
+const SB_KEY = "sb_publishable_spod5jqL8ifvthkjnq2NCw_XpEPrZxT";
+let sb = null, sbUser = null, pendingOtp = null;
+try { if (window.supabase) sb = window.supabase.createClient(SB_URL, SB_KEY); } catch (e) { sb = null; }
+function sbDisplayName() {
+  if (!sbUser) return "ゲスト";
+  return (sbUser.user_metadata && sbUser.user_metadata.display_name) || (sbUser.email ? sbUser.email.split("@")[0] : "ゲスト");
+}
+function acctMsg(text, ok, second) {
+  const el = $(second ? "acctMsg2" : "acctMsg");
+  if (el) { el.textContent = text || ""; el.className = "acct-msg " + (text ? (ok ? "ok" : "err") : ""); }
+}
+function acctErr(e) {
+  const m = (e && e.message) || "エラーが発生しました";
+  if (/Invalid login credentials/i.test(m)) return "メールアドレスかパスワードが違います。";
+  if (/already registered/i.test(m)) return "このメールアドレスは登録済みです。ログインしてください。";
+  if (/Password should be/i.test(m)) return "パスワードは6文字以上にしてください。";
+  if (/Token has expired|invalid.*token|OTP expired/i.test(m)) return "コードが違うか、期限が切れています。もう一度お試しください。";
+  if (/Email not confirmed/i.test(m)) return "メール確認が終わっていません。届いたコードを入力してください。";
+  return m;
+}
+function renderAccount() {
+  const loggedIn = !!sbUser;
+  $("acctLoggedOut").classList.toggle("hidden", loggedIn);
+  $("acctLoggedIn").classList.toggle("hidden", !loggedIn);
+  $("sideAcct").textContent = loggedIn ? sbDisplayName() : "未ログイン";
+  if (loggedIn) {
+    $("acctName").textContent = sbDisplayName();
+    $("acctEmail").textContent = sbUser.email || "";
+  }
+  if (!sb) acctMsg("アカウント機能を読み込めませんでした。通信環境を確認して再読み込みしてください。", false);
+}
+let acctRefreshing = false;
+async function refreshAuth() {
+  if (!sb || acctRefreshing) return;
+  acctRefreshing = true;
+  try {
+    const { data } = await sb.auth.getSession();
+    sbUser = data && data.session ? data.session.user : null;
+    if (sbUser) { board.me = sbDisplayName(); ensurePlayer(board.me); saveBoard(); }
+    renderAccount();
+  } finally { acctRefreshing = false; }
+}
+function acctShowForm(which) {
+  $("acctLoginForm").classList.toggle("hidden", which !== "login");
+  $("acctSignupForm").classList.toggle("hidden", which !== "signup");
+  $("acctOtpForm").classList.toggle("hidden", which !== "otp");
+  $("acctTabLogin").classList.toggle("primary", which === "login");
+  $("acctTabSignup").classList.toggle("primary", which === "signup");
+  $("acctTabOtp").classList.toggle("primary", which === "otp");
+}
+$("tabAccount").addEventListener("click", () => setMode("account"));
+$("acctTabLogin").addEventListener("click", () => acctShowForm("login"));
+$("acctTabSignup").addEventListener("click", () => acctShowForm("signup"));
+$("acctTabOtp").addEventListener("click", () => acctShowForm("otp"));
+$("loginBtn").addEventListener("click", async () => {
+  if (!sb) return;
+  const email = $("loginEmail").value.trim(), pass = $("loginPass").value;
+  if (!email || !pass) { acctMsg("メールアドレスとパスワードを入力してください。", false); return; }
+  acctMsg("ログインしています…", true);
+  const { error } = await sb.auth.signInWithPassword({ email, password: pass });
+  if (error) { acctMsg(acctErr(error), false); return; }
+  await refreshAuth();
+  acctMsg(sbDisplayName() + " としてログインしました。", true, true);
+});
+$("signupBtn").addEventListener("click", async () => {
+  if (!sb) return;
+  const name = $("suName").value.trim(), email = $("suEmail").value.trim(), pass = $("suPass").value;
+  if (!name || !email || !pass) { acctMsg("表示名・メールアドレス・パスワードを入力してください。", false); return; }
+  acctMsg("登録しています…", true);
+  const { data, error } = await sb.auth.signUp({ email, password: pass, options: { data: { display_name: name } } });
+  if (error) { acctMsg(acctErr(error), false); return; }
+  if (data && data.session) { await refreshAuth(); acctMsg("登録が完了しました。", true, true); return; }
+  pendingOtp = { email, type: "signup" };
+  $("acctVerify").classList.remove("hidden");
+  acctMsg(email + " に確認メールを送りました。メール内のリンクを開いてください。コードが表示されている場合は下の欄でもOKです。", true);
+});
+$("otpSendBtn").addEventListener("click", async () => {
+  if (!sb) return;
+  const email = $("otpEmail").value.trim();
+  if (!email) { acctMsg("メールアドレスを入力してください。", false); return; }
+  acctMsg("コードを送っています…", true);
+  const { error } = await sb.auth.signInWithOtp({ email });
+  if (error) { acctMsg(acctErr(error), false); return; }
+  pendingOtp = { email, type: "email" };
+  $("acctVerify").classList.remove("hidden");
+  acctMsg(email + " にログイン用メールを送りました。メール内のリンクを開いてください。コードが表示されている場合は下の欄でもOKです。", true);
+});
+$("verifyBtn").addEventListener("click", async () => {
+  if (!sb || !pendingOtp) { acctMsg("先にコードを送信してください。", false); return; }
+  const token = $("verifyCode").value.trim();
+  if (!token) { acctMsg("コードを入力してください。", false); return; }
+  acctMsg("コードを確認しています…", true);
+  const { error } = await sb.auth.verifyOtp({ email: pendingOtp.email, token, type: pendingOtp.type });
+  if (error) { acctMsg(acctErr(error), false); return; }
+  pendingOtp = null;
+  $("acctVerify").classList.add("hidden");
+  $("verifyCode").value = "";
+  await refreshAuth();
+  acctMsg(sbDisplayName() + " としてログインしました。", true, true);
+});
+$("logoutBtn").addEventListener("click", async () => {
+  if (!sb) return;
+  await sb.auth.signOut();
+  sbUser = null;
+  board.me = "ゲスト"; ensurePlayer(board.me); saveBoard();
+  renderAccount();
+  acctMsg("ログアウトしました。", true);
+});
+if (sb) { sb.auth.onAuthStateChange(() => { refreshAuth(); }); refreshAuth(); }
 $("tabBoard").addEventListener("click", () => setMode("board"));
 $("boardNameBtn").addEventListener("click", () => {
   const name = $("boardNameInput").value.trim();
