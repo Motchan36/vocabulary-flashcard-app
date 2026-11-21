@@ -222,7 +222,7 @@
       <option value="">未分類</option>
       <option>5級</option><option>4級</option><option>3級</option><option>準2級</option><option>2級</option><option>準1級</option><option>1級</option>
     </select>
-    <div class="row"><button type="submit" class="primary">追加する</button><button type="button" id="exportAddedBtn">追加した単語を保存（JSON）</button></div><p class="muted">追加した単語はこのブラウザだけに保存されます（他の端末には出ません）。ブラウザのデータを消すと一緒に消えてしまうので、ときどき上のボタンでバックアップを保存してください。</p>
+    <div class="row"><button type="submit" class="primary">追加する</button><button type="button" id="exportAddedBtn">追加した単語を保存（JSON）</button><button type="button" id="importAddedBtn">JSONから読み込む</button><input type="file" id="importFile" accept="application/json,.json" hidden></div><p class="muted">追加した単語はこのブラウザだけに保存されます（他の端末には出ません）。ブラウザのデータを消すと一緒に消えてしまうので、ときどき上のボタンでバックアップを保存してください。</p>
   </form>
 
   <!-- 学習エリア：絵から連想 -->
@@ -1123,6 +1123,39 @@ $("exportAddedBtn").addEventListener("click", () => {
   a.download = "vocab-added-words.json";
   a.click();
   URL.revokeObjectURL(a.href);
+});
+$("importAddedBtn").addEventListener("click", () => $("importFile").click());
+$("importFile").addEventListener("change", e => {
+  const file = e.target.files[0];
+  e.target.value = "";
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (!Array.isArray(data)) throw new Error("not an array");
+      const existing = new Set(words.map(w => w.word.toLowerCase()));
+      let addedCount = 0, skipped = 0;
+      data.forEach(item => {
+        if (!item || typeof item.word !== "string" || typeof item.meaning !== "string" || !item.word.trim() || !item.meaning.trim()) { skipped++; return; }
+        if (existing.has(item.word.toLowerCase())) { skipped++; return; }
+        existing.add(item.word.toLowerCase());
+        words.push({
+          word: item.word.trim(), meaning: item.meaning.trim(),
+          emoji: item.emoji || "\u{1F5BC}\uFE0F", image: item.image || "",
+          scene: item.scene || "", assoc: item.assoc || "",
+          example: item.example || "", eiken: item.eiken || "",
+          c1: item.c1 || "#dcefe0", c2: item.c2 || "#f6ecd2"
+        });
+        addedCount++;
+      });
+      if (addedCount) { save(); index = 0; revealed = false; render(); }
+      alert(addedCount ? addedCount + "語を読み込みました。" + (skipped ? "（重複・形式違いの " + skipped + " 件は除きました）" : "") : "読み込める単語がありませんでした。ファイルの内容を確認してください。");
+    } catch (err) {
+      alert("ファイルを読み込めませんでした。保存ボタンで書き出したJSONファイルを選んでください。");
+    }
+  };
+  reader.readAsText(file);
 });
 $("addForm").addEventListener("submit", e => {
   e.preventDefault();
