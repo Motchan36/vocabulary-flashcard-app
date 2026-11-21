@@ -82,6 +82,17 @@
   label { display: block; font-size: 13px; color: #555; margin: 10px 0 4px; }
   input, textarea, select { width: 100%; padding: 10px; font-size: 15px; border: 1px solid #c9d4c9; border-radius: 8px; background: #fff; }
   .grade-badge { display: inline-block; font-size: 12px; font-weight: 700; color: #2e5e3a; background: #e6f2e4; border: 1px solid #bcd8b8; border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle; }
+  /* 使い方インストラクション */
+  .howto { margin-top: 16px; }
+  .howto h2 { font-size: 17px; margin: 0 0 4px; }
+  .howto-lead { font-size: 13px; color: #667; margin: 0 0 10px; line-height: 1.6; }
+  .howto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .howto-grid { grid-template-columns: 1fr; } }
+  .howto-card { background: #fff; border: 1px solid #dde5dd; border-radius: 14px; overflow: hidden; }
+  .howto-visual { min-height: 84px; display: flex; align-items: center; justify-content: center; font-size: 46px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
+  .howto-body { padding: 10px 12px 12px; font-size: 13px; line-height: 1.65; color: #44543f; }
+  .howto-body b { display: block; font-size: 14px; color: #223; margin-bottom: 2px; }
+  .howto-body p { margin: 0; }
   /* 単語テスト */
   .grade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
   .grade-card { padding: 18px 14px; text-align: left; border-radius: 14px; }
@@ -118,7 +129,45 @@
   <input class="search" id="search" type="search" placeholder="単語・意味で検索…" aria-label="検索">
 
 
-  <!-- 学習 / クイズ共通エリア -->
+  <div id="homeArea">
+    <!-- 使い方：画像（絵）つきインストラクション -->
+    <section class="howto" aria-label="使い方">
+      <h2>使い方</h2>
+      <p class="howto-lead">この単語帳は、カードをめくるのではなく「絵 → 連想 → 単語」の順で覚えるアプリです。</p>
+      <div class="howto-grid">
+        <div class="howto-card"><div class="howto-visual" style="--c1:#ffe3f1;--c2:#e0f4ff">🌈</div><div class="howto-body"><b>1. 絵を見る</b><p>まず絵と場面の説明を見ます。意味はまだ見ないのがポイントです。</p></div></div>
+        <div class="howto-card"><div class="howto-visual" style="--c1:#fff2cf;--c2:#e9f6d8">💭</div><div class="howto-body"><b>2. 単語を連想する</b><p>絵からイメージを広げて、頭の中で英単語を言ってみましょう。</p></div></div>
+        <div class="howto-card"><div class="howto-visual" style="--c1:#dcefe0;--c2:#f6ecd2">✅</div><div class="howto-body"><b>3. 答え合わせをする</b><p>下の学習エリアで「単語を見る」を押すと、単語・意味・連想メモ・例文が出ます。絵と単語のつながりを確認しましょう。</p></div></div>
+        <div class="howto-card"><div class="howto-visual" style="--c1:#dfe6ff;--c2:#ffeef5">📝</div><div class="howto-body"><b>4. テストで力試し</b><p>左の「単語テスト」から、英検の級ごとに「絵からクイズ」と「単語から絵を選ぶ」に挑戦できます。</p></div></div>
+      </div>
+    </section>
+
+  <form id="addForm">
+    <h2>単語を追加</h2>
+    <p>ポイントは「絵で思い出せること」。場面の説明と、絵と単語をつなぐ連想メモを書くと覚えやすくなります。画像URLを入れると、その画像が絵として表示されます（空欄なら絵文字が絵になります）。</p>
+    <label for="newWord">単語（英語）</label>
+    <input id="newWord" required placeholder="例：waterfall">
+    <label for="newMeaning">意味（日本語）</label>
+    <input id="newMeaning" required placeholder="例：滝">
+    <label for="newEmoji">絵文字（絵の代わり）</label>
+    <input id="newEmoji" placeholder="例：💧">
+    <label for="newImage">画像URL（任意）</label>
+    <input id="newImage" type="url" placeholder="https://…">
+    <label for="newScene">場面の説明（絵を見て思い浮かべる情景）</label>
+    <textarea id="newScene" rows="2" placeholder="例：崖から大量の水が落ちている"></textarea>
+    <label for="newAssoc">連想メモ（絵と単語のつながり）</label>
+    <textarea id="newAssoc" rows="2" placeholder="例：water（水）＋ fall（落ちる）＝ 水が落ちる → 滝"></textarea>
+    <label for="newExample">例文（任意）</label>
+    <textarea id="newExample" rows="2" placeholder="例：The waterfall was beautiful."></textarea>
+    <label for="newGrade">英検の目安（単語テストの級分け用）</label>
+    <select id="newGrade">
+      <option value="">未分類</option>
+      <option>5級</option><option>4級</option><option>3級</option><option>準2級</option><option>2級</option><option>準1級</option><option>1級</option>
+    </select>
+    <div class="row"><button type="submit" class="primary">追加する</button></div>
+  </form>
+
+  <!-- 学習エリア：絵から連想 -->
   <div id="studyArea">
     <div class="scene">
       <div class="visual" id="visual">
@@ -144,6 +193,8 @@
       <button id="shuffleBtn" type="button">シャッフル</button>
     </div>
   </div>
+
+  </div><!-- /homeArea -->
 
   <!-- アウトプット：単語を見て、イメージに合う絵を4つから選ぶ -->
   <div id="outputArea" class="hidden">
@@ -219,30 +270,6 @@
   <!-- ギャラリー -->
   <div class="gallery" id="gallery"></div>
 
-  <form id="addForm">
-    <h2>単語を追加</h2>
-    <p>ポイントは「絵で思い出せること」。場面の説明と、絵と単語をつなぐ連想メモを書くと覚えやすくなります。画像URLを入れると、その画像が絵として表示されます（空欄なら絵文字が絵になります）。</p>
-    <label for="newWord">単語（英語）</label>
-    <input id="newWord" required placeholder="例：waterfall">
-    <label for="newMeaning">意味（日本語）</label>
-    <input id="newMeaning" required placeholder="例：滝">
-    <label for="newEmoji">絵文字（絵の代わり）</label>
-    <input id="newEmoji" placeholder="例：💧">
-    <label for="newImage">画像URL（任意）</label>
-    <input id="newImage" type="url" placeholder="https://…">
-    <label for="newScene">場面の説明（絵を見て思い浮かべる情景）</label>
-    <textarea id="newScene" rows="2" placeholder="例：崖から大量の水が落ちている"></textarea>
-    <label for="newAssoc">連想メモ（絵と単語のつながり）</label>
-    <textarea id="newAssoc" rows="2" placeholder="例：water（水）＋ fall（落ちる）＝ 水が落ちる → 滝"></textarea>
-    <label for="newExample">例文（任意）</label>
-    <textarea id="newExample" rows="2" placeholder="例：The waterfall was beautiful."></textarea>
-    <label for="newGrade">英検の目安（単語テストの級分け用）</label>
-    <select id="newGrade">
-      <option value="">未分類</option>
-      <option>5級</option><option>4級</option><option>3級</option><option>準2級</option><option>2級</option><option>準1級</option><option>1級</option>
-    </select>
-    <div class="row"><button type="submit" class="primary">追加する</button></div>
-  </form>
 
   <div class="list">
     <h2>登録した単語</h2>
@@ -458,7 +485,7 @@ function setMode(m) {
   $("tabStudy").classList.toggle("active", m === "study");
   $("tabTest").classList.toggle("active", m === "test");
   $("tabGallery").classList.toggle("active", m === "gallery");
-  $("studyArea").classList.toggle("hidden", m === "gallery" || m === "output" || m === "test");
+  $("homeArea").classList.toggle("hidden", m !== "study");
   $("outputArea").classList.toggle("hidden", m !== "output");
   $("testArea").classList.toggle("hidden", m !== "test");
   $("gallery").classList.toggle("show", m === "gallery");
