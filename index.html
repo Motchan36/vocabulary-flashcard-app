@@ -159,23 +159,29 @@
   .acct-icon img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
   .board-empty { text-align: center; color: #77704f; padding: 28px 0; font-size: 14px; line-height: 1.7; }
   /* 単語テスト */
-  .grade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .grade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
   .grade-card { padding: 22px 18px; text-align: left; border-radius: 12px; background: var(--card); }
   .grade-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 23px; font-weight: 800; display: block; }
   .grade-card span { font-size: 14px; font-weight: 400; color: #6b6350; display: block; margin-top: 4px; line-height: 1.5; }
-  .type-card { padding: 26px 24px 22px; text-align: left; border-radius: 14px; background: var(--card); }
-  .type-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 28px; font-weight: 800; display: block; }
-  .type-card > span { font-size: 15px; font-weight: 400; color: #6b6350; display: block; margin-top: 6px; line-height: 1.6; }
-  .example { display: block; margin-top: 18px; background: #fff; border: 2px solid var(--ink); border-radius: 12px; padding: 12px; box-shadow: 3px 3px 0 rgba(20,51,46,.9); }
+  .test-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .ti-item { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; padding: 18px 20px; box-shadow: 4px 4px 0 rgba(20,51,46,.9); }
+  .ti-item b { font-size: 21px; font-weight: 800; background: linear-gradient(transparent 62%, #ffe98a 62%); padding: 0 4px; }
+  .ti-flow { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 20px; margin-left: 12px; color: var(--teal); }
+  .ti-item p { font-size: 14px; color: #6b6350; margin: 8px 0 0; line-height: 1.65; }
+  @media (max-width: 760px) { .test-intro { grid-template-columns: 1fr; } }
+  .type-card { padding: 32px 30px 28px; text-align: left; border-radius: 14px; background: var(--card); }
+  .type-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 33px; font-weight: 800; display: block; }
+  .type-card > span { font-size: 16px; font-weight: 400; color: #6b6350; display: block; margin-top: 6px; line-height: 1.6; }
+  .example { display: block; margin-top: 20px; background: #fff; border: 2px solid var(--ink); border-radius: 12px; padding: 16px; box-shadow: 3px 3px 0 rgba(20,51,46,.9); }
   .ex-label { display: inline-block; background: var(--yellow); border: 2px solid var(--ink); border-radius: 999px; padding: 1px 12px; font-size: 12px; font-weight: 800; margin-bottom: 10px; }
-  .ex-photo { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); display: block; }
-  .ex-q { display: block; font-weight: 800; font-size: 14px; margin: 10px 0 8px; }
+  .ex-photo { width: 100%; height: 175px; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); display: block; }
+  .ex-q { display: block; font-weight: 800; font-size: 15px; margin: 10px 0 8px; }
   .ex-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-  .ex-chip { border: 2px solid var(--ink); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700; background: #fff; font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; }
+  .ex-chip { border: 2px solid var(--ink); border-radius: 999px; padding: 6px 15px; font-size: 14px; font-weight: 700; background: #fff; font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; }
   .ex-chip.ok { background: var(--yellow); }
-  .ex-word { display: block; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 34px; text-align: center; margin: 2px 0 10px; }
+  .ex-word { display: block; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 44px; text-align: center; margin: 2px 0 10px; }
   .ex-imgs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .ex-imgs img { width: 100%; height: 68px; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); display: block; }
+  .ex-imgs img { width: 100%; height: 98px; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); display: block; }
   .ex-imgs img.ok { border-color: var(--ink); box-shadow: 0 0 0 3px var(--yellow); }
   @media (max-width: 760px) { .type-grid { grid-template-columns: 1fr; } .type-card b { font-size: 24px; } }
   .grade-card:disabled { opacity: .45; cursor: default; }
@@ -283,6 +289,10 @@
   <div id="testArea" class="hidden">
     <div id="testHome">
       <div id="testTypeSelect">
+        <div class="test-intro">
+          <div class="ti-item"><b>インプット</b><span class="ti-flow">絵 → 単語</span><p>絵を見て、英単語を思い出す練習です。下の「絵からクイズ」で行います。</p></div>
+          <div class="ti-item"><b>アウトプット</b><span class="ti-flow">単語 → 絵</span><p>英単語を見て、イメージを思い浮かべる練習です。下の「単語から絵を選ぶ」で行います。</p></div>
+        </div>
         <p class="sub" style="margin-top:14px">テストの種類を選んでください。どちらも英検の級ごとに分かれていて、選んだ級の単語だけが出題されます（最大10問）。</p>
         <div class="grade-grid type-grid">
           <button type="button" class="type-card" id="typePicBtn"><b>🖼️ 絵からクイズ</b><span>絵と場面を見て、正しい英単語を4択で選びます（インプット）</span>
