@@ -21,7 +21,7 @@
   }
   * { box-sizing: border-box; }
   body { font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Kaku Gothic ProN", sans-serif; margin: 0; color: var(--ink); background-color: var(--paper); background-image: radial-gradient(#ddd2b4 1.2px, transparent 1.3px); background-size: 22px 22px; }
-  .layout { display: flex; align-items: stretch; max-width: 1060px; margin: 0 auto; }
+  .layout { display: flex; align-items: stretch; max-width: 1460px; margin: 0; }
   /* サイドバー：アイコンと同じ深緑のボード */
   .sidebar { width: 232px; flex-shrink: 0; background: var(--teal); background-image: radial-gradient(rgba(255,255,255,.07) 1.2px, transparent 1.3px); background-size: 22px 22px; border-right: 3px solid var(--ink); padding: 20px 14px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 14px; }
   .brand { display: flex; gap: 10px; align-items: center; padding: 4px 6px 14px; border: none; border-bottom: 2px dashed rgba(246,239,221,.35); background: none; cursor: pointer; width: 100%; text-align: left; font: inherit; color: #fdf6e0; border-radius: 0; box-shadow: none; }
@@ -38,7 +38,7 @@
   .sidebar .tabs button.active { background: var(--yellow); color: var(--ink); border-color: var(--ink); box-shadow: 2px 2px 0 rgba(0,0,0,.4); }
   .sidebar .tabs button.active::before { background: var(--teal); }
   .side-note { margin-top: auto; font-size: 12px; color: rgba(246,239,221,.78); line-height: 1.7; padding: 10px 6px 0; border-top: 2px dashed rgba(246,239,221,.35); }
-  .main { flex: 1; min-width: 0; max-width: 720px; margin: 0 auto; padding: 24px 20px 56px; width: 100%; }
+  .main { flex: 1; min-width: 0; max-width: 980px; margin: 0; padding: 24px 28px 56px 24px; width: 100%; }
   @media (max-width: 760px) {
     .layout { flex-direction: column; }
     .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 3px solid var(--ink); padding: 12px; }
