@@ -160,9 +160,24 @@
   .board-empty { text-align: center; color: #77704f; padding: 28px 0; font-size: 14px; line-height: 1.7; }
   /* 単語テスト */
   .grade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-  .grade-card { padding: 18px 14px; text-align: left; border-radius: 12px; background: var(--card); }
-  .grade-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 21px; font-weight: 800; display: block; }
-  .grade-card span { font-size: 13px; font-weight: 400; color: #6b6350; display: block; margin-top: 4px; line-height: 1.5; }
+  .grade-card { padding: 22px 18px; text-align: left; border-radius: 12px; background: var(--card); }
+  .grade-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 23px; font-weight: 800; display: block; }
+  .grade-card span { font-size: 14px; font-weight: 400; color: #6b6350; display: block; margin-top: 4px; line-height: 1.5; }
+  .type-card { padding: 26px 24px 22px; text-align: left; border-radius: 14px; background: var(--card); }
+  .type-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 28px; font-weight: 800; display: block; }
+  .type-card > span { font-size: 15px; font-weight: 400; color: #6b6350; display: block; margin-top: 6px; line-height: 1.6; }
+  .example { display: block; margin-top: 18px; background: #fff; border: 2px solid var(--ink); border-radius: 12px; padding: 12px; box-shadow: 3px 3px 0 rgba(20,51,46,.9); }
+  .ex-label { display: inline-block; background: var(--yellow); border: 2px solid var(--ink); border-radius: 999px; padding: 1px 12px; font-size: 12px; font-weight: 800; margin-bottom: 10px; }
+  .ex-photo { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); display: block; }
+  .ex-q { display: block; font-weight: 800; font-size: 14px; margin: 10px 0 8px; }
+  .ex-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ex-chip { border: 2px solid var(--ink); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700; background: #fff; font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; }
+  .ex-chip.ok { background: var(--yellow); }
+  .ex-word { display: block; font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 34px; text-align: center; margin: 2px 0 10px; }
+  .ex-imgs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .ex-imgs img { width: 100%; height: 68px; object-fit: cover; border-radius: 8px; border: 2px solid var(--ink); display: block; }
+  .ex-imgs img.ok { border-color: var(--ink); box-shadow: 0 0 0 3px var(--yellow); }
+  @media (max-width: 760px) { .type-grid { grid-template-columns: 1fr; } .type-card b { font-size: 24px; } }
   .grade-card:disabled { opacity: .45; cursor: default; }
   .test-score { font-family: "Baloo 2", sans-serif; font-size: 42px; font-weight: 800; text-align: center; margin: 10px 0 2px; }
   .review-item { background: var(--card); border: 2px solid var(--ink); border-left: 8px solid var(--teal); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; font-size: 14px; line-height: 1.6; box-shadow: 2px 2px 0 rgba(20,51,46,.6); }
@@ -269,9 +284,13 @@
     <div id="testHome">
       <div id="testTypeSelect">
         <p class="sub" style="margin-top:14px">テストの種類を選んでください。どちらも英検の級ごとに分かれていて、選んだ級の単語だけが出題されます（最大10問）。</p>
-        <div class="grade-grid">
-          <button type="button" class="grade-card" id="typePicBtn"><b>🖼️ 絵からクイズ</b><span>絵と場面を見て、正しい英単語を4択で選びます（インプット）</span></button>
-          <button type="button" class="grade-card" id="typeWordBtn"><b>🎯 単語から絵を選ぶ</b><span>英単語を見て、イメージに合う絵を4つの絵から選びます（アウトプット）</span></button>
+        <div class="grade-grid type-grid">
+          <button type="button" class="type-card" id="typePicBtn"><b>🖼️ 絵からクイズ</b><span>絵と場面を見て、正しい英単語を4択で選びます（インプット）</span>
+            <span class="example"><span class="ex-label">例</span><img class="ex-photo" src="images/waterfall.jpg" alt="滝の写真（例）"><span class="ex-q">この絵の単語は？</span><span class="ex-chips"><span class="ex-chip">river</span><span class="ex-chip ok">waterfall ✓</span><span class="ex-chip">mountain</span><span class="ex-chip">cloud</span></span></span>
+          </button>
+          <button type="button" class="type-card" id="typeWordBtn"><b>🎯 単語から絵を選ぶ</b><span>英単語を見て、イメージに合う絵を4つの絵から選びます（アウトプット）</span>
+            <span class="example"><span class="ex-label">例</span><span class="ex-word">apple</span><span class="ex-imgs"><img src="images/banana.jpg" alt="バナナの写真"><img class="ok" src="images/apple.jpg" alt="リンゴの写真（正解の例）"><img src="images/grape.jpg" alt="ブドウの写真"><img src="images/orange.jpg" alt="オレンジの写真"></span></span>
+          </button>
         </div>
       </div>
       <div id="testGradeSelect" class="hidden">
