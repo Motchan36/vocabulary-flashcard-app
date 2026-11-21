@@ -6,112 +6,138 @@
 <title>絵単Pin（Eta）— 絵から連想して覚える単語帳</title>
 <link rel="icon" type="image/png" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --ink: #14332e;
+    --teal: #0d5a4e;
+    --teal-dark: #093f36;
+    --paper: #f3ecd9;
+    --card: #fffaf0;
+    --yellow: #f4b41a;
+    --yellow-soft: #ffedb0;
+  }
   * { box-sizing: border-box; }
-  body { font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; margin: 0; background: #f3f6f3; color: #223; }
+  body { font-family: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Kaku Gothic ProN", sans-serif; margin: 0; color: var(--ink); background-color: var(--paper); background-image: radial-gradient(#ddd2b4 1.2px, transparent 1.3px); background-size: 22px 22px; }
   .layout { display: flex; align-items: stretch; max-width: 1060px; margin: 0 auto; }
-  .sidebar { width: 232px; flex-shrink: 0; background: #fff; border-right: 1px solid #dde5dd; padding: 20px 14px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 14px; }
-  .brand { display: flex; gap: 10px; align-items: center; padding: 2px 6px 12px; border: none; border-bottom: 1px solid #eef2ee; background: none; cursor: pointer; width: 100%; text-align: left; font: inherit; color: inherit; border-radius: 0; }
-  .brand:hover { background: #f2f7ee; }
+  /* サイドバー：アイコンと同じ深緑のボード */
+  .sidebar { width: 232px; flex-shrink: 0; background: var(--teal); background-image: radial-gradient(rgba(255,255,255,.07) 1.2px, transparent 1.3px); background-size: 22px 22px; border-right: 3px solid var(--ink); padding: 20px 14px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 14px; }
+  .brand { display: flex; gap: 10px; align-items: center; padding: 4px 6px 14px; border: none; border-bottom: 2px dashed rgba(246,239,221,.35); background: none; cursor: pointer; width: 100%; text-align: left; font: inherit; color: #fdf6e0; border-radius: 0; box-shadow: none; }
+  .brand:hover { background: rgba(255,255,255,.08); transform: none; box-shadow: none; }
+  .brand:active { transform: none; box-shadow: none; }
   .brand-logo { font-size: 28px; }
-  .brand-icon { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; display: block; box-shadow: 0 1px 4px rgba(20,60,50,.25); }
-  .brand-name { font-weight: 700; font-size: 16px; line-height: 1.3; display: block; }
-  .brand-sub { font-size: 11px; color: #889; display: block; }
-  .sidebar .tabs { flex-direction: column; margin: 0; }
-  .sidebar .tabs button { text-align: left; width: 100%; border-color: transparent; background: transparent; font-size: 15px; padding: 12px 12px; }
-  .sidebar .tabs button:hover { background: #f2f7ee; }
-  .sidebar .tabs button.active { background: #2e5e3a; color: #fff; }
-  .side-note { margin-top: auto; font-size: 12px; color: #889; line-height: 1.7; padding: 10px 6px 0; border-top: 1px solid #eef2ee; }
+  .brand-icon { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; display: block; border: 2px solid var(--ink); box-shadow: 2px 2px 0 rgba(0,0,0,.35); }
+  .brand-name { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-weight: 800; font-size: 19px; line-height: 1.25; display: block; letter-spacing: .02em; }
+  .brand-sub { font-family: "Baloo 2", sans-serif; font-size: 12px; font-weight: 700; color: var(--yellow); display: block; letter-spacing: .14em; }
+  .sidebar .tabs { flex-direction: column; margin: 0; gap: 6px; }
+  .sidebar .tabs button { text-align: left; width: 100%; border: 2px solid transparent; background: transparent; color: #fdf6e0; font-size: 15px; font-weight: 700; padding: 11px 12px; box-shadow: none; border-radius: 12px; }
+  .sidebar .tabs button::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); border: 1.5px solid rgba(0,0,0,.4); margin-right: 9px; vertical-align: 1px; }
+  .sidebar .tabs button:hover { background: rgba(255,255,255,.1); transform: none; }
+  .sidebar .tabs button.active { background: var(--yellow); color: var(--ink); border-color: var(--ink); box-shadow: 2px 2px 0 rgba(0,0,0,.4); }
+  .sidebar .tabs button.active::before { background: var(--teal); }
+  .side-note { margin-top: auto; font-size: 12px; color: rgba(246,239,221,.78); line-height: 1.7; padding: 10px 6px 0; border-top: 2px dashed rgba(246,239,221,.35); }
   .main { flex: 1; min-width: 0; max-width: 720px; margin: 0 auto; padding: 24px 20px 56px; width: 100%; }
   @media (max-width: 760px) {
     .layout { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid #dde5dd; padding: 12px; }
+    .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 3px solid var(--ink); padding: 12px; }
     .sidebar .tabs { flex-direction: row; flex-wrap: wrap; }
     .sidebar .tabs button { width: auto; }
     .side-note { display: none; }
     .main { padding: 16px 14px 48px; }
   }
-  h1 { font-size: 22px; margin: 4px 0 2px; }
-  p.sub { color: #5b6b5b; margin: 0 0 18px; font-size: 14px; line-height: 1.6; }
-  .search { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #c9d4c9; border-radius: 10px; background: #fff; }
+  h1 { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 24px; font-weight: 800; margin: 4px 0 2px; display: inline-block; background: linear-gradient(transparent 64%, rgba(244,180,26,.55) 64%); padding: 0 4px; }
+  p.sub { color: #5c5540; margin: 6px 0 18px; font-size: 14px; line-height: 1.7; }
+  .search { width: 100%; padding: 12px; font-size: 16px; border: 2px solid var(--ink); border-radius: 12px; background: var(--card); box-shadow: 2px 2px 0 rgba(20,51,46,.8); font: inherit; }
   .tabs { display: flex; gap: 8px; margin: 16px 0 4px; flex-wrap: wrap; }
-  .tabs button.active { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
-  /* 学習エリア：カードをめくるのではなく、絵を見て単語を連想する */
-  .scene { margin-top: 12px; border-radius: 18px; overflow: hidden; background: #fff; border: 1px solid #dde5dd; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
-  .visual { min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px 20px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
-  .visual img { max-width: 100%; max-height: 260px; border-radius: 12px; object-fit: cover; }
+  .tabs button.active { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
+  /* 学習エリア：ピンで留めた紙カード */
+  .scene { position: relative; margin-top: 20px; border-radius: 14px; background: var(--card); border: 2px solid var(--ink); box-shadow: 4px 4px 0 rgba(20,51,46,.85); }
+  .scene::before { content: ""; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffd34d, var(--yellow) 58%, #d99606); border: 2px solid var(--ink); box-shadow: 1px 2px 0 rgba(0,0,0,.3); z-index: 3; }
+  .visual { min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px 20px 28px; border-radius: 12px 12px 0 0; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
+  .visual img { max-width: 100%; max-height: 260px; border-radius: 10px; object-fit: cover; border: 2px solid var(--ink); }
   .emoji { font-size: 96px; line-height: 1.1; }
   .scene-desc { margin-top: 14px; font-size: 15px; color: #44543f; line-height: 1.7; max-width: 480px; }
-  .prompt { padding: 16px 20px 4px; font-size: 14px; color: #667; }
+  .prompt { padding: 16px 20px 4px; font-size: 14px; color: #6b6350; }
   .answer { padding: 4px 20px 20px; display: none; }
   .answer.show { display: block; }
-  .word { font-size: 34px; font-weight: 700; }
+  .word { font-family: "Baloo 2", sans-serif; font-size: 36px; font-weight: 800; letter-spacing: .01em; }
   .meaning { font-size: 19px; font-weight: 700; margin-top: 4px; }
-  .assoc { margin-top: 10px; background: #f2f7ee; border-radius: 10px; padding: 10px 12px; font-size: 14px; line-height: 1.7; color: #3c4c38; }
-  .example { font-size: 15px; color: #555; margin-top: 10px; line-height: 1.6; }
+  .assoc { margin-top: 12px; background: var(--yellow-soft); border: 1.5px solid var(--ink); border-radius: 4px; padding: 10px 12px; font-size: 14px; line-height: 1.7; color: #4a3f14; transform: rotate(-.4deg); box-shadow: 2px 2px 0 rgba(20,51,46,.35); }
+  .example { font-size: 15px; color: #55503f; margin-top: 12px; line-height: 1.6; }
   .choices { padding: 4px 20px 20px; display: none; grid-template-columns: 1fr 1fr; gap: 8px; }
   .choices.show { display: grid; }
-  .choices button.correct { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
-  .choices button.wrong { background: #fbe9e7; border-color: #d88; }
-  .feedback { padding: 0 20px 16px; font-size: 14px; min-height: 20px; }
+  .choices button.correct { background: var(--teal); color: #fff; border-color: var(--ink); }
+  .choices button.wrong { background: #f6d5cb; border-color: var(--ink); }
+  .feedback { padding: 0 20px 16px; font-size: 14px; min-height: 20px; font-weight: 700; }
   /* アウトプット：単語を見て、合う絵を選ぶ */
-  .out-head { padding: 20px 20px 4px; text-align: center; }
-  .out-word { font-size: 38px; font-weight: 700; margin-top: 6px; }
-  .out-score { font-size: 13px; color: #667; margin-top: 8px; }
+  .out-head { padding: 22px 20px 4px; text-align: center; }
+  .out-word { font-family: "Baloo 2", sans-serif; font-size: 40px; font-weight: 800; margin-top: 6px; }
+  .out-score { font-size: 13px; color: #6b6350; margin-top: 8px; }
   .out-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 14px 16px 6px; }
-  .out-option { border: 2px solid #dde5dd; border-radius: 14px; overflow: hidden; padding: 0; background: #fff; cursor: pointer; text-align: center; }
+  .out-option { border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; padding: 0; background: var(--card); cursor: pointer; text-align: center; box-shadow: 2px 2px 0 rgba(20,51,46,.8); }
   .out-option .opic { min-height: 118px; display: flex; align-items: center; justify-content: center; font-size: 62px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
   .out-option .opic img { width: 100%; height: 118px; object-fit: cover; display: block; }
-  .out-option .olabel { display: block; padding: 8px 6px; font-size: 12px; color: #889; }
-  .out-option.correct { border-color: #2e5e3a; box-shadow: 0 0 0 2px #2e5e3a inset; }
-  .out-option.wrong { border-color: #d88; opacity: .55; }
+  .out-option .olabel { display: block; padding: 8px 6px; font-size: 12px; color: #6b6350; border-top: 2px solid var(--ink); background: var(--card); }
+  .out-option.correct { border-color: var(--ink); box-shadow: 0 0 0 3px var(--teal) inset, 2px 2px 0 rgba(20,51,46,.8); }
+  .out-option.wrong { border-color: var(--ink); opacity: .5; }
   .out-option:disabled { cursor: default; }
   .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
-  button { padding: 11px 16px; font-size: 15px; border-radius: 10px; border: 1px solid #c4cfc4; background: #fff; cursor: pointer; }
-  button.primary { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
-  .count { font-size: 13px; color: #667; margin: 10px 0 0; }
-  /* ギャラリー */
-  .gallery { display: none; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  button { padding: 11px 16px; font-size: 15px; font-weight: 700; font-family: inherit; border-radius: 12px; border: 2px solid var(--ink); background: var(--card); color: var(--ink); cursor: pointer; box-shadow: 2px 2px 0 rgba(20,51,46,.85); transition: transform .05s ease, box-shadow .05s ease; }
+  button:hover { transform: translate(-.5px, -.5px); box-shadow: 2.5px 2.5px 0 rgba(20,51,46,.85); }
+  button:active { transform: translate(2px, 2px); box-shadow: 0 0 0 rgba(0,0,0,0); }
+  button.primary { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
+  .count { font-size: 13px; color: #6b6350; margin: 10px 0 0; }
+  /* ギャラリー：少し傾けたカードを並べる */
+  .gallery { display: none; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
   .gallery.show { display: grid; }
-  .gitem { background: #fff; border: 1px solid #dde5dd; border-radius: 14px; overflow: hidden; cursor: pointer; }
+  .gitem { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; cursor: pointer; box-shadow: 3px 3px 0 rgba(20,51,46,.8); transition: transform .12s ease; }
+  .gitem:nth-child(odd) { transform: rotate(-.7deg); }
+  .gitem:nth-child(even) { transform: rotate(.6deg); }
+  .gitem:hover { transform: rotate(0deg) translateY(-2px); }
   .gvisual { min-height: 110px; display: flex; align-items: center; justify-content: center; font-size: 52px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
   .gvisual img { width: 100%; height: 110px; object-fit: cover; }
-  .gword { padding: 10px 12px; font-size: 14px; }
-  .gword b { font-size: 16px; }
-  .gword span { color: #667; display: block; margin-top: 2px; }
-  form { background: #fff; border: 1px solid #dde5dd; border-radius: 14px; padding: 16px; margin-top: 28px; }
+  .gword { padding: 10px 12px; font-size: 14px; border-top: 2px solid var(--ink); }
+  .gword b { font-family: "Baloo 2", sans-serif; font-size: 17px; }
+  .gword span { color: #6b6350; display: block; margin-top: 2px; }
+  form { position: relative; background: var(--card); border: 2px solid var(--ink); border-radius: 14px; padding: 18px 16px 16px; margin-top: 30px; box-shadow: 4px 4px 0 rgba(20,51,46,.85); }
+  form::before { content: ""; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffd34d, var(--yellow) 58%, #d99606); border: 2px solid var(--ink); box-shadow: 1px 2px 0 rgba(0,0,0,.3); }
   form h2 { font-size: 16px; margin: 0 0 6px; }
-  form p { font-size: 13px; color: #667; margin: 0 0 6px; line-height: 1.6; }
-  label { display: block; font-size: 13px; color: #555; margin: 10px 0 4px; }
-  input, textarea, select { width: 100%; padding: 10px; font-size: 15px; border: 1px solid #c9d4c9; border-radius: 8px; background: #fff; }
-  .grade-badge { display: inline-block; font-size: 12px; font-weight: 700; color: #2e5e3a; background: #e6f2e4; border: 1px solid #bcd8b8; border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle; }
+  form p { font-size: 13px; color: #6b6350; margin: 0 0 6px; line-height: 1.6; }
+  label { display: block; font-size: 13px; font-weight: 700; color: #4c4636; margin: 10px 0 4px; }
+  input, textarea, select { width: 100%; padding: 10px; font-size: 15px; font-family: inherit; border: 2px solid #a79b78; border-radius: 10px; background: #fffdf4; color: var(--ink); }
+  input:focus, textarea:focus, select:focus, .search:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(244,180,26,.5); }
+  .grade-badge { display: inline-block; font-size: 12px; font-weight: 800; color: var(--ink); background: var(--yellow); border: 1.5px solid var(--ink); border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: middle; }
   /* 使い方インストラクション */
   .howto { margin-top: 16px; }
   .howto h2 { font-size: 17px; margin: 0 0 4px; }
-  .howto-lead { font-size: 13px; color: #667; margin: 0 0 10px; line-height: 1.6; }
-  .howto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .howto-lead { font-size: 13px; color: #5c5540; margin: 0 0 12px; line-height: 1.6; }
+  .howto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   @media (max-width: 560px) { .howto-grid { grid-template-columns: 1fr; } }
-  .howto-card { background: #fff; border: 1px solid #dde5dd; border-radius: 14px; overflow: hidden; }
-  .howto-visual { min-height: 84px; display: flex; align-items: center; justify-content: center; font-size: 46px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
+  .howto-card { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; box-shadow: 3px 3px 0 rgba(20,51,46,.8); }
+  .howto-card:nth-child(odd) { transform: rotate(-.5deg); }
+  .howto-card:nth-child(even) { transform: rotate(.5deg); }
+  .howto-visual { min-height: 84px; display: flex; align-items: center; justify-content: center; font-size: 46px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); border-bottom: 2px solid var(--ink); }
   .howto-body { padding: 10px 12px 12px; font-size: 13px; line-height: 1.65; color: #44543f; }
-  .howto-body b { display: block; font-size: 14px; color: #223; margin-bottom: 2px; }
+  .howto-body b { display: block; font-size: 14px; color: var(--ink); margin-bottom: 2px; }
   .howto-body p { margin: 0; }
   /* 単語テスト */
   .grade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
-  .grade-card { padding: 18px 14px; text-align: left; border-radius: 14px; }
-  .grade-card b { font-size: 20px; display: block; }
-  .grade-card span { font-size: 13px; color: #667; display: block; margin-top: 4px; line-height: 1.5; }
+  .grade-card { padding: 18px 14px; text-align: left; border-radius: 12px; background: var(--card); }
+  .grade-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 21px; font-weight: 800; display: block; }
+  .grade-card span { font-size: 13px; font-weight: 400; color: #6b6350; display: block; margin-top: 4px; line-height: 1.5; }
   .grade-card:disabled { opacity: .45; cursor: default; }
-  .test-score { font-size: 40px; font-weight: 700; text-align: center; margin: 10px 0 2px; }
-  .review-item { background: #fff; border: 1px solid #dde5dd; border-left: 6px solid #2e5e3a; border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; font-size: 14px; line-height: 1.6; }
-  .review-item.wrong { border-left-color: #d88; }
-  .review-item span { color: #667; }
-  .list { margin-top: 24px; }
+  .test-score { font-family: "Baloo 2", sans-serif; font-size: 42px; font-weight: 800; text-align: center; margin: 10px 0 2px; }
+  .review-item { background: var(--card); border: 2px solid var(--ink); border-left: 8px solid var(--teal); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; font-size: 14px; line-height: 1.6; box-shadow: 2px 2px 0 rgba(20,51,46,.6); }
+  .review-item.wrong { border-left-color: #d96f4e; }
+  .review-item span { color: #6b6350; }
+  .list { margin-top: 26px; }
   .list h2 { font-size: 16px; }
-  .item { background: #fff; border: 1px solid #dde5dd; border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
-  .item span { color: #555; font-size: 14px; }
+  .item { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; box-shadow: 2px 2px 0 rgba(20,51,46,.7); }
+  .item span { color: #55503f; font-size: 14px; }
   .item button { padding: 6px 10px; font-size: 13px; flex-shrink: 0; }
-  .empty { text-align: center; color: #777; padding: 32px 0; }
+  .empty { text-align: center; color: #77704f; padding: 32px 0; }
   .hidden { display: none !important; }
 </style>
 </head>
@@ -120,9 +146,9 @@
   <aside class="sidebar">
     <button type="button" class="brand" id="brandHome" title="ホームに戻る"><img class="brand-icon" src="icon.png" alt="絵単Pinのアイコン"><span><span class="brand-name">絵単Pin</span><span class="brand-sub">Eta</span></span></button>
   <div class="tabs" role="tablist">
-    <button id="tabStudy" type="button" class="active">🏠 ホーム</button>
-    <button id="tabTest" type="button">📝 単語テスト</button>
-    <button id="tabGallery" type="button">🗂️ 絵のギャラリー</button>
+    <button id="tabStudy" type="button" class="active">ホーム</button>
+    <button id="tabTest" type="button">単語テスト</button>
+    <button id="tabGallery" type="button">絵のギャラリー</button>
   </div>
     <div class="side-note">登録した単語: <b id="sideCount">0</b>語<br>データはこのブラウザに保存されます。</div>
   </aside>
