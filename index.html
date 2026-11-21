@@ -592,6 +592,8 @@ function showGradeSelect(type) {
     b.addEventListener("click", () => startTest(g));
     grid.appendChild(b);
   });
+  // 級の選択欄が画面外で見えないことがないよう、表示位置までスクロールする
+  $("testGradeSelect").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 function startTest(g) {
   testGrade = g;
@@ -602,6 +604,7 @@ function startTest(g) {
   $("testResult").classList.add("hidden");
   $("testRun").classList.remove("hidden");
   renderTestQuestion();
+  $("testRun").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 function renderTestQuestion() {
   const c = testQs[testIdx];
