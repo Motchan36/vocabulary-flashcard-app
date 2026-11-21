@@ -222,7 +222,7 @@
       <option value="">未分類</option>
       <option>5級</option><option>4級</option><option>3級</option><option>準2級</option><option>2級</option><option>準1級</option><option>1級</option>
     </select>
-    <div class="row"><button type="submit" class="primary">追加する</button></div>
+    <div class="row"><button type="submit" class="primary">追加する</button><button type="button" id="exportAddedBtn">追加した単語を保存（JSON）</button></div><p class="muted">追加した単語はこのブラウザだけに保存されます（他の端末には出ません）。ブラウザのデータを消すと一緒に消えてしまうので、ときどき上のボタンでバックアップを保存してください。</p>
   </form>
 
   <!-- 学習エリア：絵から連想 -->
@@ -1112,6 +1112,17 @@ $("gallery").addEventListener("click", e => {
   if (!g) return;
   const i = filtered().findIndex(w => w.word === g.dataset.word);
   if (i >= 0) { index = i; setMode("study"); }
+});
+$("exportAddedBtn").addEventListener("click", () => {
+  const sampleWords = new Set(SAMPLES.map(s => s.word.toLowerCase()));
+  const added = words.filter(w => !sampleWords.has(w.word.toLowerCase()));
+  if (!added.length) { alert("まだ追加した単語がありません。"); return; }
+  const blob = new Blob([JSON.stringify(added, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "vocab-added-words.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
 });
 $("addForm").addEventListener("submit", e => {
   e.preventDefault();
