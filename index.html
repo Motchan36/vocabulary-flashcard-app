@@ -297,6 +297,7 @@
         <div style="text-align:center;font-size:14px;color:#667" id="testResultGrade"></div>
         <div class="test-score" id="testScore"></div>
         <div style="text-align:center;font-size:15px;line-height:1.7" id="testMessage"></div>
+        <p class="board-note" id="testRecordNote" style="text-align:center"></p>
       </div>
       <div class="list"><h2>ふりかえり</h2><div id="testReview"></div></div>
       <div class="row">
@@ -363,18 +364,16 @@
   <!-- リーダーボード：単語テストの正解数を名前ごとに記録 -->
   <div id="boardArea" class="hidden">
     <h2>リーダーボード</h2>
-    <p class="howto-lead">単語テストの結果が、名前ごとに自動で記録されます。たくさん正解した人から順に並びます。</p>
-    <div class="board-me">
-      <div>いま記録している名前： <b id="boardMeName">ゲスト</b></div>
-      <div class="board-switch">
-        <input id="boardNameInput" placeholder="名前を入力（例：マーク）" maxlength="20">
-        <button id="boardNameBtn" type="button" class="primary">この名前で始める</button>
-        <select id="boardPlayerSelect" aria-label="名前を切り替え"></select>
-      </div>
-      <p class="board-note">家族や友だちと交代で使うときは、テストを受ける前に名前を切り替えてください。この端末（ブラウザ）の中だけのランキングです。</p>
+    <p class="howto-lead">単語テストの結果が、アカウントの名前で記録されます。たくさん正解した人から順に並びます。</p>
+    <div class="board-me hidden" id="boardMeCard">
+      <div>いまの名前： <b id="boardMeName"></b>（この名前で記録されます）</div>
+    </div>
+    <div class="board-me" id="boardLoginCard">
+      <div><b>リーダーボードはログインすると使えます</b></div>
+      <p class="board-note">ログインすると、単語テストの結果があなたのアカウントの名前で記録され、みんなのリーダーボードに表示されます。</p>
+      <div class="board-switch"><button id="boardGoAccountBtn" type="button" class="primary">ログイン／新規登録へ</button></div>
     </div>
     <div id="boardList"></div>
-    <div class="row"><button id="boardResetBtn" type="button">ランキングをリセット</button></div>
   </div>
 
   <div class="gallery" id="gallery"></div>
@@ -805,6 +804,7 @@ function showTestResult() {
   $("testScore").textContent = testScoreCount + " / " + testQs.length;
   const r = testQs.length ? testScoreCount / testQs.length : 0;
   $("testMessage").textContent = r === 1 ? "満点です！ 絵と単語がしっかり結びついています。" : r >= 0.7 ? "よくできました。間違えた単語をふりかえりで確認しましょう。" : r >= 0.4 ? "あと少し。間違えた単語は「絵から連想」モードで復習すると効きます。" : "まずは「絵から連想」モードで絵と単語を結びつけてから、もう一度挑戦しましょう。";
+  $("testRecordNote").textContent = sbUser ? "「" + sbDisplayName() + "」としてリーダーボードに記録しました。" : "ログインすると、結果がリーダーボードに記録されます。";
   $("testReview").innerHTML = testLog.map(t =>
     '<div class="review-item' + (t.ok ? "" : " wrong") + '">' + escapeHtml(t.word.emoji || "🖼️") + ' <b>' + escapeHtml(t.word.word) + '</b>　' + escapeHtml(t.word.meaning) +
     (t.ok ? ' <span>— 正解</span>' : '<br><span>あなたの答え: ' + escapeHtml(t.chosen) + '</span>') +
@@ -855,26 +855,9 @@ function render() {
     '<p class="empty">まだ単語がありません。</p>';
 }
 $("brandHome").addEventListener("click", () => { setMode("study"); window.scrollTo({ top: 0, behavior: "smooth" }); });
-// --- リーダーボード：名前ごとにテスト結果を記録 ---
-const BKEY = "picture-vocab-board-v1";
-let board = loadBoard();
-function loadBoard() {
-  try {
-    const b = JSON.parse(localStorage.getItem(BKEY));
-    if (b && b.players && b.me) return b;
-  } catch (e) {}
-  return { me: "ゲスト", players: { "ゲスト": { correct: 0, answered: 0, tests: 0, best: 0 } } };
-}
-function saveBoard() { localStorage.setItem(BKEY, JSON.stringify(board)); }
-function ensurePlayer(name) {
-  if (!board.players[name]) board.players[name] = { correct: 0, answered: 0, tests: 0, best: 0 };
-  return board.players[name];
-}
+// --- リーダーボード：ログイン中のアカウント名でオンライン記録 ---
+try { localStorage.removeItem("picture-vocab-board-v1"); } catch (e) {}
 function recordTestResult(correct, total) {
-  const p = ensurePlayer(board.me);
-  p.correct += correct; p.answered += total; p.tests += 1;
-  if (correct > p.best) p.best = correct;
-  saveBoard();
   syncScoreOnline(correct, total);
 }
 async function syncScoreOnline(correct, total) {
@@ -891,7 +874,7 @@ async function syncScoreOnline(correct, total) {
       best: Math.max(cur.best, correct),
       updated_at: new Date().toISOString()
     });
-  } catch (e) { /* オンライン同期に失敗してもローカル記録は残す */ }
+  } catch (e) { /* オンライン同期に失敗した場合は記録されない */ }
 }
 function boardRowsHtml(rows) {
   return rows.map((r, i) => {
@@ -903,29 +886,20 @@ function boardRowsHtml(rows) {
       '<div class="board-correct"><b>' + r.correct + '</b><span>単語 正解</span></div></div>';
   }).join("");
 }
-function renderBoardLocal() {
-  ensurePlayer(board.me);
-  $("boardMeName").textContent = board.me;
-  const sel = $("boardPlayerSelect");
-  sel.innerHTML = Object.keys(board.players).map(n => '<option value="' + escapeHtml(n) + '"' + (n === board.me ? " selected" : "") + '>' + escapeHtml(n) + '</option>').join("");
-  const rows = Object.entries(board.players).map(([name, p]) => ({ name, me: name === board.me, ...p }))
-    .sort((a, b) => b.correct - a.correct || (b.answered ? b.correct / b.answered : 0) - (a.answered ? a.correct / a.answered : 0) || b.tests - a.tests);
-  const totalAnswered = rows.reduce((s, r) => s + r.answered, 0);
-  if (!totalAnswered) {
-    $("boardList").innerHTML = '<div class="board-empty">まだ記録がありません。<br>単語テストを受けると、ここに正解数が表示されます。</div>';
+async function renderBoard() {
+  const loggedIn = !!(sb && sbUser);
+  $("boardMeCard").classList.toggle("hidden", !loggedIn);
+  $("boardLoginCard").classList.toggle("hidden", loggedIn);
+  if (!loggedIn) { $("boardList").innerHTML = ""; return; }
+  $("boardMeName").textContent = sbDisplayName();
+  $("boardList").innerHTML = '<div class="board-empty">読み込み中…</div>';
+  const { data, error } = await sb.from("scores").select("user_id,name,correct,answered,tests,best").order("correct", { ascending: false }).limit(100);
+  if (error || !data) {
+    $("boardList").innerHTML = '<div class="board-empty">読み込めませんでした。通信環境を確認して、もう一度開いてください。</div>';
     return;
   }
-  $("boardList").innerHTML = boardRowsHtml(rows);
-}
-async function renderBoard() {
-  renderBoardLocal();
-  if (sb && sbUser) {
-    const { data, error } = await sb.from("scores").select("user_id,name,correct,answered,tests,best").order("correct", { ascending: false }).limit(100);
-    if (!error && data) {
-      const rows = data.map(r => ({ name: r.name, correct: r.correct, answered: r.answered, tests: r.tests, best: r.best, me: r.user_id === sbUser.id }));
-      $("boardList").innerHTML = '<p class="howto-lead">みんなのリーダーボード（オンライン・全端末共通）</p>' + (rows.length ? boardRowsHtml(rows) : '<div class="board-empty">まだオンラインの記録がありません。<br>ログインして単語テストを受けると、ここに表示されます。</div>');
-    }
-  }
+  const rows = data.map(r => ({ name: r.name, correct: r.correct, answered: r.answered, tests: r.tests, best: r.best, me: r.user_id === sbUser.id }));
+  $("boardList").innerHTML = '<p class="howto-lead">みんなのリーダーボード（オンライン・全端末共通）</p>' + (rows.length ? boardRowsHtml(rows) : '<div class="board-empty">まだ記録がありません。<br>単語テストを受けると、ここに表示されます。</div>');
 }
 // --- アカウント：Supabase Auth ---
 const SB_URL = "https://ntamgvjdcmikngwiqggn.supabase.co";
@@ -933,8 +907,8 @@ const SB_KEY = "sb_publishable_spod5jqL8ifvthkjnq2NCw_XpEPrZxT";
 let sb = null, sbUser = null, pendingOtp = null;
 try { if (window.supabase) sb = window.supabase.createClient(SB_URL, SB_KEY); } catch (e) { sb = null; }
 function sbDisplayName() {
-  if (!sbUser) return "ゲスト";
-  return (sbUser.user_metadata && sbUser.user_metadata.display_name) || (sbUser.email ? sbUser.email.split("@")[0] : "ゲスト");
+  if (!sbUser) return "";
+  return (sbUser.user_metadata && sbUser.user_metadata.display_name) || (sbUser.email ? sbUser.email.split("@")[0] : "");
 }
 function acctMsg(text, ok, second) {
   const el = $(second ? "acctMsg2" : "acctMsg");
@@ -967,7 +941,6 @@ async function refreshAuth() {
   try {
     const { data } = await sb.auth.getSession();
     sbUser = data && data.session ? data.session.user : null;
-    if (sbUser) { board.me = sbDisplayName(); ensurePlayer(board.me); saveBoard(); }
     renderAccount();
   } finally { acctRefreshing = false; }
 }
@@ -1034,25 +1007,12 @@ $("logoutBtn").addEventListener("click", async () => {
   if (!sb) return;
   await sb.auth.signOut();
   sbUser = null;
-  board.me = "ゲスト"; ensurePlayer(board.me); saveBoard();
   renderAccount();
   acctMsg("ログアウトしました。", true);
 });
 if (sb) { sb.auth.onAuthStateChange(() => { refreshAuth(); }); refreshAuth(); }
 $("tabBoard").addEventListener("click", () => setMode("board"));
-$("boardNameBtn").addEventListener("click", () => {
-  const name = $("boardNameInput").value.trim();
-  if (!name) return;
-  board.me = name; ensurePlayer(name); saveBoard();
-  $("boardNameInput").value = "";
-  renderBoard();
-});
-$("boardPlayerSelect").addEventListener("change", e => { board.me = e.target.value; ensurePlayer(board.me); saveBoard(); renderBoard(); });
-$("boardResetBtn").addEventListener("click", () => {
-  if (!confirm("ランキングをすべて消します。よろしいですか？")) return;
-  board = { me: "ゲスト", players: { "ゲスト": { correct: 0, answered: 0, tests: 0, best: 0 } } };
-  saveBoard(); renderBoard();
-});
+$("boardGoAccountBtn").addEventListener("click", () => setMode("account"));
 $("tabStudy").addEventListener("click", () => setMode("study"));
 $("tabGallery").addEventListener("click", () => setMode("gallery"));
 $("tabTest").addEventListener("click", () => setMode("test"));
