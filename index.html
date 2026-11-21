@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>絵で覚える単語帳 — Picture Vocabulary</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; margin: 0; background: #f3f6f3; color: #223; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 24px 16px 56px; }
+  h1 { font-size: 22px; margin: 4px 0 2px; }
+  p.sub { color: #5b6b5b; margin: 0 0 18px; font-size: 14px; line-height: 1.6; }
+  .search { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #c9d4c9; border-radius: 10px; background: #fff; }
+  .tabs { display: flex; gap: 8px; margin: 16px 0 4px; }
+  .tabs button.active { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
+  /* 学習エリア：カードをめくるのではなく、絵を見て単語を連想する */
+  .scene { margin-top: 12px; border-radius: 18px; overflow: hidden; background: #fff; border: 1px solid #dde5dd; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .visual { min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 28px 20px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
+  .visual img { max-width: 100%; max-height: 260px; border-radius: 12px; object-fit: cover; }
+  .emoji { font-size: 96px; line-height: 1.1; }
+  .scene-desc { margin-top: 14px; font-size: 15px; color: #44543f; line-height: 1.7; max-width: 480px; }
+  .prompt { padding: 16px 20px 4px; font-size: 14px; color: #667; }
+  .answer { padding: 4px 20px 20px; display: none; }
+  .answer.show { display: block; }
+  .word { font-size: 34px; font-weight: 700; }
+  .meaning { font-size: 19px; font-weight: 700; margin-top: 4px; }
+  .assoc { margin-top: 10px; background: #f2f7ee; border-radius: 10px; padding: 10px 12px; font-size: 14px; line-height: 1.7; color: #3c4c38; }
+  .example { font-size: 15px; color: #555; margin-top: 10px; line-height: 1.6; }
+  .choices { padding: 4px 20px 20px; display: none; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .choices.show { display: grid; }
+  .choices button.correct { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
+  .choices button.wrong { background: #fbe9e7; border-color: #d88; }
+  .feedback { padding: 0 20px 16px; font-size: 14px; min-height: 20px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  button { padding: 11px 16px; font-size: 15px; border-radius: 10px; border: 1px solid #c4cfc4; background: #fff; cursor: pointer; }
+  button.primary { background: #2e5e3a; color: #fff; border-color: #2e5e3a; }
+  .count { font-size: 13px; color: #667; margin: 10px 0 0; }
+  /* ギャラリー */
+  .gallery { display: none; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .gallery.show { display: grid; }
+  .gitem { background: #fff; border: 1px solid #dde5dd; border-radius: 14px; overflow: hidden; cursor: pointer; }
+  .gvisual { min-height: 110px; display: flex; align-items: center; justify-content: center; font-size: 52px; background: linear-gradient(160deg, var(--c1,#dcefe0), var(--c2,#f6ecd2)); }
+  .gvisual img { width: 100%; height: 110px; object-fit: cover; }
+  .gword { padding: 10px 12px; font-size: 14px; }
+  .gword b { font-size: 16px; }
+  .gword span { color: #667; display: block; margin-top: 2px; }
+  form { background: #fff; border: 1px solid #dde5dd; border-radius: 14px; padding: 16px; margin-top: 28px; }
+  form h2 { font-size: 16px; margin: 0 0 6px; }
+  form p { font-size: 13px; color: #667; margin: 0 0 6px; line-height: 1.6; }
+  label { display: block; font-size: 13px; color: #555; margin: 10px 0 4px; }
+  input, textarea { width: 100%; padding: 10px; font-size: 15px; border: 1px solid #c9d4c9; border-radius: 8px; }
+  .list { margin-top: 24px; }
+  .list h2 { font-size: 16px; }
+  .item { background: #fff; border: 1px solid #dde5dd; border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .item span { color: #555; font-size: 14px; }
+  .item button { padding: 6px 10px; font-size: 13px; flex-shrink: 0; }
+  .empty { text-align: center; color: #777; padding: 32px 0; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>絵で覚える単語帳</h1>
+  <p class="sub">カードをめくるのではなく、まず絵（場面）を見て単語を連想します。イメージと結びつけて覚える単語帳です。データはこのブラウザに保存されます。</p>
+
+  <input class="search" id="search" type="search" placeholder="単語・意味で検索…" aria-label="検索">
+
+  <div class="tabs" role="tablist">
+    <button id="tabStudy" type="button" class="active">絵から連想</button>
+    <button id="tabQuiz" type="button">絵あてクイズ</button>
+    <button id="tabGallery" type="button">絵のギャラリー</button>
+  </div>
+
+  <!-- 学習 / クイズ共通エリア -->
+  <div id="studyArea">
+    <div class="scene">
+      <div class="visual" id="visual">
+        <div class="emoji" id="visualEmoji"></div>
+        <img id="visualImg" class="hidden" alt="単語を表す絵">
+        <div class="scene-desc" id="sceneDesc"></div>
+      </div>
+      <div class="prompt" id="promptText">この絵から連想する英単語は？ 頭の中で言ってみてから答えを見てください。</div>
+      <div class="choices" id="choices"></div>
+      <div class="feedback" id="feedback"></div>
+      <div class="answer" id="answer">
+        <div class="word" id="ansWord"></div>
+        <div class="meaning" id="ansMeaning"></div>
+        <div class="assoc" id="ansAssoc"></div>
+        <div class="example" id="ansExample"></div>
+      </div>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="row">
+      <button id="prevBtn" type="button">← 前の絵</button>
+      <button id="revealBtn" type="button" class="primary">単語を見る</button>
+      <button id="nextBtn" type="button">次の絵 →</button>
+      <button id="shuffleBtn" type="button">シャッフル</button>
+    </div>
+  </div>
+
+  <!-- ギャラリー -->
+  <div class="gallery" id="gallery"></div>
+
+  <form id="addForm">
+    <h2>単語を追加</h2>
+    <p>ポイントは「絵で思い出せること」。場面の説明と、絵と単語をつなぐ連想メモを書くと覚えやすくなります。画像URLを入れると、その画像が絵として表示されます（空欄なら絵文字が絵になります）。</p>
+    <label for="newWord">単語（英語）</label>
+    <input id="newWord" required placeholder="例：waterfall">
+    <label for="newMeaning">意味（日本語）</label>
+    <input id="newMeaning" required placeholder="例：滝">
+    <label for="newEmoji">絵文字（絵の代わり）</label>
+    <input id="newEmoji" placeholder="例：💧">
+    <label for="newImage">画像URL（任意）</label>
+    <input id="newImage" type="url" placeholder="https://…">
+    <label for="newScene">場面の説明（絵を見て思い浮かべる情景）</label>
+    <textarea id="newScene" rows="2" placeholder="例：崖から大量の水が落ちている"></textarea>
+    <label for="newAssoc">連想メモ（絵と単語のつながり）</label>
+    <textarea id="newAssoc" rows="2" placeholder="例：water（水）＋ fall（落ちる）＝ 水が落ちる → 滝"></textarea>
+    <label for="newExample">例文（任意）</label>
+    <textarea id="newExample" rows="2" placeholder="例：The waterfall was beautiful."></textarea>
+    <div class="row"><button type="submit" class="primary">追加する</button></div>
+  </form>
+
+  <div class="list">
+    <h2>登録した単語</h2>
+    <div id="list"></div>
+  </div>
+</div>
+<script>
+const KEY = "picture-vocab-v1";
+const SAMPLES = [
+  { word: "waterfall", meaning: "滝", emoji: "💧", image: "", scene: "崖の上から、大量の水が勢いよく落ちている。", assoc: "water（水）＋ fall（落ちる）→ 水が落ちる場所 ＝ 滝", example: "The waterfall was loud and beautiful.", c1: "#d7ecff", c2: "#eef9e8" },
+  { word: "lighthouse", meaning: "灯台", emoji: "🔦", image: "", scene: "夜の海。岩の上に立つ塔から、船に向けて光がぐるっと回っている。", assoc: "light（光）＋ house（家）→ 光の家 ＝ 灯台", example: "The lighthouse guided the ships safely.", c1: "#dfe6ff", c2: "#fff3cf" },
+  { word: "rainbow", meaning: "虹", emoji: "🌈", image: "", scene: "雨上がりの空に、七色の大きな橋がかかっている。", assoc: "rain（雨）＋ bow（弓）→ 雨のあとの弓 ＝ 虹", example: "A rainbow appeared after the rain.", c1: "#ffe3f1", c2: "#e0f4ff" },
+  { word: "blossom", meaning: "（木の）花、開花する", emoji: "🌸", image: "", scene: "春、木の枝いっぱいにピンクの花が咲いている。", assoc: "桜の花が一斉に開く場面を思い浮かべる → blossom", example: "The cherry trees are in full blossom.", c1: "#ffeef5", c2: "#f3ffe9" },
+  { word: "harvest", meaning: "収穫、取り入れ", emoji: "🌾", image: "", scene: "秋の田んぼ。黄金色の稲を刈り取って束ねている。", assoc: "育てたものを刈り取る場面 → harvest（収穫する）", example: "Farmers harvest rice in autumn.", c1: "#fff2cf", c2: "#e9f6d8" },
+  { word: "horizon", meaning: "地平線、水平線", emoji: "🌅", image: "", scene: "海と空がまっすぐな一本の線で出会っている。夕日がその線に沈んでいく。", assoc: "目に見える一番遠くの線 → horizon", example: "The sun sank below the horizon.", c1: "#ffe7c7", c2: "#d9ecff" }
+];
+let words = [];
+try { words = JSON.parse(localStorage.getItem(KEY) || "null") || null; } catch (e) { words = null; }
+if (!words) { words = SAMPLES.slice(); save(); }
+let index = 0;
+let mode = "study"; // study | quiz | gallery
+let revealed = false;
+
+const $ = id => document.getElementById(id);
+function save() { localStorage.setItem(KEY, JSON.stringify(words)); }
+function escapeHtml(s) { return String(s || "").replace(/[&<>"']/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])); }
+function filtered() {
+  const q = $("search").value.trim().toLowerCase();
+  if (!q) return words;
+  return words.filter(w => (w.word + " " + w.meaning + " " + (w.scene || "")).toLowerCase().includes(q));
+}
+function setMode(m) {
+  mode = m; revealed = false;
+  $("tabStudy").classList.toggle("active", m === "study");
+  $("tabQuiz").classList.toggle("active", m === "quiz");
+  $("tabGallery").classList.toggle("active", m === "gallery");
+  $("studyArea").classList.toggle("hidden", m === "gallery");
+  $("gallery").classList.toggle("show", m === "gallery");
+  $("promptText").textContent = m === "quiz"
+    ? "この絵が表す単語はどれ？ 選んでください。"
+    : "この絵から連想する英単語は？ 頭の中で言ってみてから答えを見てください。";
+  $("revealBtn").classList.toggle("hidden", m === "quiz");
+  render();
+}
+function renderChoices(current) {
+  const box = $("choices");
+  box.innerHTML = "";
+  box.classList.toggle("show", mode === "quiz" && !!current);
+  if (mode !== "quiz" || !current) return;
+  const others = words.filter(w => w.word !== current.word).sort(() => Math.random() - 0.5).slice(0, 3);
+  const opts = others.concat([current]).sort(() => Math.random() - 0.5);
+  opts.forEach(o => {
+    const b = document.createElement("button");
+    b.type = "button"; b.textContent = o.word;
+    b.addEventListener("click", () => {
+      if (o.word === current.word) {
+        b.classList.add("correct");
+        $("feedback").textContent = "正解！ " + current.word + " ＝ " + current.meaning;
+        revealed = true; renderAnswer(current);
+      } else {
+        b.classList.add("wrong");
+        $("feedback").textContent = "もう一度、絵をよく見て連想してみてください。";
+      }
+    });
+    box.appendChild(b);
+  });
+}
+function renderAnswer(c) {
+  $("answer").classList.toggle("show", revealed && !!c);
+  if (!c) return;
+  $("ansWord").textContent = c.word;
+  $("ansMeaning").textContent = c.meaning;
+  $("ansAssoc").textContent = c.assoc ? "連想： " + c.assoc : "";
+  $("ansAssoc").style.display = c.assoc ? "block" : "none";
+  $("ansExample").textContent = c.example || "";
+}
+function render() {
+  const list = filtered();
+  const c = list.length ? list[Math.min(index, list.length - 1)] : null;
+  if (c && index >= list.length) index = 0;
+  if (!c) {
+    $("visualEmoji").textContent = "🖼️";
+    $("visualImg").classList.add("hidden"); $("visualEmoji").classList.remove("hidden");
+    $("sceneDesc").textContent = "単語がありません。下のフォームから追加してください。";
+    $("count").textContent = "0語";
+  } else {
+    $("visual").style.setProperty("--c1", c.c1 || "#dcefe0");
+    $("visual").style.setProperty("--c2", c.c2 || "#f6ecd2");
+    if (c.image) {
+      $("visualImg").src = c.image; $("visualImg").classList.remove("hidden");
+      $("visualEmoji").classList.add("hidden");
+    } else {
+      $("visualImg").classList.add("hidden"); $("visualEmoji").classList.remove("hidden");
+      $("visualEmoji").textContent = c.emoji || "🖼️";
+    }
+    $("sceneDesc").textContent = c.scene || "";
+    $("count").textContent = (index + 1) + " / " + list.length + "語";
+  }
+  $("feedback").textContent = "";
+  renderAnswer(c);
+  renderChoices(c);
+  // ギャラリー
+  $("gallery").innerHTML = list.map(w =>
+    '<div class="gitem" data-word="' + escapeHtml(w.word) + '"><div class="gvisual" style="--c1:' + escapeHtml(w.c1 || "#dcefe0") + ';--c2:' + escapeHtml(w.c2 || "#f6ecd2") + '">' +
+    (w.image ? '<img src="' + escapeHtml(w.image) + '" alt="">' : escapeHtml(w.emoji || "🖼️")) +
+    '</div><div class="gword"><b>' + escapeHtml(w.word) + '</b><span>' + escapeHtml(w.meaning) + '</span></div></div>').join("") ||
+    '<p class="empty">まだ単語がありません。</p>';
+  // 一覧
+  $("list").innerHTML = words.map((w, i) =>
+    '<div class="item"><div>' + escapeHtml(w.emoji || "🖼️") + ' <b>' + escapeHtml(w.word) + '</b>　<span>' + escapeHtml(w.meaning) + '</span></div>' +
+    '<button type="button" data-del="' + i + '">削除</button></div>').join("") ||
+    '<p class="empty">まだ単語がありません。</p>';
+}
+$("tabStudy").addEventListener("click", () => setMode("study"));
+$("tabQuiz").addEventListener("click", () => setMode("quiz"));
+$("tabGallery").addEventListener("click", () => setMode("gallery"));
+$("revealBtn").addEventListener("click", () => { revealed = !revealed; const c = filtered()[index]; renderAnswer(c); $("revealBtn").textContent = revealed ? "単語を隠す" : "単語を見る"; });
+$("nextBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index + 1) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
+$("prevBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index - 1 + n) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
+$("shuffleBtn").addEventListener("click", () => { words.sort(() => Math.random() - 0.5); save(); index = 0; revealed = false; render(); });
+$("search").addEventListener("input", () => { index = 0; revealed = false; render(); });
+$("gallery").addEventListener("click", e => {
+  const g = e.target.closest("[data-word]");
+  if (!g) return;
+  const i = filtered().findIndex(w => w.word === g.dataset.word);
+  if (i >= 0) { index = i; setMode("study"); }
+});
+$("addForm").addEventListener("submit", e => {
+  e.preventDefault();
+  words.unshift({
+    word: $("newWord").value.trim(), meaning: $("newMeaning").value.trim(),
+    emoji: $("newEmoji").value.trim() || "🖼️", image: $("newImage").value.trim(),
+    scene: $("newScene").value.trim(), assoc: $("newAssoc").value.trim(),
+    example: $("newExample").value.trim(), c1: "#dcefe0", c2: "#f6ecd2"
+  });
+  save(); e.target.reset(); $("search").value = ""; index = 0; revealed = false; render();
+});
+$("list").addEventListener("click", e => {
+  const b = e.target.closest("[data-del]");
+  if (!b) return;
+  words.splice(Number(b.dataset.del), 1); save(); index = 0; revealed = false; render();
+});
+render();
+</script>
+</body>
+</html>
