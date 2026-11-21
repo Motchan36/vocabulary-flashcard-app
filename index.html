@@ -7,7 +7,26 @@
 <style>
   * { box-sizing: border-box; }
   body { font-family: -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; margin: 0; background: #f3f6f3; color: #223; }
-  .wrap { max-width: 680px; margin: 0 auto; padding: 24px 16px 56px; }
+  .layout { display: flex; align-items: stretch; max-width: 1060px; margin: 0 auto; }
+  .sidebar { width: 232px; flex-shrink: 0; background: #fff; border-right: 1px solid #dde5dd; padding: 20px 14px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 14px; }
+  .brand { display: flex; gap: 10px; align-items: center; padding: 2px 6px 12px; border-bottom: 1px solid #eef2ee; }
+  .brand-logo { font-size: 28px; }
+  .brand-name { font-weight: 700; font-size: 16px; line-height: 1.3; }
+  .brand-sub { font-size: 11px; color: #889; }
+  .sidebar .tabs { flex-direction: column; margin: 0; }
+  .sidebar .tabs button { text-align: left; width: 100%; border-color: transparent; background: transparent; font-size: 15px; padding: 12px 12px; }
+  .sidebar .tabs button:hover { background: #f2f7ee; }
+  .sidebar .tabs button.active { background: #2e5e3a; color: #fff; }
+  .side-note { margin-top: auto; font-size: 12px; color: #889; line-height: 1.7; padding: 10px 6px 0; border-top: 1px solid #eef2ee; }
+  .main { flex: 1; min-width: 0; max-width: 720px; margin: 0 auto; padding: 24px 20px 56px; width: 100%; }
+  @media (max-width: 760px) {
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid #dde5dd; padding: 12px; }
+    .sidebar .tabs { flex-direction: row; flex-wrap: wrap; }
+    .sidebar .tabs button { width: auto; }
+    .side-note { display: none; }
+    .main { padding: 16px 14px 48px; }
+  }
   h1 { font-size: 22px; margin: 4px 0 2px; }
   p.sub { color: #5b6b5b; margin: 0 0 18px; font-size: 14px; line-height: 1.6; }
   .search { width: 100%; padding: 12px; font-size: 16px; border: 1px solid #c9d4c9; border-radius: 10px; background: #fff; }
@@ -82,19 +101,23 @@
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>絵で覚える単語帳</h1>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-logo">🖼️</span><div><div class="brand-name">絵で覚える単語帳</div><div class="brand-sub">Picture Vocabulary</div></div></div>
+  <div class="tabs" role="tablist">
+    <button id="tabStudy" type="button" class="active">🖼️ 絵から連想</button>
+    <button id="tabQuiz" type="button">❓ 絵あてクイズ</button>
+    <button id="tabOutput" type="button">🎯 単語から絵を選ぶ</button>
+    <button id="tabTest" type="button">📝 単語テスト</button>
+    <button id="tabGallery" type="button">🗂️ 絵のギャラリー</button>
+  </div>
+    <div class="side-note">登録した単語: <b id="sideCount">0</b>語<br>データはこのブラウザに保存されます。</div>
+  </aside>
+  <main class="main">
   <p class="sub">カードをめくるのではなく、まず絵（場面）を見て単語を連想します。イメージと結びつけて覚える単語帳です。単語には英検の級の目安が付いていて、「単語テスト」では級ごとにテストできます。データはこのブラウザに保存されます。</p>
 
   <input class="search" id="search" type="search" placeholder="単語・意味で検索…" aria-label="検索">
 
-  <div class="tabs" role="tablist">
-    <button id="tabStudy" type="button" class="active">絵から連想</button>
-    <button id="tabQuiz" type="button">絵あてクイズ</button>
-    <button id="tabOutput" type="button">単語から絵を選ぶ</button>
-    <button id="tabTest" type="button">単語テスト</button>
-    <button id="tabGallery" type="button">絵のギャラリー</button>
-  </div>
 
   <!-- 学習 / クイズ共通エリア -->
   <div id="studyArea">
@@ -150,14 +173,25 @@
   <!-- 単語テスト：級を選んで、その級の絵から連想テスト -->
   <div id="testArea" class="hidden">
     <div id="testHome">
-      <p class="sub" style="margin-top:14px">級を選ぶと、その級のレベルの単語だけが出題される「絵から連想」テストが始まります。絵と場面を見て、正しい英単語を4択で選んでください（最大10問）。級は英検の目安です。</p>
-      <div class="grade-grid" id="gradeGrid"></div>
+      <div id="testTypeSelect">
+        <p class="sub" style="margin-top:14px">テストの種類を選んでください。どちらも英検の級ごとに分かれていて、選んだ級の単語だけが出題されます（最大10問）。</p>
+        <div class="grade-grid">
+          <button type="button" class="grade-card" id="typePicBtn"><b>🖼️ 絵からクイズ</b><span>絵と場面を見て、正しい英単語を4択で選びます（インプット）</span></button>
+          <button type="button" class="grade-card" id="typeWordBtn"><b>🎯 単語から絵を選ぶ</b><span>英単語を見て、イメージに合う絵を4つの絵から選びます（アウトプット）</span></button>
+        </div>
+      </div>
+      <div id="testGradeSelect" class="hidden">
+        <p class="sub" style="margin-top:14px" id="testGradeTitle"></p>
+        <div class="grade-grid" id="gradeGrid"></div>
+        <div class="row"><button type="button" id="testTypeBackBtn">← テストの種類を選び直す</button></div>
+      </div>
     </div>
     <div id="testRun" class="hidden">
       <div class="scene">
         <div class="visual" id="testVisual">
           <div class="emoji" id="testVisualEmoji"></div>
           <img id="testVisualImg" class="hidden" alt="単語を表す絵">
+          <div class="out-word hidden" id="testWord"></div>
           <div class="scene-desc" id="testSceneDesc"></div>
         </div>
         <div class="prompt" id="testProgress"></div>
@@ -215,6 +249,7 @@
     <h2>登録した単語</h2>
     <div id="list"></div>
   </div>
+  </main>
 </div>
 <script>
 const KEY = "picture-vocab-v1";
@@ -279,7 +314,114 @@ const SAMPLES = [
   { word: "drought", meaning: "干ばつ", emoji: "🏜️", image: "", scene: "長い間雨が降らず、地面がひび割れて川が干上がっている。", assoc: "雨がなく大地が乾く災害 → drought", example: "The drought damaged the crops badly.", eiken: "1級", c1: "#ffe7c7", c2: "#ffe3e0" },
   { word: "tsunami", meaning: "津波", emoji: "🌊", image: "", scene: "海底の地震で生まれた巨大な波が、街に向かって押し寄せる。", assoc: "地震が起こす巨大な波 → tsunami（日本語がそのまま英語に）", example: "The tsunami warning was issued after the earthquake.", eiken: "1級", c1: "#d7ecff", c2: "#e3e9f2" },
   { word: "monsoon", meaning: "モンスーン、季節風", emoji: "🌧️", image: "", scene: "夏になると海から湿った風が吹き、毎日激しい雨が降る季節。", assoc: "雨の季節を連れてくる風 → monsoon", example: "The monsoon season brings heavy rain.", eiken: "1級", c1: "#d7ecff", c2: "#dcefe0" },
-  { word: "gravity", meaning: "重力", emoji: "🍎", image: "", scene: "木から落ちるリンゴ。すべての物が地球に引っ張られている。", assoc: "ニュートンとリンゴの逸話 → gravity（重力）", example: "Gravity keeps us on the ground.", eiken: "1級", c1: "#ffe3e0", c2: "#eef9e8" }
+  { word: "gravity", meaning: "重力", emoji: "🍎", image: "", scene: "木から落ちるリンゴ。すべての物が地球に引っ張られている。", assoc: "ニュートンとリンゴの逸話 → gravity（重力）", example: "Gravity keeps us on the ground.", eiken: "1級", c1: "#ffe3e0", c2: "#eef9e8" },
+  // ===== 追加：英検5級 =====
+  { word: "banana", meaning: "バナナ", emoji: "🍌", image: "", scene: "木からぶら下がる、黄色くて細長い果物。皮をむいて食べる。", assoc: "黄色いカーブの果物 → banana", example: "Monkeys love bananas.", eiken: "5級", c1: "#fff2cf", c2: "#eef9e8" },
+  { word: "orange", meaning: "オレンジ、みかん", emoji: "🍊", image: "", scene: "丸くてオレンジ色の果物。ジュースにしても美味しい。", assoc: "色の名前そのままの果物 → orange", example: "I drink orange juice every day.", eiken: "5級", c1: "#ffe7c7", c2: "#fff6da" },
+  { word: "grape", meaning: "ぶどう", emoji: "🍇", image: "", scene: "紫色の小さな実が、房になってたくさんぶら下がっている。", assoc: "房になる紫の実 → grape", example: "These grapes are very sweet.", eiken: "5級", c1: "#ffe3f1", c2: "#e9f6d8" },
+  { word: "bread", meaning: "パン", emoji: "🍞", image: "", scene: "朝食のテーブルに、こんがり焼けた香ばしい一切れ。", assoc: "焼いて食べる主食 → bread", example: "We eat bread for breakfast.", eiken: "5級", c1: "#fff2cf", c2: "#ffe7c7" },
+  { word: "milk", meaning: "牛乳、ミルク", emoji: "🥛", image: "", scene: "コップに注がれた、白くて栄養たっぷりの飲み物。", assoc: "牛からもらう白い飲み物 → milk", example: "I drink milk every morning.", eiken: "5級", c1: "#eef6ff", c2: "#ffffff" },
+  { word: "egg", meaning: "卵", emoji: "🥚", image: "", scene: "鳥が産んだ、白くて楕円形のもの。割ると黄身が出てくる。", assoc: "殻の中の黄身 → egg", example: "She cooked two eggs.", eiken: "5級", c1: "#fff6da", c2: "#ffeef5" },
+  { word: "book", meaning: "本", emoji: "📖", image: "", scene: "ページをめくると、物語や知識が広がる厚い紙の束。", assoc: "読むためのページの束 → book", example: "This book is very interesting.", eiken: "5級", c1: "#ffe3e0", c2: "#eef6ff" },
+  { word: "pencil", meaning: "鉛筆", emoji: "✏️", image: "", scene: "削ると芯が出てくる、字を書くための細長い道具。", assoc: "書く道具といえば → pencil", example: "I write with a pencil.", eiken: "5級", c1: "#fff2cf", c2: "#d7ecff" },
+  { word: "school", meaning: "学校", emoji: "🏫", image: "", scene: "朝、たくさんの子どもたちが集まって勉強する建物。", assoc: "学ぶ場所 → school", example: "My school is near the station.", eiken: "5級", c1: "#d7ecff", c2: "#fff2cf" },
+  { word: "house", meaning: "家", emoji: "🏠", image: "", scene: "三角の屋根とドアがある、家族が暮らす建物。", assoc: "住む場所 → house", example: "Their house has a big garden.", eiken: "5級", c1: "#ffe7c7", c2: "#e9f6d8" },
+  { word: "car", meaning: "車", emoji: "🚗", image: "", scene: "タイヤが4つあって、道路を走る乗り物。", assoc: "道路を走る乗り物 → car", example: "My father drives a car.", eiken: "5級", c1: "#ffe3e0", c2: "#eef6ff" },
+  { word: "bus", meaning: "バス", emoji: "🚌", image: "", scene: "バス停に止まって、大勢の人を乗せて走る大きな乗り物。", assoc: "大勢乗れる乗り物 → bus", example: "I go to school by bus.", eiken: "5級", c1: "#fff2cf", c2: "#d7ecff" },
+  { word: "flower", meaning: "花", emoji: "🌼", image: "", scene: "庭に咲く、色とりどりの花びらを持った植物。", assoc: "咲く植物の美しい部分 → flower", example: "These flowers are beautiful.", eiken: "5級", c1: "#ffeef5", c2: "#fff2cf" },
+  { word: "hand", meaning: "手", emoji: "✋", image: "", scene: "指が5本あって、物をつかんだり手を振ったりする体の部分。", assoc: "物をつかむ部分 → hand", example: "Raise your hand.", eiken: "5級", c1: "#ffe7c7", c2: "#ffeef5" },
+  { word: "eye", meaning: "目", emoji: "👀", image: "", scene: "顔にある、物を見るための2つの器官。", assoc: "見るための器官 → eye", example: "She has big eyes.", eiken: "5級", c1: "#eef6ff", c2: "#ffe3f1" },
+  { word: "hat", meaning: "帽子", emoji: "🎩", image: "", scene: "頭にかぶるもの。日よけやおしゃれに使う。", assoc: "頭にかぶる → hat", example: "He is wearing a hat.", eiken: "5級", c1: "#e3e9f2", c2: "#fff2cf" },
+  { word: "shoe", meaning: "靴", emoji: "👟", image: "", scene: "足にはいて歩くもの。左右で一足。", assoc: "足にはくもの → shoe", example: "I bought new shoes.", eiken: "5級", c1: "#d7ecff", c2: "#ffe3e0" },
+  { word: "ball", meaning: "ボール", emoji: "⚽", image: "", scene: "蹴ったり投げたりして遊ぶ、丸いもの。", assoc: "丸くて転がる遊び道具 → ball", example: "The children are playing with a ball.", eiken: "5級", c1: "#eef6ff", c2: "#e9f6d8" },
+  // ===== 追加：英検4級 =====
+  { word: "window", meaning: "窓", emoji: "🪟", image: "", scene: "壁に開いた四角い穴から、光と風が入ってくる。", assoc: "光が入る壁の穴 → window", example: "Please open the window.", eiken: "4級", c1: "#d7ecff", c2: "#fff6da" },
+  { word: "door", meaning: "ドア、扉", emoji: "🚪", image: "", scene: "部屋に入るとき、ノックして開ける板。", assoc: "出入りのための板 → door", example: "Close the door, please.", eiken: "4級", c1: "#ffe7c7", c2: "#e3e9f2" },
+  { word: "chair", meaning: "椅子", emoji: "🪑", image: "", scene: "脚が4本あって、座るための家具。", assoc: "座る家具 → chair", example: "There are four chairs in the room.", eiken: "4級", c1: "#fff2cf", c2: "#dcefe0" },
+  { word: "umbrella", meaning: "傘", emoji: "☂️", image: "", scene: "雨の日、頭の上で開いて雨を防ぐもの。", assoc: "雨から守る道具 → umbrella", example: "Take an umbrella with you.", eiken: "4級", c1: "#dfe6ff", c2: "#ffeef5" },
+  { word: "bag", meaning: "かばん、袋", emoji: "🎒", image: "", scene: "物を入れて持ち歩くもの。背負うタイプもある。", assoc: "物を入れるもの → bag", example: "My bag is heavy today.", eiken: "4級", c1: "#ffe3e0", c2: "#fff2cf" },
+  { word: "clock", meaning: "時計（置き・掛け）", emoji: "🕰️", image: "", scene: "壁にかかっていて、針が時刻を教えてくれる。", assoc: "時刻を知らせる針 → clock", example: "The clock says seven.", eiken: "4級", c1: "#fff6da", c2: "#eef6ff" },
+  { word: "camera", meaning: "カメラ", emoji: "📷", image: "", scene: "シャッターを押すと、その瞬間を写真に残せる機械。", assoc: "写真を撮る機械 → camera", example: "I took a photo with my camera.", eiken: "4級", c1: "#e3e9f2", c2: "#ffe3f1" },
+  { word: "phone", meaning: "電話、スマートフォン", emoji: "📱", image: "", scene: "遠くの人と話したり、メッセージを送ったりできる小さな機械。", assoc: "話す・連絡する機械 → phone", example: "My phone is ringing.", eiken: "4級", c1: "#d7ecff", c2: "#e9f6d8" },
+  { word: "bicycle", meaning: "自転車", emoji: "🚲", image: "", scene: "ペダルをこいで進む、タイヤが2つの乗り物。", assoc: "こいで進む二輪 → bicycle", example: "I ride my bicycle to school.", eiken: "4級", c1: "#e9f6d8", c2: "#d7ecff" },
+  { word: "airplane", meaning: "飛行機", emoji: "✈️", image: "", scene: "翼を持ち、空を飛んで遠くの国まで人を運ぶ乗り物。", assoc: "空を飛ぶ乗り物 → airplane", example: "The airplane landed safely.", eiken: "4級", c1: "#d7ecff", c2: "#eef6ff" },
+  { word: "ship", meaning: "船（大型）", emoji: "🚢", image: "", scene: "海の上を進む、大きくてたくさんの人を運べる乗り物。", assoc: "海を行く大きな乗り物 → ship", example: "The ship arrived at the port.", eiken: "4級", c1: "#d7ecff", c2: "#fff2cf" },
+  { word: "garden", meaning: "庭、庭園", emoji: "🌷", image: "", scene: "家の周りで、花や野菜を育てている場所。", assoc: "花を育てる場所 → garden", example: "My grandmother works in the garden.", eiken: "4級", c1: "#ffeef5", c2: "#e9f6d8" },
+  { word: "kitchen", meaning: "台所、キッチン", emoji: "🍳", image: "", scene: "フライパンの音と料理の匂いがする、食事を作る部屋。", assoc: "料理をする部屋 → kitchen", example: "Mother is cooking in the kitchen.", eiken: "4級", c1: "#ffe7c7", c2: "#ffe3e0" },
+  { word: "letter", meaning: "手紙", emoji: "✉️", image: "", scene: "封筒に入れて郵便で送る、気持ちを書いた紙。", assoc: "郵便で送る気持ち → letter", example: "I wrote a letter to my friend.", eiken: "4級", c1: "#fff6da", c2: "#ffeef5" },
+  { word: "snowman", meaning: "雪だるま", emoji: "⛄", image: "", scene: "雪を丸めて2つ重ね、人参の鼻をつけた冬の名物。", assoc: "雪で作る人形 → snowman（snow＋man）", example: "The children made a snowman.", eiken: "4級", c1: "#eef6ff", c2: "#ffffff" },
+  { word: "cookie", meaning: "クッキー", emoji: "🍪", image: "", scene: "サクサクした甘い焼き菓子。チョコチップ入りが人気。", assoc: "焼いた甘いお菓子 → cookie", example: "She baked cookies for us.", eiken: "4級", c1: "#ffe7c7", c2: "#fff2cf" },
+  // ===== 追加：英検3級 =====
+  { word: "hospital", meaning: "病院", emoji: "🏥", image: "", scene: "白い建物で、具合の悪い人が診てもらう場所。赤い十字が目印。", assoc: "治療を受ける場所 → hospital", example: "He went to the hospital yesterday.", eiken: "3級", c1: "#ffe3e0", c2: "#eef6ff" },
+  { word: "station", meaning: "駅", emoji: "🚉", image: "", scene: "電車が止まり、大勢の人が乗り降りする場所。", assoc: "電車の乗り降り場所 → station", example: "The station is crowded in the morning.", eiken: "3級", c1: "#d7ecff", c2: "#fff2cf" },
+  { word: "library", meaning: "図書館", emoji: "📚", image: "", scene: "静かな部屋に、本がずらりと並んでいる場所。", assoc: "本が集まる場所 → library", example: "I study at the library.", eiken: "3級", c1: "#e9f6d8", c2: "#ffe7c7" },
+  { word: "museum", meaning: "博物館、美術館", emoji: "🏛️", image: "", scene: "昔の道具や絵画が展示され、見て学べる大きな建物。", assoc: "展示を見て学ぶ場所 → museum", example: "We visited the museum on Sunday.", eiken: "3級", c1: "#e3e9f2", c2: "#fff6da" },
+  { word: "bakery", meaning: "パン屋", emoji: "🥐", image: "", scene: "焼きたてパンの香りがする、クロワッサンが並ぶ店。", assoc: "パンを売る店 → bakery", example: "The bakery opens at seven.", eiken: "3級", c1: "#fff2cf", c2: "#ffe3e0" },
+  { word: "elephant", meaning: "ゾウ", emoji: "🐘", image: "", scene: "長い鼻と大きな耳を持つ、陸で一番大きな動物。", assoc: "長い鼻の大きな動物 → elephant", example: "The elephant is eating bananas.", eiken: "3級", c1: "#e3e9f2", c2: "#ffeef5" },
+  { word: "lion", meaning: "ライオン", emoji: "🦁", image: "", scene: "たてがみを持つ、百獣の王と呼ばれる動物。", assoc: "たてがみの王様 → lion", example: "The lion roared loudly.", eiken: "3級", c1: "#fff2cf", c2: "#ffe7c7" },
+  { word: "monkey", meaning: "サル", emoji: "🐒", image: "", scene: "木から木へ飛び移り、器用にバナナを食べる動物。", assoc: "木登り上手な動物 → monkey", example: "Monkeys live in this forest.", eiken: "3級", c1: "#ffe7c7", c2: "#e9f6d8" },
+  { word: "panda", meaning: "パンダ", emoji: "🐼", image: "", scene: "白黒模様で、竹を食べるのが大好きな動物。", assoc: "白黒で竹が好き → panda", example: "Many people came to see the panda.", eiken: "3級", c1: "#eef6ff", c2: "#e9f6d8" },
+  { word: "dolphin", meaning: "イルカ", emoji: "🐬", image: "", scene: "海でジャンプしながら泳ぐ、賢くて人懐っこい生き物。", assoc: "海で跳ねる賢い生き物 → dolphin", example: "Dolphins are very intelligent.", eiken: "3級", c1: "#d7ecff", c2: "#d9f6f0" },
+  { word: "penguin", meaning: "ペンギン", emoji: "🐧", image: "", scene: "氷の上をよちよち歩く、飛べない鳥。泳ぎは得意。", assoc: "氷の上のよちよち鳥 → penguin", example: "Penguins cannot fly.", eiken: "3級", c1: "#eef6ff", c2: "#d7ecff" },
+  { word: "giraffe", meaning: "キリン", emoji: "🦒", image: "", scene: "首がとても長く、高い木の葉を食べる動物。", assoc: "長い首の動物 → giraffe", example: "The giraffe has a long neck.", eiken: "3級", c1: "#fff2cf", c2: "#e9f6d8" },
+  { word: "zebra", meaning: "シマウマ", emoji: "🦓", image: "", scene: "白黒のしま模様を持つ、馬に似た動物。", assoc: "しま模様の馬 → zebra", example: "Zebras live in Africa.", eiken: "3級", c1: "#eef6ff", c2: "#fff6da" },
+  { word: "ladder", meaning: "はしご", emoji: "🪜", image: "", scene: "高いところに届くため、段を登っていく道具。", assoc: "登るための段の道具 → ladder", example: "He climbed the ladder to fix the roof.", eiken: "3級", c1: "#ffe7c7", c2: "#e3e9f2" },
+  { word: "scissors", meaning: "はさみ", emoji: "✂️", image: "", scene: "2枚の刃で紙や布をチョキチョキ切る道具。", assoc: "切る道具 → scissors", example: "Cut the paper with scissors.", eiken: "3級", c1: "#ffe3f1", c2: "#eef6ff" },
+  { word: "glasses", meaning: "眼鏡", emoji: "👓", image: "", scene: "目がよく見えるよう、顔にかけるレンズの道具。", assoc: "目にかける道具 → glasses", example: "My grandfather wears glasses.", eiken: "3級", c1: "#eef6ff", c2: "#ffe7c7" },
+  // ===== 追加：英検準2級 =====
+  { word: "airport", meaning: "空港", emoji: "🛫", image: "", scene: "大きな飛行機が離陸していく、旅の始まりの場所。", assoc: "飛行機の発着場 → airport（air＋port 空の港）", example: "We arrived at the airport early.", eiken: "準2級", c1: "#d7ecff", c2: "#fff2cf" },
+  { word: "hotel", meaning: "ホテル", emoji: "🏨", image: "", scene: "旅行先で泊まる、ベッドと部屋が用意された建物。", assoc: "旅先で泊まる建物 → hotel", example: "We stayed at a hotel near the beach.", eiken: "準2級", c1: "#ffe3f1", c2: "#eef6ff" },
+  { word: "restaurant", meaning: "レストラン", emoji: "🍽️", image: "", scene: "席に座って注文すると、料理が運ばれてくる店。", assoc: "食事を楽しむ店 → restaurant", example: "This restaurant is famous for its pasta.", eiken: "準2級", c1: "#ffe7c7", c2: "#ffe3e0" },
+  { word: "chef", meaning: "シェフ、料理人", emoji: "👨‍🍳", image: "", scene: "白い帽子をかぶり、厨房で腕を振るう料理のプロ。", assoc: "料理を作るプロ → chef", example: "The chef cooked a wonderful dinner.", eiken: "準2級", c1: "#fff2cf", c2: "#ffeef5" },
+  { word: "farmer", meaning: "農家、農場主", emoji: "👨‍🌾", image: "", scene: "畑で野菜や米を育てている人。", assoc: "farm（農場）で働く人 → farmer", example: "The farmer grows rice and vegetables.", eiken: "準2級", c1: "#e9f6d8", c2: "#fff2cf" },
+  { word: "artist", meaning: "芸術家、画家", emoji: "🎨", image: "", scene: "パレットと筆を持ち、キャンバスに絵を描く人。", assoc: "art（芸術）を作る人 → artist", example: "She is a famous artist.", eiken: "準2級", c1: "#ffe3f1", c2: "#d7ecff" },
+  { word: "singer", meaning: "歌手", emoji: "🎤", image: "", scene: "マイクを持ってステージで歌う人。", assoc: "sing（歌う）する人 → singer", example: "The singer performed on stage.", eiken: "準2級", c1: "#dfe6ff", c2: "#ffe3f1" },
+  { word: "sunrise", meaning: "日の出", emoji: "🌅", image: "", scene: "朝、太陽が地平線から顔を出し始める瞬間。", assoc: "sun（太陽）が rise（昇る）→ sunrise", example: "We watched the sunrise from the beach.", eiken: "準2級", c1: "#ffe7c7", c2: "#ffe3f1" },
+  { word: "sunset", meaning: "夕日、日没", emoji: "🌇", image: "", scene: "夕方、太陽が建物の向こうに沈み、空が赤く染まる。", assoc: "sun（太陽）が set（沈む）→ sunset", example: "The sunset was beautiful last night.", eiken: "準2級", c1: "#ffe3e0", c2: "#ffe7c7" },
+  { word: "autumn", meaning: "秋", emoji: "🍂", image: "", scene: "葉が赤や黄色に色づき、ひらひらと落ちてくる季節。", assoc: "紅葉の季節 → autumn", example: "Leaves turn red in autumn.", eiken: "準2級", c1: "#ffe7c7", c2: "#ffe3e0" },
+  { word: "jungle", meaning: "ジャングル、密林", emoji: "🌴", image: "", scene: "熱帯の、植物が生い茂る蒸し暑い森。", assoc: "南国の密林 → jungle", example: "Many animals live in the jungle.", eiken: "準2級", c1: "#dcefe0", c2: "#fff2cf" },
+  { word: "pond", meaning: "池", emoji: "🪷", image: "", scene: "公園にある小さな水たまり。蓮の花が浮かび、鯉が泳ぐ。", assoc: "湖より小さい水場 → pond", example: "Ducks are swimming in the pond.", eiken: "準2級", c1: "#d9f6f0", c2: "#ffeef5" },
+  { word: "seed", meaning: "種", emoji: "🌰", image: "", scene: "土にまくと芽が出る、植物の始まりの小さな粒。", assoc: "植物の始まり → seed", example: "Plant the seeds in spring.", eiken: "準2級", c1: "#e9f6d8", c2: "#ffe7c7" },
+  { word: "branch", meaning: "枝、支店", emoji: "🌿", image: "", scene: "木の幹から分かれて伸び、葉をつける部分。", assoc: "幹から分かれる部分 → branch", example: "A bird is sitting on the branch.", eiken: "準2級", c1: "#e9f6d8", c2: "#d7ecff" },
+  // ===== 追加：英検2級 =====
+  { word: "shadow", meaning: "影", emoji: "👤", image: "", scene: "夕日の光で、地面に自分の黒い形が長く伸びている。", assoc: "光が作る黒い形 → shadow", example: "His shadow stretched across the ground.", eiken: "2級", c1: "#e3e9f2", c2: "#ffe7c7" },
+  { word: "smoke", meaning: "煙", emoji: "💨", image: "", scene: "火の上から、灰色のけむりがもくもくと立ち上る。", assoc: "火から出る灰色の気体 → smoke", example: "Smoke rose from the chimney.", eiken: "2級", c1: "#e3e9f2", c2: "#eef6ff" },
+  { word: "pollution", meaning: "汚染、公害", emoji: "🏭", image: "", scene: "工場の煙や排気で、空や水が汚れてしまうこと。", assoc: "環境が汚れること → pollution", example: "Air pollution is a serious problem.", eiken: "2級", c1: "#e3e9f2", c2: "#ffe3e0" },
+  { word: "recycle", meaning: "リサイクルする、再利用する", emoji: "♻️", image: "", scene: "空き缶やペットボトルを分け、新しい製品に生まれ変わらせる。", assoc: "ぐるぐる循環マーク → recycle", example: "We should recycle plastic bottles.", eiken: "2級", c1: "#e9f6d8", c2: "#d7ecff" },
+  { word: "earthquake", meaning: "地震", emoji: "🏚️", image: "", scene: "地面がグラグラと揺れ、建物が崩れてしまう災害。", assoc: "earth（大地）が quake（揺れる）→ earthquake", example: "A big earthquake hit the city.", eiken: "2級", c1: "#ffe7c7", c2: "#ffe3e0" },
+  { word: "flood", meaning: "洪水", emoji: "🌊", image: "", scene: "大雨で川の水があふれ、街が水に浸かってしまう災害。", assoc: "水があふれる災害 → flood", example: "The flood damaged many houses.", eiken: "2級", c1: "#d7ecff", c2: "#e3e9f2" },
+  { word: "storm", meaning: "嵐、暴風雨", emoji: "⛈️", image: "", scene: "強い風と激しい雨、雷が同時にやってくる荒れた天気。", assoc: "風＋雨＋雷の天気 → storm", example: "The storm kept us indoors all day.", eiken: "2級", c1: "#dfe6ff", c2: "#d7ecff" },
+  { word: "lightning", meaning: "稲妻、雷光", emoji: "🌩️", image: "", scene: "嵐の空に、ギザギザの光が一瞬走る現象。", assoc: "空を走る光 → lightning（音は thunder）", example: "Lightning lit up the sky.", eiken: "2級", c1: "#fff2cf", c2: "#dfe6ff" },
+  { word: "comet", meaning: "彗星", emoji: "☄️", image: "", scene: "長い尾を引いて夜空を流れる、氷と塵の天体。", assoc: "尾を引く星 → comet", example: "The comet appears every 76 years.", eiken: "2級", c1: "#dfe6ff", c2: "#eef6ff" },
+  { word: "planet", meaning: "惑星", emoji: "🪐", image: "", scene: "輪を持った土星のように、太陽の周りを回る大きな天体。", assoc: "太陽の周りを回る星 → planet", example: "Mars is called the red planet.", eiken: "2級", c1: "#dfe6ff", c2: "#ffe7c7" },
+  { word: "galaxy", meaning: "銀河", emoji: "🌌", image: "", scene: "無数の星が集まって作る、宇宙の大集団。私たちの天の川もその一つ。", assoc: "星の大集団 → galaxy", example: "Our galaxy is called the Milky Way.", eiken: "2級", c1: "#dfe6ff", c2: "#ffeef5" },
+  { word: "valley", meaning: "谷、渓谷", emoji: "🏞️", image: "", scene: "山と山の間の低い土地。川が流れていることが多い。", assoc: "山に挟まれた低地 → valley", example: "A river runs through the valley.", eiken: "2級", c1: "#dcefe0", c2: "#d7ecff" },
+  { word: "harbor", meaning: "港", emoji: "⚓", image: "", scene: "船が錨を下ろして休み、荷物を積み下ろしする場所。", assoc: "船の休む場所 → harbor", example: "Ships were anchored in the harbor.", eiken: "2級", c1: "#d7ecff", c2: "#e3e9f2" },
+  { word: "tunnel", meaning: "トンネル", emoji: "🚇", image: "", scene: "山や地下をくり抜いた、暗くて長い通り道。", assoc: "山を貫く道 → tunnel", example: "The train went through a long tunnel.", eiken: "2級", c1: "#e3e9f2", c2: "#d7ecff" },
+  // ===== 追加：英検準1級 =====
+  { word: "cemetery", meaning: "墓地、共同墓地", emoji: "🪦", image: "", scene: "静かな丘に、墓石が静かに並んでいる場所。", assoc: "墓石が並ぶ場所 → cemetery", example: "The old cemetery is on the hill.", eiken: "準1級", c1: "#e3e9f2", c2: "#dcefe0" },
+  { word: "masterpiece", meaning: "傑作、名作", emoji: "🖼️", image: "", scene: "美術館で大勢が見つめる、時代を超えた最高の作品。", assoc: "master（名人）の piece（作品）→ masterpiece", example: "This painting is his masterpiece.", eiken: "準1級", c1: "#fff6da", c2: "#ffe3f1" },
+  { word: "sculpture", meaning: "彫刻", emoji: "🗿", image: "", scene: "石や木を彫って作られた、立体的な芸術作品。", assoc: "彫って作る芸術 → sculpture", example: "The park has a famous sculpture.", eiken: "準1級", c1: "#e3e9f2", c2: "#ffe7c7" },
+  { word: "cathedral", meaning: "大聖堂", emoji: "⛪", image: "", scene: "高い塔とステンドグラスを持つ、街の中心の大きな教会。", assoc: "大きな教会 → cathedral", example: "The cathedral was built 800 years ago.", eiken: "準1級", c1: "#dfe6ff", c2: "#fff6da" },
+  { word: "fountain", meaning: "噴水", emoji: "⛲", image: "", scene: "公園の真ん中で、水が高く吹き上がっては落ちてくる。", assoc: "水が噴き上がる → fountain", example: "Children played around the fountain.", eiken: "準1級", c1: "#d7ecff", c2: "#eef6ff" },
+  { word: "vineyard", meaning: "ブドウ園、ブドウ畑", emoji: "🍇", image: "", scene: "丘の斜面いっぱいに、ワイン用のブドウ畑が広がっている。", assoc: "vine（ブドウのつる）の yard（畑）→ vineyard", example: "They own a vineyard in France.", eiken: "準1級", c1: "#e9f6d8", c2: "#ffe3f1" },
+  { word: "orchard", meaning: "果樹園", emoji: "🍎", image: "", scene: "リンゴやミカンの木が規則正しく並ぶ畑。", assoc: "果物の木の畑 → orchard", example: "We picked apples in the orchard.", eiken: "準1級", c1: "#ffe3e0", c2: "#e9f6d8" },
+  { word: "peninsula", meaning: "半島", emoji: "🗾", image: "", scene: "三方を海に囲まれ、本土から突き出した陸地。房総や伊豆がそうだ。", assoc: "半分（pen-）島（insula）→ peninsula", example: "The peninsula is surrounded by the sea.", eiken: "準1級", c1: "#d7ecff", c2: "#e9f6d8" },
+  { word: "hemisphere", meaning: "半球", emoji: "🌐", image: "", scene: "地球を半分に切った片方。日本は北半球にある。", assoc: "hemi（半分）＋ sphere（球）→ hemisphere", example: "Japan is in the Northern Hemisphere.", eiken: "準1級", c1: "#d7ecff", c2: "#dfe6ff" },
+  { word: "equator", meaning: "赤道", emoji: "🌍", image: "", scene: "地球の真ん中をぐるっと一周する、一番暑い地帯の線。", assoc: "地球を等しく（equal）分ける線 → equator", example: "Countries near the equator are hot all year.", eiken: "準1級", c1: "#ffe7c7", c2: "#d7ecff" },
+  { word: "twilight", meaning: "黄昏、薄明", emoji: "🌆", image: "", scene: "日が沈んだ直後、空が紫とオレンジに染まる短い時間。", assoc: "昼と夜の間の光 → twilight", example: "We walked home in the twilight.", eiken: "準1級", c1: "#dfe6ff", c2: "#ffe7c7" },
+  { word: "abyss", meaning: "深淵、底知れぬ深み", emoji: "🕳️", image: "", scene: "のぞき込んでも底が見えない、真っ暗で深い穴や海の底。", assoc: "底なしの深さ → abyss", example: "He stared into the abyss below.", eiken: "準1級", c1: "#e3e9f2", c2: "#dfe6ff" },
+  // ===== 追加：英検1級 =====
+  { word: "labyrinth", meaning: "迷宮、迷路", emoji: "🌀", image: "", scene: "入り組んだ通路が続き、一度入ると出られなくなる仕掛け。", assoc: "出口の分からない迷路 → labyrinth", example: "We got lost in the labyrinth of old streets.", eiken: "1級", c1: "#dfe6ff", c2: "#e9f6d8" },
+  { word: "mirage", meaning: "蜃気楼、逃げ水", emoji: "🏜️", image: "", scene: "砂漠で、遠くに水があるように見えるのに近づくと消えてしまう現象。", assoc: "砂漠の幻の水 → mirage", example: "The travelers saw a mirage in the desert.", eiken: "1級", c1: "#fff2cf", c2: "#d7ecff" },
+  { word: "oasis", meaning: "オアシス", emoji: "🌴", image: "", scene: "砂漠の真ん中に、水と緑が集まる小さな楽園。", assoc: "砂漠の中の水場 → oasis", example: "They finally reached the oasis.", eiken: "1級", c1: "#e9f6d8", c2: "#d7ecff" },
+  { word: "kaleidoscope", meaning: "万華鏡", emoji: "🔮", image: "", scene: "筒をのぞいて回すと、色と形の模様が次々と変わる玩具。", assoc: "回すたび模様が変わる筒 → kaleidoscope", example: "The sky looked like a kaleidoscope of colors.", eiken: "1級", c1: "#ffe3f1", c2: "#dfe6ff" },
+  { word: "zenith", meaning: "天頂、絶頂", emoji: "🌞", image: "", scene: "太陽がちょうど頭の真上に来た位置。一番高いところ。", assoc: "頭の真上 → zenith", example: "The sun reached its zenith at noon.", eiken: "1級", c1: "#fff2cf", c2: "#d7ecff" },
+  { word: "heritage", meaning: "遺産、伝統", emoji: "🏯", image: "", scene: "姫路城のように、先人から受け継いだ大切な建物や文化。", assoc: "受け継ぐもの → heritage", example: "The castle is a World Heritage site.", eiken: "1級", c1: "#ffe7c7", c2: "#e3e9f2" },
+  { word: "sanctuary", meaning: "聖域、保護区", emoji: "🕊️", image: "", scene: "鳥たちが安心して暮らせるよう、守られた静かな場所。", assoc: "守られた安全な場所 → sanctuary", example: "This island is a bird sanctuary.", eiken: "1級", c1: "#dcefe0", c2: "#eef6ff" },
+  { word: "pilgrimage", meaning: "巡礼、聖地参拝の旅", emoji: "🛕", image: "", scene: "四国八十八ヶ所のように、聖なる場所を巡る長く敬虔な旅。", assoc: "聖地を巡る旅 → pilgrimage", example: "They went on a pilgrimage to the shrine.", eiken: "1級", c1: "#fff6da", c2: "#ffe3e0" },
+  { word: "manuscript", meaning: "原稿、手書き文書", emoji: "📜", image: "", scene: "印刷される前の、著者が書いたままの巻物のような文書。", assoc: "manu（手）＋ script（書く）→ manuscript", example: "The manuscript was written in the 12th century.", eiken: "1級", c1: "#fff6da", c2: "#e3e9f2" },
+  { word: "expedition", meaning: "探検、遠征", emoji: "🧭", image: "", scene: "コンパスと地図を手に、未知の土地へ向かう本格的な旅。", assoc: "未知への本格的な旅 → expedition", example: "The expedition reached the South Pole.", eiken: "1級", c1: "#d7ecff", c2: "#ffe7c7" }
 ];
 const GRADES = ["5級", "4級", "3級", "準2級", "2級", "準1級", "1級"];
 let words = [];
@@ -430,10 +572,19 @@ let testScoreCount = 0;
 let testLog = [];
 let testAnswered = false;
 function gradeCount(g) { return words.filter(w => (w.eiken || "未分類") === g).length; }
+let testType = "picture"; // picture: 絵からクイズ | word: 単語から絵を選ぶ
 function showTestHome() {
   $("testHome").classList.remove("hidden");
   $("testRun").classList.add("hidden");
   $("testResult").classList.add("hidden");
+  $("testTypeSelect").classList.remove("hidden");
+  $("testGradeSelect").classList.add("hidden");
+}
+function showGradeSelect(type) {
+  testType = type;
+  $("testTypeSelect").classList.add("hidden");
+  $("testGradeSelect").classList.remove("hidden");
+  $("testGradeTitle").textContent = (type === "picture" ? "🖼️ 絵からクイズ" : "🎯 単語から絵を選ぶ") + " — 級を選んでください。選んだ級の単語だけが出題されます。";
   const grid = $("gradeGrid");
   grid.innerHTML = "";
   GRADES.concat(["未分類"]).forEach(g => {
@@ -459,17 +610,27 @@ function startTest(g) {
 function renderTestQuestion() {
   const c = testQs[testIdx];
   testAnswered = false;
+  const isPic = testType === "picture";
   $("testVisual").style.setProperty("--c1", c.c1 || "#dcefe0");
   $("testVisual").style.setProperty("--c2", c.c2 || "#f6ecd2");
-  if (c.image) {
-    $("testVisualImg").src = c.image; $("testVisualImg").classList.remove("hidden");
-    $("testVisualEmoji").classList.add("hidden");
+  if (isPic) {
+    $("testWord").classList.add("hidden");
+    if (c.image) {
+      $("testVisualImg").src = c.image; $("testVisualImg").classList.remove("hidden");
+      $("testVisualEmoji").classList.add("hidden");
+    } else {
+      $("testVisualImg").classList.add("hidden"); $("testVisualEmoji").classList.remove("hidden");
+      $("testVisualEmoji").textContent = c.emoji || "🖼️";
+    }
+    $("testSceneDesc").textContent = c.scene || "";
   } else {
-    $("testVisualImg").classList.add("hidden"); $("testVisualEmoji").classList.remove("hidden");
-    $("testVisualEmoji").textContent = c.emoji || "🖼️";
+    $("testVisualImg").classList.add("hidden");
+    $("testVisualEmoji").classList.add("hidden");
+    $("testWord").classList.remove("hidden");
+    $("testWord").textContent = c.word;
+    $("testSceneDesc").textContent = "イメージに合う絵はどれ？";
   }
-  $("testSceneDesc").textContent = c.scene || "";
-  $("testProgress").textContent = (testGrade === "未分類" ? "未分類" : "英検 " + testGrade) + " テスト　" + (testIdx + 1) + " / " + testQs.length + " 問目 — この絵から連想する単語は？";
+  $("testProgress").textContent = (testGrade === "未分類" ? "未分類" : "英検 " + testGrade) + (isPic ? " 絵からクイズ　" : " 単語から絵を選ぶ　") + (testIdx + 1) + " / " + testQs.length + " 問目";
   $("testFeedback").textContent = "";
   $("testNextBtn").classList.add("hidden");
   const sameGrade = words.filter(w => w.word !== c.word && (w.eiken || "未分類") === (c.eiken || "未分類")).sort(() => Math.random() - 0.5);
@@ -479,7 +640,16 @@ function renderTestQuestion() {
   box.innerHTML = "";
   opts.forEach(o => {
     const b = document.createElement("button");
-    b.type = "button"; b.textContent = o.word;
+    b.type = "button";
+    b.dataset.word = o.word;
+    if (isPic) {
+      b.textContent = o.word;
+    } else {
+      b.className = "out-option";
+      b.style.setProperty("--c1", o.c1 || "#dcefe0");
+      b.style.setProperty("--c2", o.c2 || "#f6ecd2");
+      b.innerHTML = '<span class="opic">' + (o.image ? '<img src="' + escapeHtml(o.image) + '" alt="選択肢の絵">' : escapeHtml(o.emoji || "🖼️")) + '</span><span class="olabel">このイメージ？</span>';
+    }
     b.addEventListener("click", () => {
       if (testAnswered) return;
       testAnswered = true;
@@ -487,7 +657,7 @@ function renderTestQuestion() {
       if (ok) { testScoreCount++; b.classList.add("correct"); }
       else {
         b.classList.add("wrong");
-        box.querySelectorAll("button").forEach(x => { if (x.textContent === c.word) x.classList.add("correct"); });
+        box.querySelectorAll("button").forEach(x => { if (x.dataset.word === c.word) x.classList.add("correct"); });
       }
       box.querySelectorAll("button").forEach(x => { x.disabled = true; });
       testLog.push({ word: c, chosen: o.word, ok: ok });
@@ -503,7 +673,7 @@ function renderTestQuestion() {
 function showTestResult() {
   $("testRun").classList.add("hidden");
   $("testResult").classList.remove("hidden");
-  $("testResultGrade").textContent = (testGrade === "未分類" ? "未分類" : "英検 " + testGrade) + " テストの結果";
+  $("testResultGrade").textContent = (testGrade === "未分類" ? "未分類" : "英検 " + testGrade) + (testType === "picture" ? " 絵からクイズ" : " 単語から絵を選ぶ") + " の結果";
   $("testScore").textContent = testScoreCount + " / " + testQs.length;
   const r = testQs.length ? testScoreCount / testQs.length : 0;
   $("testMessage").textContent = r === 1 ? "満点です！ 絵と単語がしっかり結びついています。" : r >= 0.7 ? "よくできました。間違えた単語をふりかえりで確認しましょう。" : r >= 0.4 ? "あと少し。間違えた単語は「絵から連想」モードで復習すると効きます。" : "まずは「絵から連想」モードで絵と単語を結びつけてから、もう一度挑戦しましょう。";
@@ -524,6 +694,7 @@ function renderAnswer(c) {
   $("ansExample").textContent = c.example || "";
 }
 function render() {
+  $("sideCount").textContent = words.length;
   const list = filtered();
   const c = list.length ? list[Math.min(index, list.length - 1)] : null;
   if (c && index >= list.length) index = 0;
@@ -565,10 +736,13 @@ $("tabQuiz").addEventListener("click", () => setMode("quiz"));
 $("tabOutput").addEventListener("click", () => setMode("output"));
 $("tabGallery").addEventListener("click", () => setMode("gallery"));
 $("tabTest").addEventListener("click", () => setMode("test"));
+$("typePicBtn").addEventListener("click", () => showGradeSelect("picture"));
+$("typeWordBtn").addEventListener("click", () => showGradeSelect("word"));
+$("testTypeBackBtn").addEventListener("click", () => showTestHome());
 $("testNextBtn").addEventListener("click", () => { if (testIdx < testQs.length - 1) { testIdx++; renderTestQuestion(); } else { showTestResult(); } });
-$("testQuitBtn").addEventListener("click", () => showTestHome());
+$("testQuitBtn").addEventListener("click", () => { showTestHome(); showGradeSelect(testType); });
 $("testRetryBtn").addEventListener("click", () => startTest(testGrade));
-$("testBackBtn").addEventListener("click", () => showTestHome());
+$("testBackBtn").addEventListener("click", () => { showTestHome(); showGradeSelect(testType); });
 $("outNextBtn").addEventListener("click", () => { newOutputQuestion(); renderOutput(); });
 $("outResetBtn").addEventListener("click", () => { outAttempts = 0; outCorrect = 0; outStreak = 0; newOutputQuestion(); renderOutput(); });
 $("revealBtn").addEventListener("click", () => { revealed = !revealed; const c = filtered()[index]; renderAnswer(c); $("revealBtn").textContent = revealed ? "単語を隠す" : "単語を見る"; });
