@@ -163,6 +163,14 @@
   .grade-card { padding: 22px 18px; text-align: left; border-radius: 12px; background: var(--card); }
   .grade-card b { font-family: "Baloo 2", "M PLUS Rounded 1c", sans-serif; font-size: 23px; font-weight: 800; display: block; }
   .grade-card span { font-size: 14px; font-weight: 400; color: #6b6350; display: block; margin-top: 4px; line-height: 1.5; }
+  .count-panel { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; box-shadow: 4px 4px 0 rgba(20,51,46,.9); padding: 18px 20px; margin-top: 14px; }
+  .count-panel > b { font-size: 20px; font-weight: 800; background: linear-gradient(transparent 62%, #ffe98a 62%); padding: 0 4px; }
+  .count-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 12px; }
+  .count-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .count-chip { border: 2px solid var(--ink); border-radius: 999px; padding: 9px 20px; font-size: 16px; font-weight: 800; background: #fff; cursor: pointer; font-family: inherit; }
+  .count-chip.active { background: var(--yellow); }
+  .count-input-wrap { display: inline-flex; align-items: center; gap: 7px; font-weight: 800; font-size: 16px; }
+  .count-input-wrap input { width: 92px; padding: 9px 10px; font-size: 17px; font-weight: 800; text-align: center; border: 2px solid var(--ink); border-radius: 10px; background: #fff; font-family: inherit; }
   .test-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
   .ti-item { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; padding: 18px 20px; box-shadow: 4px 4px 0 rgba(20,51,46,.9); }
   .ti-item b { font-size: 21px; font-weight: 800; background: linear-gradient(transparent 62%, #ffe98a 62%); padding: 0 4px; }
@@ -293,7 +301,7 @@
           <div class="ti-item"><b>インプット</b><span class="ti-flow">絵 → 単語</span><p>絵を見て、英単語を思い出す練習です。下の「絵からクイズ」で行います。</p></div>
           <div class="ti-item"><b>アウトプット</b><span class="ti-flow">単語 → 絵</span><p>英単語を見て、イメージを思い浮かべる練習です。下の「単語から絵を選ぶ」で行います。</p></div>
         </div>
-        <p class="sub" style="margin-top:14px">テストの種類を選んでください。どちらも英検の級ごとに分かれていて、選んだ級の単語だけが出題されます（最大10問）。</p>
+        <p class="sub" style="margin-top:14px">テストの種類を選んでください。どちらも英検の級ごとに分かれていて、選んだ級の単語だけが出題されます。</p>
         <div class="grade-grid type-grid">
           <button type="button" class="type-card" id="typePicBtn"><b>🖼️ 絵からクイズ</b><span>絵と場面を見て、正しい英単語を4択で選びます（インプット）</span>
             <span class="example"><span class="ex-label">例</span><img class="ex-photo" src="images/waterfall.jpg" alt="滝の写真（例）"><span class="ex-q">この絵の単語は？</span><span class="ex-chips"><span class="ex-chip">river</span><span class="ex-chip ok">waterfall ✓</span><span class="ex-chip">mountain</span><span class="ex-chip">cloud</span></span></span>
@@ -302,6 +310,19 @@
             <span class="example"><span class="ex-label">例</span><span class="ex-word">apple</span><span class="ex-imgs"><img src="images/banana.jpg" alt="バナナの写真"><img class="ok" src="images/apple.jpg" alt="リンゴの写真（正解の例）"><img src="images/grape.jpg" alt="ブドウの写真"><img src="images/orange.jpg" alt="オレンジの写真"></span></span>
           </button>
         </div>
+      </div>
+      <div class="count-panel" id="countPanel">
+        <b>問題数</b>
+        <div class="count-row">
+          <div class="count-chips" id="countChips">
+            <button type="button" class="count-chip" data-count="5">5問</button>
+            <button type="button" class="count-chip active" data-count="10">10問</button>
+            <button type="button" class="count-chip" data-count="20">20問</button>
+            <button type="button" class="count-chip" data-count="all">全部</button>
+          </div>
+          <label class="count-input-wrap"><input type="number" id="countInput" min="1" max="99" step="1" value="10"> 問</label>
+        </div>
+        <p class="board-note">ボタンで選ぶか、右の欄に好きな数を入力できます。級の単語数より多くは出題されません（例：1級は最大16問）。</p>
       </div>
       <div id="testGradeSelect" class="hidden">
         <p class="sub" style="margin-top:14px" id="testGradeTitle"></p>
@@ -734,6 +755,8 @@ function renderChoices(current) {
   });
 }
 // --- 単語テスト：級を選んで絵から連想テスト ---
+let testCount = 10;
+let testCountAll = false;
 let testGrade = null;
 let testQs = [];
 let testIdx = 0;
@@ -768,10 +791,40 @@ function showGradeSelect(type) {
   // 級の選択欄が画面外で見えないことがないよう、表示位置までスクロールする
   $("testGradeSelect").scrollIntoView({ behavior: "smooth", block: "start" });
 }
+function setTestCountUI() {
+  document.querySelectorAll("#countChips .count-chip").forEach(ch => {
+    const v = ch.dataset.count;
+    ch.classList.toggle("active", testCountAll ? v === "all" : String(testCount) === v);
+  });
+  const inp = $("countInput");
+  if (document.activeElement !== inp) inp.value = testCountAll ? "" : testCount;
+  inp.placeholder = testCountAll ? "全部" : "";
+}
+document.querySelectorAll("#countChips .count-chip").forEach(ch => {
+  ch.addEventListener("click", () => {
+    if (ch.dataset.count === "all") testCountAll = true;
+    else { testCountAll = false; testCount = parseInt(ch.dataset.count, 10); }
+    setTestCountUI();
+  });
+});
+$("countInput").addEventListener("input", () => {
+  const v = parseInt($("countInput").value, 10);
+  if (Number.isFinite(v) && v >= 1) { testCountAll = false; testCount = Math.min(99, v); }
+  setTestCountUI();
+});
+$("countInput").addEventListener("change", () => {
+  if (testCountAll) return;
+  let v = parseInt($("countInput").value, 10);
+  if (!Number.isFinite(v) || v < 1) v = 10;
+  testCount = Math.min(99, Math.max(1, v));
+  $("countInput").value = testCount;
+  setTestCountUI();
+});
 function startTest(g) {
   testGrade = g;
   const pool = words.filter(w => (w.eiken || "未分類") === g);
-  testQs = pool.slice().sort(() => Math.random() - 0.5).slice(0, 10);
+  const limit = testCountAll ? pool.length : Math.min(testCount, pool.length);
+  testQs = pool.slice().sort(() => Math.random() - 0.5).slice(0, limit);
   testIdx = 0; testScoreCount = 0; testLog = [];
   $("testHome").classList.add("hidden");
   $("testResult").classList.add("hidden");
