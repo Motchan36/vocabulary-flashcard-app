@@ -1036,7 +1036,7 @@ $("signupBtn").addEventListener("click", async () => {
   const name = $("suName").value.trim(), email = $("suEmail").value.trim(), pass = $("suPass").value;
   if (!name || !email || !pass) { acctMsg("表示名・メールアドレス・パスワードを入力してください。", false); return; }
   acctMsg("登録しています…", true);
-  const { data, error } = await sb.auth.signUp({ email, password: pass, options: { data: { display_name: name } } });
+  const { data, error } = await sb.auth.signUp({ email, password: pass, options: { data: { display_name: name }, emailRedirectTo: "https://motchan36.github.io/vocabulary-flashcard-app/" } });
   if (error) { acctMsg(acctErr(error), false); return; }
   if (data && data.session) { await refreshAuth(); acctMsg("登録が完了しました。", true, true); return; }
   pendingOtp = { email, type: "signup" };
@@ -1048,7 +1048,7 @@ $("otpSendBtn").addEventListener("click", async () => {
   const email = $("otpEmail").value.trim();
   if (!email) { acctMsg("メールアドレスを入力してください。", false); return; }
   acctMsg("コードを送っています…", true);
-  const { error } = await sb.auth.signInWithOtp({ email });
+  const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: "https://motchan36.github.io/vocabulary-flashcard-app/" } });
   if (error) { acctMsg(acctErr(error), false); return; }
   pendingOtp = { email, type: "email" };
   $("acctVerify").classList.remove("hidden");
