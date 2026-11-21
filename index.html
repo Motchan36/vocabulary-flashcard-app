@@ -105,9 +105,7 @@
   <aside class="sidebar">
     <div class="brand"><span class="brand-logo">🖼️</span><div><div class="brand-name">絵で覚える単語帳</div><div class="brand-sub">Picture Vocabulary</div></div></div>
   <div class="tabs" role="tablist">
-    <button id="tabStudy" type="button" class="active">🖼️ 絵から連想</button>
-    <button id="tabQuiz" type="button">❓ 絵あてクイズ</button>
-    <button id="tabOutput" type="button">🎯 単語から絵を選ぶ</button>
+    <button id="tabStudy" type="button" class="active">🏠 ホーム</button>
     <button id="tabTest" type="button">📝 単語テスト</button>
     <button id="tabGallery" type="button">🗂️ 絵のギャラリー</button>
   </div>
@@ -457,8 +455,6 @@ function filtered() {
 function setMode(m) {
   mode = m; revealed = false;
   $("tabStudy").classList.toggle("active", m === "study");
-  $("tabQuiz").classList.toggle("active", m === "quiz");
-  $("tabOutput").classList.toggle("active", m === "output");
   $("tabTest").classList.toggle("active", m === "test");
   $("tabGallery").classList.toggle("active", m === "gallery");
   $("studyArea").classList.toggle("hidden", m === "gallery" || m === "output" || m === "test");
@@ -732,8 +728,6 @@ function render() {
     '<p class="empty">まだ単語がありません。</p>';
 }
 $("tabStudy").addEventListener("click", () => setMode("study"));
-$("tabQuiz").addEventListener("click", () => setMode("quiz"));
-$("tabOutput").addEventListener("click", () => setMode("output"));
 $("tabGallery").addEventListener("click", () => setMode("gallery"));
 $("tabTest").addEventListener("click", () => setMode("test"));
 $("typePicBtn").addEventListener("click", () => showGradeSelect("picture"));
