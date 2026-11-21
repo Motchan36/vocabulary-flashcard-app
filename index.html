@@ -318,9 +318,11 @@
             <button type="button" class="count-chip" data-count="5">5問</button>
             <button type="button" class="count-chip active" data-count="10">10問</button>
             <button type="button" class="count-chip" data-count="20">20問</button>
+            <button type="button" class="count-chip" data-count="50">50問</button>
+            <button type="button" class="count-chip" data-count="100">100問</button>
             <button type="button" class="count-chip" data-count="all">全部</button>
           </div>
-          <label class="count-input-wrap"><input type="number" id="countInput" min="1" max="99" step="1" value="10"> 問</label>
+          <label class="count-input-wrap"><input type="number" id="countInput" min="1" max="100" step="1" value="10"> 問</label>
         </div>
         <p class="board-note">ボタンで選ぶか、右の欄に好きな数を入力できます。級の単語数より多くは出題されません（例：1級は最大16問）。</p>
       </div>
@@ -809,14 +811,14 @@ document.querySelectorAll("#countChips .count-chip").forEach(ch => {
 });
 $("countInput").addEventListener("input", () => {
   const v = parseInt($("countInput").value, 10);
-  if (Number.isFinite(v) && v >= 1) { testCountAll = false; testCount = Math.min(99, v); }
+  if (Number.isFinite(v) && v >= 1) { testCountAll = false; testCount = Math.min(100, v); }
   setTestCountUI();
 });
 $("countInput").addEventListener("change", () => {
   if (testCountAll) return;
   let v = parseInt($("countInput").value, 10);
   if (!Number.isFinite(v) || v < 1) v = 10;
-  testCount = Math.min(99, Math.max(1, v));
+  testCount = Math.min(100, Math.max(1, v));
   $("countInput").value = testCount;
   setTestCountUI();
 });
