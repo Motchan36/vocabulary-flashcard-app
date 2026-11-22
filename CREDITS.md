@@ -1154,3 +1154,7 @@ Also see my personal gallery at Google Photos — CC BY-SA 3.0
 - wash over: [File:DSCF1287 A tranquil seaside promenade lined with palm trees and a quiet sandy beach as gentle waves lap the shore under a cloudy sky.jpg](https://commons.wikimedia.org/wiki/File:DSCF1287_A_tranquil_seaside_promenade_lined_with_palm_trees_and_a_quiet_sandy_beach_as_gentle_waves_lap_the_shore_under_a_cloudy_sky.jpg) — PattayaPatrol — CC BY-SA 4.0
 - wrest: [File:Two boys engaged in arm wrestling.jpg](https://commons.wikimedia.org/wiki/File:Two_boys_engaged_in_arm_wrestling.jpg) — Hector Alejandro — CC BY 2.0
 - zip by: [File:G7232 Bullet Train leaving Zhenjiang Station on the Shanghai-Nanjing Intercity High-Speed Railway.JPG](https://commons.wikimedia.org/wiki/File:G7232_Bullet_Train_leaving_Zhenjiang_Station_on_the_Shanghai-Nanjing_Intercity_High-Speed_Railway.JPG) — Opacitatic — CC BY 4.0
+
+## 代名詞・疑問詞の使い方イラスト（AI生成）
+
+he / she / they / we / you / me / him / us / my / his / our / mine / ours / whose / what / when / where / why / how / that の20語は、使い方の場面を示すAI生成イラストを使用。
