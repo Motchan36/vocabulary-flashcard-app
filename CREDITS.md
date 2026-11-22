@@ -2342,3 +2342,107 @@ derivative work: Themightyquill (talk) — CC BY-SA 2.0
 - emergency exit: [File:Emergency exit sign 01.jpg](https://commons.wikimedia.org/wiki/File:Emergency_exit_sign_01.jpg) — Kritzolina — CC BY-SA 4.0
 - fire extinguisher: [File:Estintori.jpg](https://commons.wikimedia.org/wiki/File:Estintori.jpg) — Anna.Massini — CC BY 4.0
 - sign language: [File:Sign language alphabet (59).png](https://commons.wikimedia.org/wiki/File:Sign_language_alphabet_(59).png) — Raziakhatun12 — CC BY-SA 4.0
+
+## 拡張バッチ4（準2級プラス追加分、Wikimedia Commons、URL表示）
+
+### 準2級プラス（追加分）
+- amphibian: [Agalychnis callidryas.jpg](https://commons.wikimedia.org/wiki/File:Agalychnis_callidryas.jpg) — Christian R. Linder — CC BY-SA 3.0
+- antibiotic: [Antibiotic pills.jpg](https://commons.wikimedia.org/wiki/File:Antibiotic_pills.jpg) — Maksym Kozlenko — CC BY-SA 4.0
+- apparatus: [Laboratory vacuum distillation apparatus on a benchtop.jpg](https://commons.wikimedia.org/wiki/File:Laboratory_vacuum_distillation_apparatus_on_a_benchtop.jpg) — KiveVictor — CC BY 4.0
+- archive: [Documents on shelves in the archive store (History Centre) at the Herbert.jpg](https://commons.wikimedia.org/wiki/File:Documents_on_shelves_in_the_archive_store_(History_Centre)_at_the_Herbert.jpg) — mooncow — CC BY-SA 3.0
+- asteroid: [Artist’s impression of an asteroid that orbits closer to the Sun than Earth’s orbit.jpg](https://commons.wikimedia.org/wiki/File:Artist%E2%80%99s_impression_of_an_asteroid_that_orbits_closer_to_the_Sun_than_Earth%E2%80%99s_orbit.jpg) — DOE/FNAL/DECam/CTIO/NOIRLab/NSF/AURA/J. da Silva/Spaceengine — CC BY 4.0
+- barcode: [BCode barcode 1683.png](https://commons.wikimedia.org/wiki/File:BCode_barcode_1683.png) — User4720 — CC BY-SA 4.0
+- barrier: [Concrete barrier 20180625.jpg](https://commons.wikimedia.org/wiki/File:Concrete_barrier_20180625.jpg) — Santeri Viinamäki — CC BY-SA 4.0
+- bluetooth: [Bluetooth logo (2016).svg](https://commons.wikimedia.org/wiki/File:Bluetooth_logo_(2016).svg) — Bluetooth SIG, Inc. — Public domain
+- bookmark: [Ribbon bookmark and a paper bookmark.jpg](https://commons.wikimedia.org/wiki/File:Ribbon_bookmark_and_a_paper_bookmark.jpg) — PJeganathan — CC BY-SA 3.0
+- cargo: [Aerial photograph of a cargo ship.jpg](https://commons.wikimedia.org/wiki/File:Aerial_photograph_of_a_cargo_ship.jpg) — Wilfredor — CC BY-SA 3.0
+- carnivore: [Carnivore-lion.jpg](https://commons.wikimedia.org/wiki/File:Carnivore-lion.jpg) — Mathias Appel — CC0
+- chromosome: [Diagram of a chromosome in a cell CRUK 019.svg](https://commons.wikimedia.org/wiki/File:Diagram_of_a_chromosome_in_a_cell_CRUK_019.svg) — Cancer Research UK — CC BY-SA 4.0
+- circuit: [Electronic circuit board.jpg](https://commons.wikimedia.org/wiki/File:Electronic_circuit_board.jpg) — Tom Hall — CC BY 4.0
+- clone: [Dolly face closeup.jpg](https://commons.wikimedia.org/wiki/File:Dolly_face_closeup.jpg) — Toni Barros from São Paulo, Brasil — CC BY-SA 2.0
+- coastline: [Aerial View, A coastline of Hailing Island, Yangjiang City.jpg](https://commons.wikimedia.org/wiki/File:Aerial_View,_A_coastline_of_Hailing_Island,_Yangjiang_City.jpg) — YikyuenG — CC BY-SA 4.0
+- collision: [Japanese car accident.jpg](https://commons.wikimedia.org/wiki/File:Japanese_car_accident.jpg) — Shuets Udono — CC BY-SA 2.0
+- compost: [Compost pile.JPG](https://commons.wikimedia.org/wiki/File:Compost_pile.JPG) — Ksd5 — CC0
+- congestion: [02 Stau Verkehrsstau - heavy traffic congestion in Budapest city, Hungary.jpg](https://commons.wikimedia.org/wiki/File:02_Stau_Verkehrsstau_-_heavy_traffic_congestion_in_Budapest_city,_Hungary.jpg) — Marek Ślusarczyk (Tupungato) Photo portfolio — CC BY 3.0
+- coral: [Coral Outcrop Flynn Reef.jpg](https://commons.wikimedia.org/wiki/File:Coral_Outcrop_Flynn_Reef.jpg) — Toby Hudson — CC BY-SA 3.0
+- crystal: [Quartz, Tibet.jpg](https://commons.wikimedia.org/wiki/File:Quartz,_Tibet.jpg) — JJ Harrison (https://www.jjharrison.com.au/) — CC BY-SA 2.5
+- currency: [10 Copper Coins - Market Stabilization Currency Bureau (1921) 01.jpg](https://commons.wikimedia.org/wiki/File:10_Copper_Coins_-_Market_Stabilization_Currency_Bureau_(1921)_01.jpg) — The Market Stabilization Currency Bureau. — Public domain
+- cyclone: [Tropical Cyclone Batsirai approaching Madagascar NOAA-20 satellite image 2 February 2022.png](https://commons.wikimedia.org/wiki/File:Tropical_Cyclone_Batsirai_approaching_Madagascar_NOAA-20_satellite_image_2_February_2022.png) — NOAA image — Public domain
+- debris: [Rubble and debris from demolished building - geograph.org.uk - 1689200.jpg](https://commons.wikimedia.org/wiki/File:Rubble_and_debris_from_demolished_building_-_geograph.org.uk_-_1689200.jpg) — Dave Spicer — CC BY-SA 2.0
+- detector: [Smoke detector (1).JPG](https://commons.wikimedia.org/wiki/File:Smoke_detector_(1).JPG) — Georg Pik — Public domain
+- diameter: [CIRCLE LINES-en.svg](https://commons.wikimedia.org/wiki/File:CIRCLE_LINES-en.svg) — Jleedev — Public domain
+- donor: [A blood donor contributes to the hospital's "Blood Bank", Rarotonga, 1965.jpg](https://commons.wikimedia.org/wiki/File:A_blood_donor_contributes_to_the_hospital%27s_%22Blood_Bank%22,_Rarotonga,_1965.jpg) — Photographer: Unknown — CC BY 2.0
+- embryo: [Eleutherodactylus planirostris embryos.jpg](https://commons.wikimedia.org/wiki/File:Eleutherodactylus_planirostris_embryos.jpg) — Alex Abair — CC BY 4.0
+- encyclopedia: [Encyclopedia on a wooden bookshelf.png](https://commons.wikimedia.org/wiki/File:Encyclopedia_on_a_wooden_bookshelf.png) — DALL-E, with text prompt from Aaron Lucas — Public domain
+- erosion: [Soil erosion, brownout - geograph.org.uk - 367915.jpg](https://commons.wikimedia.org/wiki/File:Soil_erosion,_brownout_-_geograph.org.uk_-_367915.jpg) — Jim Bain — CC BY-SA 2.0
+- essay: [Writing essay.png](https://commons.wikimedia.org/wiki/File:Writing_essay.png) — Azikahkhan — CC BY-SA 4.0
+- freight: [Pacific National freight train Virginia, SA.jpg](https://commons.wikimedia.org/wiki/File:Pacific_National_freight_train_Virginia,_SA.jpg) — Tomoyn — CC BY 4.0
+- frost: [Frost-covered lifebuoy, Lake Siskiyou.jpg](https://commons.wikimedia.org/wiki/File:Frost-covered_lifebuoy,_Lake_Siskiyou.jpg) — Radomianin — CC BY-SA 4.0
+- fuel: [Fuelpump1.jpg](https://commons.wikimedia.org/wiki/File:Fuelpump1.jpg) — Sonett72 at English Wikipedia — Public domain
+- fungus: [Fliegenpilz fly agaric Amanita muscaria.JPG](https://commons.wikimedia.org/wiki/File:Fliegenpilz_fly_agaric_Amanita_muscaria.JPG) — Holger Krisp — CC BY 3.0
+- glucose: [Alpha-D-Glucopyranose-with-H.png](https://commons.wikimedia.org/wiki/File:Alpha-D-Glucopyranose-with-H.png) — Jorge Stolfi — CC BY-SA 4.0
+- greenhouse: [Small greenhouse with grapevines escaping.jpg](https://commons.wikimedia.org/wiki/File:Small_greenhouse_with_grapevines_escaping.jpg) — W.carter — CC0
+- hibernation: [Eptesicus nilssonii hibernating.JPG](https://commons.wikimedia.org/wiki/File:Eptesicus_nilssonii_hibernating.JPG) — Magne Flåten — CC BY-SA 4.0
+- inhaler: [Inhaler - 3230581981.jpg](https://commons.wikimedia.org/wiki/File:Inhaler_-_3230581981.jpg) — penreyes — CC BY 2.0
+- insecticide: [Insecticide Spray.jpg](https://commons.wikimedia.org/wiki/File:Insecticide_Spray.jpg) — Daniel Abugre Anyorigya — CC BY-SA 4.0
+- insulin: [Human insulin 100IU-ml vial white background.jpg](https://commons.wikimedia.org/wiki/File:Human_insulin_100IU-ml_vial_white_background.jpg) — Wesalius — CC BY 4.0
+- irrigation: [Irrigation through sprinkler.jpg](https://commons.wikimedia.org/wiki/File:Irrigation_through_sprinkler.jpg) — Abhay iari — CC BY-SA 4.0
+- joint: [Human knee joint FE model.png](https://commons.wikimedia.org/wiki/File:Human_knee_joint_FE_model.png) — Hamid nbe — CC BY-SA 4.0
+- journal: [Notebook (NIH BioArt 394).png](https://commons.wikimedia.org/wiki/File:Notebook_(NIH_BioArt_394).png) — Courtesy of NIAID Ryan Kissinger — Public domain
+- kerosene: [Kerosene bottle.jpg](https://commons.wikimedia.org/wiki/File:Kerosene_bottle.jpg) — Longhair at English Wikipedia — Public domain
+- landfill: [SBI landfill Cranbourne site.jpg](https://commons.wikimedia.org/wiki/File:SBI_landfill_Cranbourne_site.jpg) — Environment Protection Authority Victoria — CC BY 4.0
+- landscape: [Swedish landscape near Björnlunda (by Pudelek) 01.jpg](https://commons.wikimedia.org/wiki/File:Swedish_landscape_near_Bj%C3%B6rnlunda_(by_Pudelek)_01.jpg) — Pudelek — CC BY-SA 4.0
+- laser: [Lasers.JPG](https://commons.wikimedia.org/wiki/File:Lasers.JPG) — 彭嘉傑 — CC BY 2.5
+- lava: [Pāhoehoe Lava flow.JPG](https://commons.wikimedia.org/wiki/File:P%C4%81hoehoe_Lava_flow.JPG) — Brocken Inaglory — CC BY-SA 3.0
+- layer: [Stratum (PSF).png](https://commons.wikimedia.org/wiki/File:Stratum_(PSF).png) — Pearson Scott Foresman — Public domain
+- lens: [Canon EF 100mm f2.8L Macro IS USM switches horizontal.jpg](https://commons.wikimedia.org/wiki/File:Canon_EF_100mm_f2.8L_Macro_IS_USM_switches_horizontal.jpg) — Lucasbosch — CC BY-SA 3.0
+- litter: [Italia-Perugia-Trash-Litter-01.jpg](https://commons.wikimedia.org/wiki/File:Italia-Perugia-Trash-Litter-01.jpg) — Asurnipal — CC BY-SA 4.0
+- mammal: [Panthera pardus close up.jpg](https://commons.wikimedia.org/wiki/File:Panthera_pardus_close_up.jpg) — tropicaLiving — CC BY-SA 3.0
+- massage: [Ostentrop Germany Chanchai-Thaimassage-10.jpg](https://commons.wikimedia.org/wiki/File:Ostentrop_Germany_Chanchai-Thaimassage-10.jpg) — CEphoto, Uwe Aranas — CC BY-SA 3.0
+- microbe: [Bacteria (248 28) Airborne microbes.jpg](https://commons.wikimedia.org/wiki/File:Bacteria_(248_28)_Airborne_microbes.jpg) — Doc. RNDr. Josef Reischig, CSc. — CC BY-SA 3.0
+- migration: [Flock-of-tundra-swans.jpg](https://commons.wikimedia.org/wiki/File:Flock-of-tundra-swans.jpg) — Pixel ;-)~commonswiki — CC BY-SA 3.0
+- mineral: [Quartz, Tibet.jpg](https://commons.wikimedia.org/wiki/File:Quartz,_Tibet.jpg) — JJ Harrison ( https://www.jjharrison.com.au/ ) — CC BY-SA 2.5
+- molecule: [Ball and stick model of a water molecule.png](https://commons.wikimedia.org/wiki/File:Ball_and_stick_model_of_a_water_molecule.png) — SoonLorpai — CC BY-SA 4.0
+- residence: [Brockhampton Estate - gatehouse and manor house 2.jpg](https://commons.wikimedia.org/wiki/File:Brockhampton_Estate_-_gatehouse_and_manor_house_2.jpg) — DeFacto — CC BY-SA 4.0
+- servant: [Habit of a servant maid in China. Servante de la Chine (NYPL b14140320-1638284).jpg](https://commons.wikimedia.org/wiki/File:Habit_of_a_servant_maid_in_China._Servante_de_la_Chine_(NYPL_b14140320-1638284).jpg) — Scan by NYPL — Public domain
+- simulation: [A350-900 full flight simulator cockpit VHHH.jpg](https://commons.wikimedia.org/wiki/File:A350-900_full_flight_simulator_cockpit_VHHH.jpg) — Ilari Kousa — CC BY-SA 4.0
+- skeleton: [Human skeleton front en.svg](https://commons.wikimedia.org/wiki/File:Human_skeleton_front_en.svg) — LadyofHats Mariana Ruiz Villarreal — Public domain
+- sketch: [Pencil-sketch-by-ranjan-shaw.jpg](https://commons.wikimedia.org/wiki/File:Pencil-sketch-by-ranjan-shaw.jpg) — Shawranjan — CC BY-SA 4.0
+- spacecraft: [Soyuz TMA-16 approaching ISS.jpg](https://commons.wikimedia.org/wiki/File:Soyuz_TMA-16_approaching_ISS.jpg) — Expedition 20 Crew, NASA — Public domain
+- spectrum: [Light spectrum on a wall caused by sunlight going through prism and then handmade glass.jpg](https://commons.wikimedia.org/wiki/File:Light_spectrum_on_a_wall_caused_by_sunlight_going_through_prism_and_then_handmade_glass.jpg) — Pittigrilli — CC BY-SA 4.0
+- sphere: [Faceted glass ball suspended on a nylon thread.jpg](https://commons.wikimedia.org/wiki/File:Faceted_glass_ball_suspended_on_a_nylon_thread.jpg) — Hartmut Schmidt Heidelberg — CC BY-SA 4.0
+- spotlight: [Spotlight stage August Wilson Center.jpg](https://commons.wikimedia.org/wiki/File:Spotlight_stage_August_Wilson_Center.jpg) — daveynin from United States — CC BY 2.0
+- spouse: [Bride Groom NP.JPG](https://commons.wikimedia.org/wiki/File:Bride_Groom_NP.JPG) — Krish Dulal — CC BY-SA 3.0
+- stage: [Empty stage - Washington Week taping - Hanna Theatre (28375385981).jpg](https://commons.wikimedia.org/wiki/File:Empty_stage_-_Washington_Week_taping_-_Hanna_Theatre_(28375385981).jpg) — Tim Evanson from Cleveland Heights, Ohio, USA — CC BY-SA 2.0
+- stem: [(Unidentified plant stem close-up at Hakone, Japan) - DPLA - 7de3f08958e5b155d10cc4b6f7f6d445.jpg](https://commons.wikimedia.org/wiki/File:(Unidentified_plant_stem_close-up_at_Hakone,_Japan)_-_DPLA_-_7de3f08958e5b155d10cc4b6f7f6d445.jpg) — Carlquist, Sherwin John, 1930-2021 — CC BY 4.0
+- storage: [Warehouse filled with stacked pallets showcasing efficient space usage during daytime operations.jpg](https://commons.wikimedia.org/wiki/File:Warehouse_filled_with_stacked_pallets_showcasing_efficient_space_usage_during_daytime_operations.jpg) — Shixart1985 — CC BY 2.0
+- studio: [Studio View Berlin 2017.jpg](https://commons.wikimedia.org/wiki/File:Studio_View_Berlin_2017.jpg) — Gil Marco Shani — CC BY-SA 4.0
+- summit: [Gokyo Ri summit, Gokyo Lake, Nepal, Himalayas.jpg](https://commons.wikimedia.org/wiki/File:Gokyo_Ri_summit,_Gokyo_Lake,_Nepal,_Himalayas.jpg) — Vyacheslav Argenberg — CC BY 4.0
+- teenager: [A Group Of Indian Teenagers In Bus.JPG](https://commons.wikimedia.org/wiki/File:A_Group_Of_Indian_Teenagers_In_Bus.JPG) — Perumalnadar — CC BY-SA 3.0
+- texture: [Burnt Wood Texture DTXR-WD-GR-4.jpg](https://commons.wikimedia.org/wiki/File:Burnt_Wood_Texture_DTXR-WD-GR-4.jpg) — Shadowmeld Photography — CC BY-SA 4.0
+- tourism: [Sightseeing tour Amsterdam city by tram. The couple of Italian tourists are sitting in the front part of the tram, just behind the driver. free photo Amsterdam - Fons Heijnsbroek, July 2022.tif](https://commons.wikimedia.org/wiki/File:Sightseeing_tour_Amsterdam_city_by_tram._The_couple_of_Italian_tourists_are_sitting_in_the_front_part_of_the_tram,_just_behind_the_driver._free_photo_Amsterdam_-_Fons_Heijnsbroek,_July_2022.tif) — Fons Heijnsbroek — CC0
+- vote: [Glass ballot box - Smithsonian.jpg](https://commons.wikimedia.org/wiki/File:Glass_ballot_box_-_Smithsonian.jpg) — National Museum of American History.
+
+Original uploader was Electiontechnology at en.wikipedia — Public domain
+- weapon: [Sword - Filippovka 1 - Museum of Archeology and Ethnography, Ufa.jpg](https://commons.wikimedia.org/wiki/File:Sword_-_Filippovka_1_-_Museum_of_Archeology_and_Ethnography,_Ufa.jpg) — Лапоть — CC0
+- commute: [Commuters leaving Alstom X'Trapolis train at Woodstock station.jpg](https://commons.wikimedia.org/wiki/File:Commuters_leaving_Alstom_X%27Trapolis_train_at_Woodstock_station.jpg) — Lefcentreright — CC0
+- erupt: [001 Volcano eruption of Litli-Hrútur in Iceland in 2023 Photo by Giles Laurent.jpg](https://commons.wikimedia.org/wiki/File:001_Volcano_eruption_of_Litli-Hr%C3%BAtur_in_Iceland_in_2023_Photo_by_Giles_Laurent.jpg) — Giles Laurent — CC BY-SA 4.0
+- overtake: [Bike Overtaking a Car along Panseke Road.jpg](https://commons.wikimedia.org/wiki/File:Bike_Overtaking_a_Car_along_Panseke_Road.jpg) — Oluwaseyi Ale — CC BY-SA 4.0
+- pollute: [Smoke Pollution.jpg](https://commons.wikimedia.org/wiki/File:Smoke_Pollution.jpg) — Adina Voicu — CC0
+- protest: [Crowd of protesters with signs at the Stand Against Racism protest in Auckland city, Sunday 24 March 2019.jpg](https://commons.wikimedia.org/wiki/File:Crowd_of_protesters_with_signs_at_the_Stand_Against_Racism_protest_in_Auckland_city,_Sunday_24_March_2019.jpg) — Thomas Le Bas — CC BY-SA 4.0
+- screw: [1960s 1970s Upson Tools Hold E Zee PR 6 Phillips screw holding screwdriver Lok Blok made in USA.jpg](https://commons.wikimedia.org/wiki/File:1960s_1970s_Upson_Tools_Hold_E_Zee_PR_6_Phillips_screw_holding_screwdriver_Lok_Blok_made_in_USA.jpg) — R. Henrik Nilsson — CC BY 4.0
+- seal: [021 Wild smiling harbor seal at Jökulsárlón (Iceland) Photo by Giles Laurent.jpg](https://commons.wikimedia.org/wiki/File:021_Wild_smiling_harbor_seal_at_J%C3%B6kuls%C3%A1rl%C3%B3n_(Iceland)_Photo_by_Giles_Laurent.jpg) — Giles Laurent — CC BY-SA 4.0
+- sharpen: [Pencil sharpening 01.jpg](https://commons.wikimedia.org/wiki/File:Pencil_sharpening_01.jpg) — Kwameghana(Bright Kwame Ayisi) — CC0
+- shatter: [Broken window glass in Esbjerg, 1.jpg](https://commons.wikimedia.org/wiki/File:Broken_window_glass_in_Esbjerg,_1.jpg) — Kent Madsen — CC BY-SA 2.0
+- shear: [Sheep Shearing - Dorset County Show 2025 - 54788781321.jpg](https://commons.wikimedia.org/wiki/File:Sheep_Shearing_-_Dorset_County_Show_2025_-_54788781321.jpg) — Stephen and Helen Jones — CC BY-SA 4.0
+- shell: [Seashell in hand.jpg](https://commons.wikimedia.org/wiki/File:Seashell_in_hand.jpg) — Aditijuneja2023 — CC BY-SA 4.0
+- shield: [Rodela (16168699887).jpg](https://commons.wikimedia.org/wiki/File:Rodela_(16168699887).jpg) — Ángel M. Felicísimo — CC BY-SA 4.0
+- shore: [Sea shore in misty sunlight.jpg](https://commons.wikimedia.org/wiki/File:Sea_shore_in_misty_sunlight.jpg) — Sudzie — CC BY-SA 4.0
+- slate: [Beige wavy slate seamless stone surface texture.jpg](https://commons.wikimedia.org/wiki/File:Beige_wavy_slate_seamless_stone_surface_texture.jpg) — Sisters.seamless — CC0
+- sling: [Unidentified soldier in uniform with arm in sling in front of painted backdrop showing military camp and American flag LCCN2010650628.jpg](https://commons.wikimedia.org/wiki/File:Unidentified_soldier_in_uniform_with_arm_in_sling_in_front_of_painted_backdrop_showing_military_camp_and_American_flag_LCCN2010650628.jpg) — Liljenquist Family Collection of Civil War Photographs — Public domain
+- slope: [Hillside grass field - geograph.org.uk - 6970248.jpg](https://commons.wikimedia.org/wiki/File:Hillside_grass_field_-_geograph.org.uk_-_6970248.jpg) — M J Roscoe — CC BY-SA 2.0
+- slug: [Slug on a leaf.jpg](https://commons.wikimedia.org/wiki/File:Slug_on_a_leaf.jpg) — Humoyun Mehridinov — CC BY-SA 4.0
+- snorkel: [Underwater portrait of a female snorkeler.jpg](https://commons.wikimedia.org/wiki/File:Underwater_portrait_of_a_female_snorkeler.jpg) — Stanislav Stelmakhovich — CC0
+- boiling: [Boiling water.jpg](https://commons.wikimedia.org/wiki/File:Boiling_water.jpg) — GRAN — CC BY 3.0
+- pregnant: [A pregnant woman (3891094937).jpg](https://commons.wikimedia.org/wiki/File:A_pregnant_woman_(3891094937).jpg) — Haleyface — CC BY 2.0
+- rural: [012 Hay bales during harvest in Meuse Department, France - Creative Commons free stock photo with attribution.jpg](https://commons.wikimedia.org/wiki/File:012_Hay_bales_during_harvest_in_Meuse_Department,_France_-_Creative_Commons_free_stock_photo_with_attribution.jpg) — Marek Ślusarczyk (Tupungato) Photo portfolio — CC BY 3.0
