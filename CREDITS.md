@@ -2924,3 +2924,250 @@ Derivative work:G.Kiruthikan — CC BY-SA 3.0
 - silken: [Rajshahi silk fabric, Sopura Silk Mills Ltd (01).jpg](https://commons.wikimedia.org/wiki/File:Rajshahi_silk_fabric,_Sopura_Silk_Mills_Ltd_(01).jpg) — Moheen Reeyad — CC BY-SA 4.0
 - slippery: [Korean Sign - Slippery road 1.jpg](https://commons.wikimedia.org/wiki/File:Korean_Sign_-_Slippery_road_1.jpg) — P.Ctnt — Public domain
 - slithering: [Slithering Snake.jpg](https://commons.wikimedia.org/wiki/File:Slithering_Snake.jpg) — Dugald Stewart Walker (1883-1937) — Public domain
+
+## 拡張バッチ7（1級追加分、Wikimedia Commons、URL表示）
+
+### 1級（追加分）
+- gerrymandering: [North Carolina redistricting example using Dave's Redistricting.png](https://commons.wikimedia.org/wiki/File:North_Carolina_redistricting_example_using_Dave's_Redistricting.png) — Dave Bradlee — CC BY-SA 4.0
+- judiciary: [Columns of the Supreme Court Building (51844437263).jpg](https://commons.wikimedia.org/wiki/File:Columns_of_the_Supreme_Court_Building_(51844437263).jpg) — USCapitol from Washington, D.C., United States of America — Public domain
+- parish: [Parish church, Carstairs Village - geograph.org.uk - 2649167.jpg](https://commons.wikimedia.org/wiki/File:Parish_church,_Carstairs_Village_-_geograph.org.uk_-_2649167.jpg) — John Lord — CC BY-SA 2.0
+- emirate: [Dubai Skyline 2016.jpg](https://commons.wikimedia.org/wiki/File:Dubai_Skyline_2016.jpg) — Tonenight — CC BY-SA 4.0
+- principality: [Monaco Panorama 2015.jpg](https://commons.wikimedia.org/wiki/File:Monaco_Panorama_2015.jpg) — Villy Fink Isaksen — CC BY-SA 4.0
+- contraband: [CBP at Port of Norfolk Seizes Chop Shop Contraband Destined for Jordan (29319981464).jpg](https://commons.wikimedia.org/wiki/File:CBP_at_Port_of_Norfolk_Seizes_Chop_Shop_Contraband_Destined_for_Jordan_(29319981464).jpg) — U.S. Customs and Border Protection — Public domain
+- incarceration: [Prison cell interior Ulucanlar Prison Museum Ankara 2025.jpg](https://commons.wikimedia.org/wiki/File:Prison_cell_interior_Ulucanlar_Prison_Museum_Ankara_2025.jpg) — Furkan Akkurt — CC BY-SA 4.0
+- barrister: [Legal wigs today.jpg](https://commons.wikimedia.org/wiki/File:Legal_wigs_today.jpg) — Oxfordian Kissuth — CC BY-SA 3.0
+- courtroom: [Beverley Guildhall Courtroom.jpg](https://commons.wikimedia.org/wiki/File:Beverley_Guildhall_Courtroom.jpg) — Michael D Beckwith — CC0
+- poaching: [Elephant with injured trunk, victim of poachers, in Murchison Falls National Park.jpg](https://commons.wikimedia.org/wiki/File:Elephant_with_injured_trunk,_victim_of_poachers,_in_Murchison_Falls_National_Park.jpg) — Daryona — CC BY-SA 3.0
+- hemoglobin: [Structures of Hemoglobin forms.png](https://commons.wikimedia.org/wiki/File:Structures_of_Hemoglobin_forms.png) — Gladissk — CC BY-SA 3.0
+- cerebellum: [Cerebellum - DK ATLAS.png](https://commons.wikimedia.org/wiki/File:Cerebellum_-_DK_ATLAS.png) — RAZVAN V. MARINESCU — CC BY 4.0
+- atrium: [Right atrium.png](https://commons.wikimedia.org/wiki/File:Right_atrium.png) — xranatomy.com — CC BY-SA 4.0
+- aorta: [Aorta scheme noTags.svg](https://commons.wikimedia.org/wiki/File:Aorta_scheme_noTags.svg) — Edoarado — CC BY-SA 3.0
+- capillary: [Nailfold Capillaries.png](https://commons.wikimedia.org/wiki/File:Nailfold_Capillaries.png) — Dmitry Stavtsev, Nikita Margaryants, Mikhail Volkov — CC BY 4.0
+- alveolus: [Pulmonary Alveolus (NIH BioArt 567).svg](https://commons.wikimedia.org/wiki/File:Pulmonary_Alveolus_(NIH_BioArt_567).svg) — BioArt — CC BY 4.0
+- bronchus: [Bronchial anatomy.jpg](https://commons.wikimedia.org/wiki/File:Bronchial_anatomy.jpg) — Patrick J. Lynch, medical illustrator — CC BY 2.5
+- trachea: [Trachea svg hariadhi.svg](https://commons.wikimedia.org/wiki/File:Trachea_svg_hariadhi.svg) — Hariadhi — CC BY-SA 4.0
+- mitochondria: [Mitochondrion structure.svg](https://commons.wikimedia.org/wiki/File:Mitochondrion_structure.svg) — Kelvinsong; modified by Sowlos — CC BY-SA 3.0
+- ribosome: [Ribosome shape.png](https://commons.wikimedia.org/wiki/File:Ribosome_shape.png) — Vossman — CC BY-SA 3.0
+- chloroplast: [Chloroplast (standalone version)-en.svg](https://commons.wikimedia.org/wiki/File:Chloroplast_(standalone_version)-en.svg) — Kelvinsong — CC0
+- spectrophotometer: [DU640 spectrophotometer.jpg](https://commons.wikimedia.org/wiki/File:DU640_spectrophotometer.jpg) — TimVickers — Public domain
+- chromatograph: [Gas Chromatograph Autosampler.jpg](https://commons.wikimedia.org/wiki/File:Gas_Chromatograph_Autosampler.jpg) — Hey Paul from Sacramento, CA, USA — CC BY 2.0
+- centrifuge: [Centrifuge in Laboratory 1.jpg](https://commons.wikimedia.org/wiki/File:Centrifuge_in_Laboratory_1.jpg) — Ivangiesen — CC0
+- incubator: [Mcmaster NICU infant 6978.jpg](https://commons.wikimedia.org/wiki/File:Mcmaster_NICU_infant_6978.jpg) — Peter K Burian — CC BY-SA 4.0
+- autoclave: [Dry sterilizer, Autoclave.JPG](https://commons.wikimedia.org/wiki/File:Dry_sterilizer,_Autoclave.JPG) — Делфина — CC BY-SA 4.0
+- exoskeleton: [Hybrid Assistive Limb, CYBERDYNE.jpg](https://commons.wikimedia.org/wiki/File:Hybrid_Assistive_Limb,_CYBERDYNE.jpg) — Yuichiro C. Katsumoto from Shonan, Japan — CC BY 2.0
+- endoscope: [Endoscope Storage Hanger.jpg](https://commons.wikimedia.org/wiki/File:Endoscope_Storage_Hanger.jpg) — Galenus Medical — CC BY-SA 4.0
+- stethoscope: [2023 Stetoskop.jpg](https://commons.wikimedia.org/wiki/File:2023_Stetoskop.jpg) — Jacek Halicki — CC BY-SA 4.0
+- sphygmomanometer: [Blood pressure measure with Sphygmomanometer.jpg](https://commons.wikimedia.org/wiki/File:Blood_pressure_measure_with_Sphygmomanometer.jpg) — YVSREDDY — CC BY-SA 3.0
+- tomography: [CT Abdomen Scan.jpg](https://commons.wikimedia.org/wiki/File:CT_Abdomen_Scan.jpg) — Goleisureintl — CC BY 4.0
+- radiography: [202212 Chest X-ray Female.svg](https://commons.wikimedia.org/wiki/File:202212_Chest_X-ray_Female.svg) — DataBase Center for Life Science (DBCLS) — CC BY 4.0
+- mammography: [Low intensity mass on mammography MLO view.jpg](https://commons.wikimedia.org/wiki/File:Low_intensity_mass_on_mammography_MLO_view.jpg) — Cerevisae — CC BY-SA 4.0
+- colonoscopy: [Diagram showing a colonoscopy CRUK 060.svg](https://commons.wikimedia.org/wiki/File:Diagram_showing_a_colonoscopy_CRUK_060.svg) — Cancer Research UK — CC BY-SA 4.0
+- stent: [Cobalt Chromium Coronary Stent.png](https://commons.wikimedia.org/wiki/File:Cobalt_Chromium_Coronary_Stent.png) — ETTon — CC BY-SA 4.0
+- pacemaker: [CPI Bipolar Pulse Generator 04.jpg](https://commons.wikimedia.org/wiki/File:CPI_Bipolar_Pulse_Generator_04.jpg) — Brian Adducci — CC BY-SA 4.0
+- defibrillator: [AED - Automated external defibrillator in compartment with sign above.jpg](https://commons.wikimedia.org/wiki/File:AED_-_Automated_external_defibrillator_in_compartment_with_sign_above.jpg) — Infrogmation — CC BY-SA 4.0
+- ventilator: [Medical ventilator 001.jpg](https://commons.wikimedia.org/wiki/File:Medical_ventilator_001.jpg) — أمين — CC BY-SA 4.0
+- prosthesis: [Prosthetic foot.jpg](https://commons.wikimedia.org/wiki/File:Prosthetic_foot.jpg) — Axiles Bionics — CC BY-SA 2.0
+- suture: [Sutured wound.jpg](https://commons.wikimedia.org/wiki/File:Sutured_wound.jpg) — Drummyfish — CC0
+- pollination: [Bee pollinating a rose.jpg](https://commons.wikimedia.org/wiki/File:Bee_pollinating_a_rose.jpg) — Debivort — CC BY-SA 3.0
+- metamorphosis: [Acraea zetes caterpillar to pupae to butterfly metamorphosis by Nick Hobgood.jpg](https://commons.wikimedia.org/wiki/File:Acraea_zetes_caterpillar_to_pupae_to_butterfly_metamorphosis_by_Nick_Hobgood.jpg) — Nick Hobgood — CC BY-SA 3.0
+- reforestation: [Agriculture, etc. Government reforestation near Bab el Wad. Labourers planting trees LOC matpc.15613.jpg](https://commons.wikimedia.org/wiki/File:Agriculture,_etc._Government_reforestation_near_Bab_el_Wad._Labourers_planting_trees_LOC_matpc.15613.jpg) — Matson Collection — Public domain
+- aquaculture: [Fish Farm near the village of Garni, Kotayk, Armenia.jpg](https://commons.wikimedia.org/wiki/File:Fish_Farm_near_the_village_of_Garni,_Kotayk,_Armenia.jpg) — Narek Avetisyan /Narek75/ — CC BY-SA 4.0
+- estuary: [Aerial photograph, estuary, Westerhaver.jpg](https://commons.wikimedia.org/wiki/File:Aerial_photograph,_estuary,_Westerhaver.jpg) — acediscovery — CC BY 4.0
+- peatland: [Cloonchambers Bog, Co. Roscommon 2.jpg](https://commons.wikimedia.org/wiki/File:Cloonchambers_Bog,_Co._Roscommon_2.jpg) — CaitNi — CC BY-SA 4.0
+- taiga: [Ergaki, Siberian pine forest, Spruce forest, Taiga wilderness, Sayan Mountains, Siberia, Russia.jpg](https://commons.wikimedia.org/wiki/File:Ergaki,_Siberian_pine_forest,_Spruce_forest,_Taiga_wilderness,_Sayan_Mountains,_Siberia,_Russia.jpg) — Vyacheslav Argenberg — CC BY 4.0
+- icecap: [Sukkertoppen ice cap in southwest Greenland (2013).jpg](https://commons.wikimedia.org/wiki/File:Sukkertoppen_ice_cap_in_southwest_Greenland_(2013).jpg) — NASA — CC0
+- permafrost: [Permafrost in Herschel Island 002.jpg](https://commons.wikimedia.org/wiki/File:Permafrost_in_Herschel_Island_002.jpg) — Boris Radosavljevic — CC BY 2.0
+- landslide: [Landslide Seba Beach.jpg](https://commons.wikimedia.org/wiki/File:Landslide_Seba_Beach.jpg) — Quinn Desilets — CC BY-SA 4.0
+- wildfire: [Lick Fire on the Umatilla National Forest burning at night.jpg](https://commons.wikimedia.org/wiki/File:Lick_Fire_on_the_Umatilla_National_Forest_burning_at_night.jpg) — U.S. Forest Service- Pacific Northwest Region — Public domain
+- abbey: [Bolton Abbey - Priory Church of St Mary & St Cuthbert, Bolton Abbey - 20230901123627.jpg](https://commons.wikimedia.org/wiki/File:Bolton_Abbey_-_Priory_Church_of_St_Mary_&_St_Cuthbert,_Bolton_Abbey_-_20230901123627.jpg) — Dbrooke1829 — CC BY-SA 4.0
+- acolyte: [Altar Boy in Holy Day Vestments (1965) (PICT1209).jpg](https://commons.wikimedia.org/wiki/File:Altar_Boy_in_Holy_Day_Vestments_(1965)_(PICT1209).jpg) — NMGiovannucci — CC BY-SA 4.0
+- alchemy: [James Nasmyth (1808-1890) - An Alchemist in His Laboratory - 47333i - Wellcome Collection.jpg](https://commons.wikimedia.org/wiki/File:James_Nasmyth_(1808-1890)_-_An_Alchemist_in_His_Laboratory_-_47333i_-_Wellcome_Collection.jpg) — James Nasmyth — Public domain
+- alluvium: [Alluvium (GeoDIL number - 408).jpg](https://commons.wikimedia.org/wiki/File:Alluvium_%28GeoDIL_number_-_408%29.jpg) — Shannon Heinle — CC0
+- altar: [Altar-mor da Basílica de Nossa Senhora do Carmo, Recife, Pernambuco, Brasil.jpg](https://commons.wikimedia.org/wiki/File:Altar-mor_da_Bas%C3%ADlica_de_Nossa_Senhora_do_Carmo%2C_Recife%2C_Pernambuco%2C_Brasil.jpg) — Wilfredor — CC BY-SA 4.0
+- amphora: [Amphorae stacking.jpg](https://commons.wikimedia.org/wiki/File:Amphorae_stacking.jpg) — Ad Meskens — CC BY-SA 3.0
+- amulet: [Amulet. Sudanese, 19th century.jpg](https://commons.wikimedia.org/wiki/File:Amulet._Sudanese%2C_19th_century.jpg) — wellcomecollection — CC BY-SA 4.0
+- arabesque: [Ferhat-Pasha mosque arabesque (Banja Luka, Republika Srpska).jpg](https://commons.wikimedia.org/wiki/File:Ferhat-Pasha_mosque_arabesque_%28Banja_Luka%2C_Republika_Srpska%29.jpg) — Petar Milošević — CC BY-SA 4.0
+- archipelago: [1000 Islands Tower view July 2015 panorama 5.jpg](https://commons.wikimedia.org/wiki/File:1000_Islands_Tower_view_July_2015_panorama_5.jpg) — King of Hearts — CC BY-SA 4.0
+- ashlar: [Auchinleck Castle, ashlar masonry.jpg](https://commons.wikimedia.org/wiki/File:Auchinleck_Castle%2C_ashlar_masonry.jpg) — Rosser1954 — CC BY-SA 4.0
+- baluster: [Craftsman making a baluster 1.jpg](https://commons.wikimedia.org/wiki/File:Craftsman_making_a_baluster_1.jpg) — Kambai Akau — CC BY-SA 4.0
+- balustrade: [Baluster and Balustrade (PSF).jpg](https://commons.wikimedia.org/wiki/File:Baluster_and_Balustrade_%28PSF%29.jpg) — Pearson Scott Foresman — Public domain
+- basalt: [Slanska hora CZ basalt columns 122.jpg](https://commons.wikimedia.org/wiki/File:Slanska_hora_CZ_basalt_columns_122.jpg) — User:Miaow Miaow — Public domain
+- bible: [Gideon's Bible beside a Book of Mormon in a JW Marriott Hotel.jpg](https://commons.wikimedia.org/wiki/File:Gideon%27s_Bible_beside_a_Book_of_Mormon_in_a_JW_Marriott_Hotel.jpg) — Th78blue — CC BY-SA 4.0
+- bisque: [Lobster Bisque (8246875626).jpg](https://commons.wikimedia.org/wiki/File:Lobster_Bisque_%288246875626%29.jpg) — Prayitno / Thank you for (12 millions +) view from Los Angeles, USA — CC BY 2.0
+- bodhisattva: [Pensive Bodhisattva 02.jpg](https://commons.wikimedia.org/wiki/File:Pensive_Bodhisattva_02.jpg) — 국립중앙박물관(National Museum of Korea) — KOGL Type 1
+- bouillabaisse: [20250903 Bouillabaisse in Khimki.jpg](https://commons.wikimedia.org/wiki/File:20250903_Bouillabaisse_in_Khimki.jpg) — missing name — CC BY 4.0
+- butte: [Camel Butte, Monument Valley.jpg](https://commons.wikimedia.org/wiki/File:Camel_Butte%2C_Monument_Valley.jpg) — Supercarwaar — CC BY-SA 4.0
+- cairn: [Cairn at Garvera, Surselva, Graubuenden, Switzerland.jpg](https://commons.wikimedia.org/wiki/File:Cairn_at_Garvera%2C_Surselva%2C_Graubuenden%2C_Switzerland.jpg) — Tinelot Wittermans — CC BY-SA 3.0
+- canopy: [Beech Forest (AU), Great Otway National Park -- 2019 -- 1294.jpg](https://commons.wikimedia.org/wiki/File:Beech_Forest_%28AU%29%2C_Great_Otway_National_Park_--_2019_--_1294.jpg) — Dietmar Rabich — CC BY-SA 4.0
+- canyon: [Bryce Canyon Hoodoos.jpg](https://commons.wikimedia.org/wiki/File:Bryce_Canyon_Hoodoos.jpg) — “Jon Zander(digon3)” — CC BY-SA 3.0
+- cassoulet: [Bowl of cassoulet.JPG](https://commons.wikimedia.org/wiki/File:Bowl_of_cassoulet.JPG) — BrokenSphere — CC BY-SA 3.0
+- cavern: [Carlsbad Caverns National Park CAVE2770.jpg](https://commons.wikimedia.org/wiki/File:Carlsbad_Caverns_National_Park_CAVE2770.jpg) — National Park Service Digital Image Archives — Public domain
+- cenotaph: [Cenotaph, Farnworth.jpg](https://commons.wikimedia.org/wiki/File:Cenotaph%2C_Farnworth.jpg) — Bill Boaden — CC BY-SA 2.0
+- cenote: [Cenote & Sky.jpg](https://commons.wikimedia.org/wiki/File:Cenote_%26_Sky.jpg) — edenpictures — CC BY 2.0
+- cirque: [Lowercurtis.jpg](https://commons.wikimedia.org/wiki/File:Lowercurtis.jpg) — No machine-readable author provided. Peltoms~commonswiki assumed (based on copyright claims). — Public domain
+- citadel: [Citadel of Raymond de Saint-Gilles 2009.jpg](https://commons.wikimedia.org/wiki/File:Citadel_of_Raymond_de_Saint-Gilles_2009.jpg) — Peripitus — CC BY-SA 3.0
+- confluence: [Confluence Chandra Bhaga Lahaul Oct22 A7C 03346.jpg](https://commons.wikimedia.org/wiki/File:Confluence_Chandra_Bhaga_Lahaul_Oct22_A7C_03346.jpg) — This Photo was taken by Timothy A. Gonsalves.  Feel free to use my photos, but please mention me as the author.  I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk p — CC BY-SA 4.0
+- corona: [Eclipse-totale-2026-couronne-Luc-Viatour.jpg](https://commons.wikimedia.org/wiki/File:Eclipse-totale-2026-couronne-Luc-Viatour.jpg) — Lviatour — CC BY-SA 4.0
+- cranium: [Anthroplogy - human skull of a boy.JPG](https://commons.wikimedia.org/wiki/File:Anthroplogy_-_human_skull_of_a_boy.JPG) — High Contrast — CC BY 3.0 de
+- crevasse: [Crevasse at Breiðamerkurjökull, Iceland, 20240719 1410 2588.jpg](https://commons.wikimedia.org/wiki/File:Crevasse_at_Brei%C3%B0amerkurj%C3%B6kull%2C_Iceland%2C_20240719_1410_2588.jpg) — Jakub Hałun — CC BY 4.0
+- delta: [Building Up the Yellow River Delta.jpeg](https://commons.wikimedia.org/wiki/File:Building_Up_the_Yellow_River_Delta.jpeg) — NASA Earth Observatory images by Lauren Dauphin, using Landsat data from the U.S. Geological Survey. Story by Adam Voiland. — Public domain
+- dervish: [Whirling dervish feeling the vibe.jpg](https://commons.wikimedia.org/wiki/File:Whirling_dervish_feeling_the_vibe.jpg) — Valeria Kikvidze — CC BY-SA 4.0
+- dolmen: [Dolmen.001 - Castelo de San Antón.jpg](https://commons.wikimedia.org/wiki/File:Dolmen.001_-_Castelo_de_San_Ant%C3%B3n.jpg) — Fernando Losada Rodríguez — CC BY-SA 4.0
+- escarpment: [Escarpment track looking south towards Pukerua Bay.jpg](https://commons.wikimedia.org/wiki/File:Escarpment_track_looking_south_towards_Pukerua_Bay.jpg) — Marshelec — CC BY-SA 4.0
+- feldspar: [Axinite - Quartz - Feldspar - Epidote 02.jpg](https://commons.wikimedia.org/wiki/File:Axinite_-_Quartz_-_Feldspar_-_Epidote_02.jpg) — Kritzolina — CC BY-SA 4.0
+- finial: [Bottom of roof finial 64.jpg](https://commons.wikimedia.org/wiki/File:Bottom_of_roof_finial_64.jpg) — A.-K. D. — CC BY-SA 4.0
+- fjord: [2015-09-18 MS OCEAN ENDEAVOUR - IMO 7625811, at Qeqertarsuaq Island (Karrat Fjord), Greenland.jpg](https://commons.wikimedia.org/wiki/File:2015-09-18_MS_OCEAN_ENDEAVOUR_-_IMO_7625811%2C_at_Qeqertarsuaq_Island_%28Karrat_Fjord%29%2C_Greenland.jpg) — Gordon Leggett — CC BY-SA 4.0
+- floodplain: [Floodplain, small-scale.jpg](https://commons.wikimedia.org/wiki/File:Floodplain%2C_small-scale.jpg) — Jo-Jo Eumerus — CC BY-SA 4.0
+- gneiss: [Gneiss.jpg](https://commons.wikimedia.org/wiki/File:Gneiss.jpg) — No machine-readable author provided. Siim assumed (based on copyright claims). — CC BY-SA 3.0
+- gorge: [Landscape Hells Canyon Gorge and Snake River.jpg](https://commons.wikimedia.org/wiki/File:Landscape_Hells_Canyon_Gorge_and_Snake_River.jpg) — Mandy — CC BY 2.0
+- granite: [198 Granite rock in La Digue Island at sunset Photo by Giles Laurent.jpg](https://commons.wikimedia.org/wiki/File:198_Granite_rock_in_La_Digue_Island_at_sunset_Photo_by_Giles_Laurent.jpg) — Giles Laurent — CC BY-SA 4.0
+- grotto: [Green Grotto Caves - Jamaica.jpg](https://commons.wikimedia.org/wiki/File:Green_Grotto_Caves_-_Jamaica.jpg) — Brandie — CC BY-SA 2.0
+- gulch: [Ed Maier's Secret - near Buckskin Gulch, Utah.jpg](https://commons.wikimedia.org/wiki/File:Ed_Maier's_Secret_-_near_Buckskin_Gulch,_Utah.jpg) — John Fowler — CC BY 2.0
+- halo: [Angel with halo - Giotto - Scrovegni - -14- - The Angel Gabriel Sent by God (cropped).jpg](https://commons.wikimedia.org/wiki/File:Angel_with_halo_-_Giotto_-_Scrovegni_-_-14-_-_The_Angel_Gabriel_Sent_by_God_(cropped).jpg) — Giotto — Public domain
+- heath: [Stoborough Heath, heathland - geograph.org.uk - 1473907.jpg](https://commons.wikimedia.org/wiki/File:Stoborough_Heath,_heathland_-_geograph.org.uk_-_1473907.jpg) — Mike Faherty — CC BY-SA 2.0
+- humerus: [Humerus - anterior.jpg](https://commons.wikimedia.org/wiki/File:Humerus_-_anterior.jpg) — MAKY.OREL — CC0
+- impasto: [Impasto detail.jpg](https://commons.wikimedia.org/wiki/File:Impasto_detail.jpg) — TheGoodEndedHappily — CC BY-SA 4.0
+- incense: [Burning incense sticks in Vietnam.jpg](https://commons.wikimedia.org/wiki/File:Burning_incense_sticks_in_Vietnam.jpg) — Christopher Michel — CC BY 2.0
+- inscription: [Stone Inscription in Nagari, Bhopal State Museum.jpg](https://commons.wikimedia.org/wiki/File:Stone_Inscription_in_Nagari,_Bhopal_State_Museum.jpg) — SpeakingArch — CC BY-SA 4.0
+- intaglio: [Intaglio-printmaking.JPG](https://commons.wikimedia.org/wiki/File:Intaglio-printmaking.JPG) — Halvard : from Norway. — Public domain
+- isthmus: [Satellite image of Panama in March 2003.jpg](https://commons.wikimedia.org/wiki/File:Satellite_image_of_Panama_in_March_2003.jpg) — Jeff Schmaltz, MODIS Rapid Response Team, NASA/GSFC — Public domain
+- lagoon: [Inside the lagoon of Ant Atoll, southwest of Pohnpei (Federated States of Micronesia).jpg](https://commons.wikimedia.org/wiki/File:Inside_the_lagoon_of_Ant_Atoll,_southwest_of_Pohnpei_(Federated_States_of_Micronesia).jpg) — Patrick Nunn — CC BY-SA 4.0
+- levee: [Renforcement levée Loire-Guilly.jpg](https://commons.wikimedia.org/wiki/File:Renforcement_levée_Loire-Guilly.jpg) — Roland45 — CC BY-SA 4.0
+- lithography: [Henry Monnier Games Lithography 1830.jpg](https://commons.wikimedia.org/wiki/File:Henry_Monnier_Games_Lithography_1830.jpg) — Henry Monnier — Public domain
+- loess: [LoessVicksburg.jpg](https://commons.wikimedia.org/wiki/File:LoessVicksburg.jpg) — Wilson44691 — Public domain
+- maelstrom: [Naruto Whirlpools taken 4-21-2008.jpg](https://commons.wikimedia.org/wiki/File:Naruto_Whirlpools_taken_4-21-2008.jpg) — Hellbuny — CC BY-SA 3.0
+- mandible: [Human jawbone left.jpg](https://commons.wikimedia.org/wiki/File:Human_jawbone_left.jpg) — Gregory F. Maxwell &lt;gmaxwell@gmail.com&gt; PGP:0xB0413BFA — GFDL 1.2
+- marble: [Marble Stone Texture.jpg](https://commons.wikimedia.org/wiki/File:Marble_Stone_Texture.jpg) — JustMeSupport — CC BY-SA 4.0
+- marquetry: [Coffre à marqueterie-Musée de l'Œuvre Notre-Dame.jpg](https://commons.wikimedia.org/wiki/File:Coffre_à_marqueterie-Musée_de_l'Œuvre_Notre-Dame.jpg) — Ji-Elle — CC BY-SA 4.0
+- marshland: [Heathfield Marshland - geograph.org.uk - 123489.jpg](https://commons.wikimedia.org/wiki/File:Heathfield_Marshland_-_geograph.org.uk_-_123489.jpg) — Chris Upson — CC BY-SA 2.0
+- maxilla: [Maxilla image.png](https://commons.wikimedia.org/wiki/File:Maxilla_image.png) — Images are generated by Life Science Databases(LSDB). — CC BY-SA 2.1 jp
+- megalith: [Stonehenge back wide.jpg](https://commons.wikimedia.org/wiki/File:Stonehenge_back_wide.jpg) — Frédéric Vincent — CC BY-SA 2.0
+- menhir: [Menhir de Kergo 7509.JPG](https://commons.wikimedia.org/wiki/File:Menhir_de_Kergo_7509.JPG) — XIIIfromTOKYO — CC BY-SA 3.0
+- meridian: [Meridian globe 200.jpg](https://commons.wikimedia.org/wiki/File:Meridian_globe_200.jpg) — Lakewood66 at en.wikipedia — Public domain
+- mesa: [Blue Mesa Painted Desert.jpg](https://commons.wikimedia.org/wiki/File:Blue_Mesa_Painted_Desert.jpg) — Adbar — CC BY-SA 3.0
+- mezzotint: [Mezzotint Wallerant Vaillant.jpg](https://commons.wikimedia.org/wiki/File:Mezzotint_Wallerant_Vaillant.jpg) — Wallerant Vaillant — Public domain
+- mica: [Mica - Silicate Mineral.jpg](https://commons.wikimedia.org/wiki/File:Mica_-_Silicate_Mineral.jpg) — B. Domangue — CC BY-SA 4.0
+- minaret: [Great Mosque of Kairouan minaret view 01.jpg](https://commons.wikimedia.org/wiki/File:Great_Mosque_of_Kairouan_minaret_view_01.jpg) — IssamBarhoumi — CC BY-SA 4.0
+- mirepoix: [Mirepoix on cutting board.jpg](https://commons.wikimedia.org/wiki/File:Mirepoix_on_cutting_board.jpg) — Pigup — CC BY-SA 3.0
+- monastery: [Surb Astvatsatsin Church, Noravank Monastery, Armenia.jpg](https://commons.wikimedia.org/wiki/File:Surb_Astvatsatsin_Church,_Noravank_Monastery,_Armenia.jpg) — Petar Milošević — CC BY-SA 4.0
+- monolith: [Balancing granite monolith, Ergaki, Sayan Mountains, Russia.jpg](https://commons.wikimedia.org/wiki/File:Balancing_granite_monolith,_Ergaki,_Sayan_Mountains,_Russia.jpg) — Vyacheslav Argenberg — CC BY 4.0
+- moraine: [Glacier du Miage moraines.jpg](https://commons.wikimedia.org/wiki/File:Glacier_du_Miage_moraines.jpg) — Yves Lemarcheix — Public domain
+- mosaic: [Apse mosaic - Basilica of San Vitale (Ravenna).jpg](https://commons.wikimedia.org/wiki/File:Apse_mosaic_-_Basilica_of_San_Vitale_(Ravenna).jpg) — Petar Milošević — CC BY-SA 4.0
+- nave: [Christ Church Cathedral Nave, Dublin, Ireland - Diliff.jpg](https://commons.wikimedia.org/wiki/File:Christ_Church_Cathedral_Nave,_Dublin,_Ireland_-_Diliff.jpg) — Diliff — CC BY-SA 3.0
+- nebula: [Orion Nebula - Hubble 2006 mosaic 18000.jpg](https://commons.wikimedia.org/wiki/File:Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg) — NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Team — Public domain
+- neuron: [Healthy neuron (NIH BioArt 197).png](https://commons.wikimedia.org/wiki/File:Healthy_neuron_(NIH_BioArt_197).png) — Courtesy of NIAID
+
+Rose Perry-Gottschalk — Public domain
+- obelisk: [Obelisk - geograph.org.uk - 4728084.jpg](https://commons.wikimedia.org/wiki/File:Obelisk_-_geograph.org.uk_-_4728084.jpg) — Alex McGregor — CC BY-SA 2.0
+- obsidian: [Obsidian stone.jpg](https://commons.wikimedia.org/wiki/File:Obsidian_stone.jpg) — Ziongarage — CC0
+- ossuary: [Ossuary in Sedlec.JPG](https://commons.wikimedia.org/wiki/File:Ossuary_in_Sedlec.JPG) — Jan Kameníček — CC BY-SA 3.0
+- outback: [Australian Outback (3333214660).jpg](https://commons.wikimedia.org/wiki/File:Australian_Outback_(3333214660).jpg) — Andy Mitchell from Glasgow, UK — CC BY-SA 2.0
+- pagoda: [Hue Vietnam Thien-Mu-Temple-and-Pagoda-03.jpg](https://commons.wikimedia.org/wiki/File:Hue_Vietnam_Thien-Mu-Temple-and-Pagoda-03.jpg) — CEphoto, Uwe Aranas — CC BY-SA 3.0
+- palimpsest: [Galens' Palimpsest 1.jpg](https://commons.wikimedia.org/wiki/File:Galens'_Palimpsest_1.jpg) — "The Galen Syriac Palimpsest", OPenn,  Hosted by the University of Pennsylvania Libraries. Lincense at http://digitalgalen.net/0_ReadMe.html — CC BY-SA 3.0
+- pamphlet: [Belgian revolution - Political tract - 1830.jpg](https://commons.wikimedia.org/wiki/File:Belgian_revolution_-_Political_tract_-_1830.jpg) — Félix de Mérode / Sylvain Van de Weyer / Alexandre Gendebien — Public domain
+- pantheon: [Rome (IT), Pantheon -- 2013 -- 3572.jpg](https://commons.wikimedia.org/wiki/File:Rome_(IT),_Pantheon_--_2013_--_3572.jpg) — Dietmar Rabich — CC BY-SA 4.0
+- patella: [Patella - facies anterior et posterior patellae.jpg](https://commons.wikimedia.org/wiki/File:Patella_-_facies_anterior_et_posterior_patellae.jpg) — MAKY.OREL — CC0
+- patina: [Patina an Kupfer.jpg](https://commons.wikimedia.org/wiki/File:Patina_an_Kupfer.jpg) — Adrian Michael — CC BY-SA 3.0
+- pediment: [Pediment Cathedral, Almeria, Spain.jpg](https://commons.wikimedia.org/wiki/File:Pediment_Cathedral,_Almeria,_Spain.jpg) — Jebulon — CC0
+- pelvis: [Rheumatology - Pelvis- Coxal bone 1 -- Smart-Servier.png](https://commons.wikimedia.org/wiki/File:Rheumatology_-_Pelvis-_Coxal_bone_1_--_Smart-Servier.png) — Laboratoires Servier — CC BY-SA 3.0
+- penumbra: [Diagram of umbra, penumbra & antumbra.png](https://commons.wikimedia.org/wiki/File:Diagram_of_umbra,_penumbra_&_antumbra.png) — Qarnos — Public domain
+- phalanx: [Phalanx formation ancient Greek.png](https://commons.wikimedia.org/wiki/File:Phalanx_formation_ancient_Greek.png) — Bratislav Tabaš — CC BY-SA 3.0
+- pinnacle: [Pinnacle Mountain of Banff National Park, Canada.jpg](https://commons.wikimedia.org/wiki/File:Pinnacle_Mountain_of_Banff_National_Park,_Canada.jpg) — 潘世博 — CC BY-SA 2.0
+- plateau: [Landscape of the Tibetan Plateau.jpg](https://commons.wikimedia.org/wiki/File:Landscape_of_the_Tibetan_Plateau.jpg) — Jan Kranendonk (https://www.jankranendonk.nl) — CC BY-SA 4.0
+- pointillism: [Seurat-La Parade detail.jpg](https://commons.wikimedia.org/wiki/File:Seurat-La_Parade_detail.jpg) — Georges Seurat — Public domain
+- prairie: [Three Creeks - Prairie in Ohio 1.jpg](https://commons.wikimedia.org/wiki/File:Three_Creeks_-_Prairie_in_Ohio_1.jpg) — Sixflashphoto — CC BY-SA 4.0
+- precipice: [Precipice, Gad Cliff - geograph.org.uk - 645140.jpg](https://commons.wikimedia.org/wiki/File:Precipice,_Gad_Cliff_-_geograph.org.uk_-_645140.jpg) — Jim Champion — CC BY-SA 2.0
+- pumice: [A pumice stone.jpg](https://commons.wikimedia.org/wiki/File:A_pumice_stone.jpg) — Ebiojo — CC BY-SA 4.0
+- quartz: [Quartz, Tibet.jpg](https://commons.wikimedia.org/wiki/File:Quartz,_Tibet.jpg) — JJ Harrison (https://www.jjharrison.com.au/) — CC BY-SA 2.5
+- quenelle: [Pike quenelles.jpg](https://commons.wikimedia.org/wiki/File:Pike_quenelles.jpg) — stu_spivack — CC BY-SA 2.0
+- rabbi: [Rabbi Binyamin Minich.png](https://commons.wikimedia.org/wiki/File:Rabbi_Binyamin_Minich.png) — Nathan.Зaschenberg — CC BY-SA 4.0
+- ratatouille: [Ratatouille.jpg](https://commons.wikimedia.org/wiki/File:Ratatouille.jpg) — Marcus Guimarães — CC BY 2.0
+- ravine: [Ravine of Ksani.jpg](https://commons.wikimedia.org/wiki/File:Ravine_of_Ksani.jpg) — user:jaba1977 — Attribution
+- reef: [Coral Outcrop Flynn Reef.jpg](https://commons.wikimedia.org/wiki/File:Coral_Outcrop_Flynn_Reef.jpg) — Toby Hudson — CC BY-SA 3.0
+- reliquary: [The Reliquary of the Robe of the Virgin Mary.jpg](https://commons.wikimedia.org/wiki/File:The_Reliquary_of_the_Robe_of_the_Virgin_Mary.jpg) — Michael Du Pon — CC BY-SA 4.0
+- retina: [Schematic diagram of the eye and retina.svg](https://commons.wikimedia.org/wiki/File:Schematic_diagram_of_the_eye_and_retina.svg) — Bfazek — CC BY-SA 4.0
+- rosary: [Rosary 2006-01-16.jpg](https://commons.wikimedia.org/wiki/File:Rosary_2006-01-16.jpg) — Daniel Tibi ( Dti ) | daniel-tibi.de — Public domain
+- sacristy: [Frari (Venice) - Sacristy -General view.jpg](https://commons.wikimedia.org/wiki/File:Frari_(Venice)_-_Sacristy_-General_view.jpg) — Didier Descouens — CC BY-SA 4.0
+- sacrum: [Pelvis - os sacrum (posterior).jpg](https://commons.wikimedia.org/wiki/File:Pelvis_-_os_sacrum_(posterior).jpg) — MAKY.OREL — CC0
+- sandstone: [Aztec Sandstone - Red Rock Canyon.jpg](https://commons.wikimedia.org/wiki/File:Aztec_Sandstone_-_Red_Rock_Canyon.jpg) — Óðinn — CC BY-SA 2.5 ca
+- savanna: [Herd of cattle in Namibian savanna.jpg](https://commons.wikimedia.org/wiki/File:Herd_of_cattle_in_Namibian_savanna.jpg) — Tim Brunauer on behalf of Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) — CC BY-SA 4.0
+- scapula: [Scapula - anterior view.jpg](https://commons.wikimedia.org/wiki/File:Scapula_-_anterior_view.jpg) — MAKY.OREL — CC0
+- schist: [Schist (Ordovician; Marlboro West Route 9 roadcut, Vermont, USA) 1.jpg](https://commons.wikimedia.org/wiki/File:Schist_(Ordovician;_Marlboro_West_Route_9_roadcut,_Vermont,_USA)_1.jpg) — James St. John — CC BY 2.0
+- scripture: [Sanamahi Laikan Puya - Classical Meitei language manuscript text - in traditional Meetei Mayek script - 1 of the holy & sacred scriptures of Sanamahi religion of Ancient Kangleipak civilisation state.jpg](https://commons.wikimedia.org/wiki/File:Sanamahi_Laikan_Puya_-_Classical_Meitei_language_manuscript_text_-_in_traditional_Meetei_Mayek_script_-_1_of_the_holy_&_sacred_scriptures_of_Sanamahi_religion_of_Ancient_Kangleipak_civilisation_state.jpg) — Original author : Unknown — Public domain
+- scrubland: [Scrubland - geograph.org.uk - 2791119.jpg](https://commons.wikimedia.org/wiki/File:Scrubland_-_geograph.org.uk_-_2791119.jpg) — Christine Westerback — CC BY-SA 2.0
+- serotonin: [Serotonin-Spartan-HF-based-on-xtal-3D-sf-web.png](https://commons.wikimedia.org/wiki/File:Serotonin-Spartan-HF-based-on-xtal-3D-sf-web.png) — Ben Mills — Public domain
+- shale: [Chattanooga Shale (Upper Devonian; Burkesville West Rt. 90 roadcut, Kentucky, USA) 25 (40541681100).jpg](https://commons.wikimedia.org/wiki/File:Chattanooga_Shale_(Upper_Devonian;_Burkesville_West_Rt._90_roadcut,_Kentucky,_USA)_25_(40541681100).jpg) — James St. John — CC BY 2.0
+- shoal: [Red Fish at Papahānaumokuākea.jpg](https://commons.wikimedia.org/wiki/File:Red_Fish_at_Papahānaumokuākea.jpg) — U.S. Fish & Wildlife Service - Pacific Region's — Public domain
+- siege: [The Siege of Osaka Castle.jpg](https://commons.wikimedia.org/wiki/File:The_Siege_of_Osaka_Castle.jpg) — anonymous — Public domain
+- sinkhole: [Sinkhole in parking lot.jpg](https://commons.wikimedia.org/wiki/File:Sinkhole_in_parking_lot.jpg) — Kayree kh — CC BY 3.0
+- sommelier: [Sommelier with restaurants wine collection.jpg](https://commons.wikimedia.org/wiki/File:Sommelier_with_restaurants_wine_collection.jpg) — Fabio Ingrosso — CC BY 2.0
+- stalactite: [2015 Jaskinia Niedźwiedzia w Kletnie, szata naciekowa 26.jpg](https://commons.wikimedia.org/wiki/File:2015_Jaskinia_Niedźwiedzia_w_Kletnie,_szata_naciekowa_26.jpg) — Jacek Halicki — CC BY-SA 4.0
+- stalagmite: [Stalagmite in Vrelo Cave.jpg](https://commons.wikimedia.org/wiki/File:Stalagmite_in_Vrelo_Cave.jpg) — Ivanna 3 — CC0
+- stele: [Toaist stele stone Tang Dynasty 726 CE China.jpg](https://commons.wikimedia.org/wiki/File:Toaist_stele_stone_Tang_Dynasty_726_CE_China.jpg) — Mary Harrsch — CC BY-SA 4.0
+- steppe: [Steppe, Grassland, Rostov-on-Don, Russia.jpg](https://commons.wikimedia.org/wiki/File:Steppe,_Grassland,_Rostov-on-Don,_Russia.jpg) — Vyacheslav Argenberg — CC BY 4.0
+- stupa: [Stupa 1, Sanchi 02.jpg](https://commons.wikimedia.org/wiki/File:Stupa_1,_Sanchi_02.jpg) — Bernard Gagnon — CC BY-SA 3.0
+- synagogue: [Eldridge Street Synagogue (42773).jpg](https://commons.wikimedia.org/wiki/File:Eldridge_Street_Synagogue_(42773).jpg) — Rhododendrites — CC BY-SA 4.0
+- synapse: [Synapse figure.png](https://commons.wikimedia.org/wiki/File:Synapse_figure.png) — Curtis Neveu — CC BY-SA 4.0
+- talisman: [Amulet. Sudanese, 19th century.jpg](https://commons.wikimedia.org/wiki/File:Amulet._Sudanese,_19th_century.jpg) — wellcomecollection — CC BY-SA 4.0
+- tapenade: [Tapenade, tomme et saucisson.jpg](https://commons.wikimedia.org/wiki/File:Tapenade,_tomme_et_saucisson.jpg) — sailn1 — CC BY 2.5
+- tarn: [Blea Tarn, Lake District, Cumbria (200633b) (9453802222).jpg](https://commons.wikimedia.org/wiki/File:Blea_Tarn,_Lake_District,_Cumbria_(200633b)_(9453802222).jpg) — Robert Linsdell from St. Andrews, Canada — CC BY 2.0
+- tarot: [Tarot cards - 3 card spread.jpg](https://commons.wikimedia.org/wiki/File:Tarot_cards_-_3_card_spread.jpg) — Nosferattus — CC0
+- terrine: [Terrine de saumon au basilic.JPG](https://commons.wikimedia.org/wiki/File:Terrine_de_saumon_au_basilic.JPG) — DocteurCosmos — CC BY-SA 3.0
+- tessellation: [Ambigram tessellation Escher.jpg](https://commons.wikimedia.org/wiki/File:Ambigram_tessellation_Escher.jpg) — Basile Morin — CC BY-SA 4.0
+- thorax: [Beraud, Atlas of surgical and topographical anatomy; thorax Wellcome L0027672.jpg](https://commons.wikimedia.org/wiki/File:Beraud,_Atlas_of_surgical_and_topographical_anatomy;_thorax_Wellcome_L0027672.jpg) — https://wellcomeimages.org/indexplus/obf_images/af/2d/c4176f449f17c5a06d8efa7cdaa7.jpg Gallery: https://wellcomeimages.org/indexplus/image/L0027672.html Wellcome Collection gallery (2018-03-23): https://wellcomecollection.org/works/g9uz7snm CC-BY-4.0 — CC BY 4.0
+- tibia: [Tibia, fibula (anterior).jpg](https://commons.wikimedia.org/wiki/File:Tibia,_fibula_(anterior).jpg) — MAKY.OREL — CC0
+- corrugate: [Corrugated iron roof - geograph.org.uk - 6227174.jpg](https://commons.wikimedia.org/wiki/File:Corrugated_iron_roof_-_geograph.org.uk_-_6227174.jpg) — Jonathan Thacker — CC BY-SA 2.0
+- counterfeit: [Counterfeit Russian 100000 ruble banknote.jpg](https://commons.wikimedia.org/wiki/File:Counterfeit_Russian_100000_ruble_banknote.jpg) — Russian Government — Public domain
+- crystallize: [Making Copper Sulphate Crystals.jpg](https://commons.wikimedia.org/wiki/File:Making_Copper_Sulphate_Crystals.jpg) — Tess Watson from Edinburgh, Scotland, UK — CC BY 2.0
+- defibrillate: [Automated external defibrillator (AED) at the Waconia Historical Society.jpg](https://commons.wikimedia.org/wiki/File:Automated_external_defibrillator_(AED)_at_the_Waconia_Historical_Society.jpg) — Myotus — CC BY-SA 4.0
+- dialyze: [Dialog-dialysis-machine-b-braun.jpg](https://commons.wikimedia.org/wiki/File:Dialog-dialysis-machine-b-braun.jpg) — Jonas@sodratornet.se — CC BY-SA 4.0
+- disembark: [Passengers disembarking from ship - Largs Bay(GN13812).jpg](https://commons.wikimedia.org/wiki/File:Passengers_disembarking_from_ship_-_Largs_Bay(GN13812).jpg) — State Government Photographer — CC0
+- dredge: [Dredging by Cutter Suction Dredger Sweta under progress at MMT Haldia - 2024.jpg](https://commons.wikimedia.org/wiki/File:Dredging_by_Cutter_Suction_Dredger_Sweta_under_progress_at_MMT_Haldia_-_2024.jpg) — Inland Waterways Authority of India (IWAI) — GODL-India
+- droop: [Bloom and droop (14047914058).jpg](https://commons.wikimedia.org/wiki/File:Bloom_and_droop_(14047914058).jpg) — cogdogblog — CC0
+- emboss: [Embossed leather binding on 12th century manuscript LCCN2006681054.jpg](https://commons.wikimedia.org/wiki/File:Embossed_leather_binding_on_12th_century_manuscript_LCCN2006681054.jpg) — Miscellaneous Items in High Demand, PPOC, Library of Congress — Public domain
+- encamp: [Soldiers in their tents in army camp LCCN2004660515.jpg](https://commons.wikimedia.org/wiki/File:Soldiers_in_their_tents_in_army_camp_LCCN2004660515.jpg) — Waud, Alfred R. (Alfred Rudolph), 1828-1891, artist — Public domain
+- excavate: [Archaeological dig at Historic Jamestowne - Sarah Stierch.jpg](https://commons.wikimedia.org/wiki/File:Archaeological_dig_at_Historic_Jamestowne_-_Sarah_Stierch.jpg) — Sarah Stierch — CC BY 4.0
+- frolic: [Frolicking lambs near Jephson's Farm - geograph.org.uk - 6166337.jpg](https://commons.wikimedia.org/wiki/File:Frolicking_lambs_near_Jephson's_Farm_-_geograph.org.uk_-_6166337.jpg) — Bill Boaden — CC BY-SA 2.0
+- gambol: [Frolicking lambs near Youlgrave - geograph.org.uk - 4967693.jpg](https://commons.wikimedia.org/wiki/File:Frolicking_lambs_near_Youlgrave_-_geograph.org.uk_-_4967693.jpg) — Bill Boaden — CC BY-SA 2.0
+- germinate: [Delonix regia germinating seeds.jpg](https://commons.wikimedia.org/wiki/File:Delonix_regia_germinating_seeds.jpg) — Thebirdbrand — CC BY-SA 4.0
+- immunize: [Doctor vaccinating a young child. Wellcome M0002840.jpg](https://commons.wikimedia.org/wiki/File:Doctor_vaccinating_a_young_child._Wellcome_M0002840.jpg) — Wellcome Collection — CC BY 4.0
+- incinerate: [Waste incineration plant (6959781259).jpg](https://commons.wikimedia.org/wiki/File:Waste_incineration_plant_(6959781259).jpg) — Ivan Bandura — CC BY 2.0
+- incubate: [Incubator with freshly hatched chick.jpg](https://commons.wikimedia.org/wiki/File:Incubator_with_freshly_hatched_chick.jpg) — VauxhallCityFarm — CC BY-SA 4.0
+- inoculate: [Vaccination clinique Laurier 1945.jpg](https://commons.wikimedia.org/wiki/File:Vaccination_clinique_Laurier_1945.jpg) — La Presse, 1945 — Public domain
+- inscribe: [Stone Inscription Chanderi (Guna), Bhopal State Museum.jpg](https://commons.wikimedia.org/wiki/File:Stone_Inscription_Chanderi_(Guna),_Bhopal_State_Museum.jpg) — SpeakingArch — CC BY-SA 4.0
+- intubate: [From left to right- U.S. Army Maj. David Masneri, an emergency medicine physician with the 7236th Medical Support Unit, teaches a Canadian soldier how to perform a tracheal intubation on a training mannequin 130221-A-DB144-585.jpg](https://commons.wikimedia.org/wiki/File:From_left_to_right-_U.S._Army_Maj._David_Masneri,_an_emergency_medicine_physician_with_the_7236th_Medical_Support_Unit,_teaches_a_Canadian_soldier_how_to_perform_a_tracheal_intubation_on_a_training_mannequin_130221-A-DB144-585.jpg) — Staff Sgt. Marnie Jacobowitz — Public domain
+- lactate: [Nikolay Khludov — Mother Breastfeeding Baby (1907).jpg](https://commons.wikimedia.org/wiki/File:Nikolay_Khludov_—_Mother_Breastfeeding_Baby_(1907).jpg) — Nikolay Khludov — Public domain
+- lure: [4 hooked fishing bait lures viz jig spoonlure plug spinnerbait.jpg](https://commons.wikimedia.org/wiki/File:4_hooked_fishing_bait_lures_viz_jig_spoonlure_plug_spinnerbait.jpg) — R. Henrik Nilsson — CC BY 4.0
+- mash: [2019-11-28 14 29 27 A bowl of mashed potatoes laid out for Thanksgiving Dinner in the Parkway Village section of Ewing Township, Mercer County, New Jersey.jpg](https://commons.wikimedia.org/wiki/File:2019-11-28_14_29_27_A_bowl_of_mashed_potatoes_laid_out_for_Thanksgiving_Dinner_in_the_Parkway_Village_section_of_Ewing_Township,_Mercer_County,_New_Jersey.jpg) — Famartin — CC BY-SA 4.0
+- mince: [Minced meat.jpg](https://commons.wikimedia.org/wiki/File:Minced_meat.jpg) — Erwin — CC0
+- mothball: [Mothball Fleet - Suisun Bay.jpg](https://commons.wikimedia.org/wiki/File:Mothball_Fleet_-_Suisun_Bay.jpg) — Ingrid Taylar — CC BY-SA 2.0
+- mummify: [Egyptian mummies in Ägyptisches Museum Berlin.jpg](https://commons.wikimedia.org/wiki/File:Egyptian_mummies_in_Ägyptisches_Museum_Berlin.jpg) — Yair Haklai — CC BY-SA 4.0
+- pawn: [Schachfiguren, Bauern -- 2022 -- 0022.jpg](https://commons.wikimedia.org/wiki/File:Schachfiguren,_Bauern_--_2022_--_0022.jpg) — Dietmar Rabich — CC BY-SA 4.0
+- percolate: [Coffee percolator & accoutrements.jpg](https://commons.wikimedia.org/wiki/File:Coffee_percolator_&_accoutrements.jpg) — Matthew Dawkins — CC BY 2.0
+- photosynthesize: [Photosynthesis en.svg](https://commons.wikimedia.org/wiki/File:Photosynthesis_en.svg) — At09kg, Wattcle, Nefronus — CC BY-SA 4.0
+- plough: [Tractor ploughing field 2.jpg](https://commons.wikimedia.org/wiki/File:Tractor_ploughing_field_2.jpg) — abhiriksh — CC BY-SA 3.0
+- plow: [Tractor plowing fields (6484367199).jpg](https://commons.wikimedia.org/wiki/File:Tractor_plowing_fields_(6484367199).jpg) — OSU Special Collections & Archives : Commons — No restrictions
+- pollinate: [Bee pollinating a rose.jpg](https://commons.wikimedia.org/wiki/File:Bee_pollinating_a_rose.jpg) — Debivort — CC BY-SA 3.0
+- puree: [Starting solids - homemade baby food in a bowl.jpg](https://commons.wikimedia.org/wiki/File:Starting_solids_-_homemade_baby_food_in_a_bowl.jpg) — MAKY.OREL — CC0
+- quarry: [Ancient stone quarry on Bornholm.jpg](https://commons.wikimedia.org/wiki/File:Ancient_stone_quarry_on_Bornholm.jpg) — Socket0 — CC0
+- seesaw: [Playground seesaw.jpg](https://commons.wikimedia.org/wiki/File:Playground_seesaw.jpg) — Killarnee — CC BY-SA 4.0
+- concentric: [Concentric Circles.svg](https://commons.wikimedia.org/wiki/File:Concentric_Circles.svg) — Andreas Pietzowski — CC BY-SA 4.0
+- decrepit: [Photograph of an old and decrepit building in a rural part of Moga city, Moga tehsil, Moga district, Punjab, India, April 2023 03.jpg](https://commons.wikimedia.org/wiki/File:Photograph_of_an_old_and_decrepit_building_in_a_rural_part_of_Moga_city,_Moga_tehsil,_Moga_district,_Punjab,_India,_April_2023_03.jpg) — MaplesyrupSushi — CC BY-SA 4.0
+- desiccated: [Drought.jpg](https://commons.wikimedia.org/wiki/File:Drought.jpg) — Tomas Castelazo — CC BY 3.0
+- diagnostic: [Medical staff analysing the results of a rapid diagnostic test.jpg](https://commons.wikimedia.org/wiki/File:Medical_staff_analysing_the_results_of_a_rapid_diagnostic_test.jpg) — Rakotovaogael — CC BY-SA 4.0
+- elliptical: [Elliptical orbit.gif](https://commons.wikimedia.org/wiki/File:Elliptical_orbit.gif) — Caddiy — CC0
+- equilateral: [Equilateral triangle with side 2.svg](https://commons.wikimedia.org/wiki/File:Equilateral_triangle_with_side_2.svg) — TrunghaiTĐN — CC BY-SA 4.0
+- flickering: [Candle flame closeup.jpg](https://commons.wikimedia.org/wiki/File:Candle_flame_closeup.jpg) — domdomegg — CC BY 4.0
+- fluttering: [Flags Flutter in the Wind at Ben Gurion International Airport.jpg](https://commons.wikimedia.org/wiki/File:Flags_Flutter_in_the_Wind_at_Ben_Gurion_International_Airport.jpg) — U.S. Department of State — Public domain
+- foamy: [Waves and foam in Le Croisic (4).jpg](https://commons.wikimedia.org/wiki/File:Waves_and_foam_in_Le_Croisic_(4).jpg) — Ibex73 — CC BY 4.0
+- geothermal: [Geysir Geothermal Field, Haukadalur Valley, Iceland, 20230501 0904 3751.jpg](https://commons.wikimedia.org/wiki/File:Geysir_Geothermal_Field,_Haukadalur_Valley,_Iceland,_20230501_0904_3751.jpg) — Jakub Hałun — CC BY-SA 4.0
+- gnarled: [Gnarled Tree - geograph.org.uk - 2430316.jpg](https://commons.wikimedia.org/wiki/File:Gnarled_Tree_-_geograph.org.uk_-_2430316.jpg) — Kurseong Carl — CC BY-SA 2.0
+- gothic: [Gothic-Cologne-Cathedral-66.jpg](https://commons.wikimedia.org/wiki/File:Gothic-Cologne-Cathedral-66.jpg) — Photo-collage by User:MathKnight from photos of  User:Wirginiusz Kaleta,  Neuwieser, Judith Strücker, FJK71, Thomas Wolf and Max Hasak — CC BY-SA 4.0
+- hexagonal: [Giant's Causeway and the Basalt Columns.jpg](https://commons.wikimedia.org/wiki/File:Giant%27s_Causeway_and_the_Basalt_Columns.jpg) — Y. Jauregui-Sánchez — CC BY-SA 4.0
+- incandescent: [Light bulb Edison 2.jpg](https://commons.wikimedia.org/wiki/File:Light_bulb_Edison_2.jpg) — Thomas Edison (reprinted by the Norris Peters Co.) — Public domain
+- kaleidoscopic: [Kaleidoscope-abc.jpg](https://commons.wikimedia.org/wiki/File:Kaleidoscope-abc.jpg) — Koperczak — CC BY 3.0
+- kinetic: [Kinetic Sculpture in Motion.jpg](https://commons.wikimedia.org/wiki/File:Kinetic_Sculpture_in_Motion.jpg) — MarylandGeoffrey — CC BY-SA 4.0
+- labyrinthine: [Aerial view of labyrinth in a hemp field in Kanepi parish, Estonia.jpg](https://commons.wikimedia.org/wiki/File:Aerial_view_of_labyrinth_in_a_hemp_field_in_Kanepi_parish,_Estonia.jpg) — Sillerkiil — CC BY-SA 4.0
+- laden: [Citrus Trees heavily laden with ripe fruit.jpg](https://commons.wikimedia.org/wiki/File:Citrus_Trees_heavily_laden_with_ripe_fruit.jpg) — Godwin Borg — CC BY-SA 4.0
+- neonatal: [Infant-Incubator-wBaby-1978-USA.jpg](https://commons.wikimedia.org/wiki/File:Infant-Incubator-wBaby-1978-USA.jpg) — Evan-Amos — Public domain
+- parched: [CSIRO ScienceImage 607 Effects of Drought on the Soil.jpg](https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_607_Effects_of_Drought_on_the_Soil.jpg) — Atmospheric Research, CSIRO — CC BY 3.0
