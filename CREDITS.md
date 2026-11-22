@@ -2144,3 +2144,201 @@ derivative work: Themightyquill (talk) — CC BY-SA 2.0
 - yoga: [File:Mr-yoga-stretched-out-scorpion.png](https://commons.wikimedia.org/wiki/File:Mr-yoga-stretched-out-scorpion.png) — Mr. Yoga — CC BY-SA 4.0
 - yogurt: [File:A bowl of frozen yogurt.jpg](https://commons.wikimedia.org/wiki/File:A_bowl_of_frozen_yogurt.jpg) — JacquesDemien — CC0
 - zipper: [File:YKK Zipper on Jeans close up.jpg](https://commons.wikimedia.org/wiki/File:YKK_Zipper_on_Jeans_close_up.jpg) — Chris 73 — CC BY-SA 3.0
+
+## 拡張バッチ3（準2級追加分、Wikimedia Commons、URL表示）
+
+### 準2級（追加分）
+- parliament: [Budapest Parliament 4604.JPG](https://commons.wikimedia.org/wiki/File:Budapest_Parliament_4604.JPG) — Dirk Beyer — CC BY-SA 3.0
+- congress: [US Capitol dome Jan 2006.jpg](https://commons.wikimedia.org/wiki/File:US_Capitol_dome_Jan_2006.jpg) — Diliff — CC BY 2.5
+- bend: [Bend or curve in the lane - geograph.org.uk - 7441825.jpg](https://commons.wikimedia.org/wiki/File:Bend_or_curve_in_the_lane_-_geograph.org.uk_-_7441825.jpg) — Jeremy Bolwell — CC BY-SA 2.0
+- alien: [Alien Grey.png](https://commons.wikimedia.org/wiki/File:Alien_Grey.png) — Peacefyre — CC0
+- freedom: [Statue of Liberty frontal 2.jpg](https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_frontal_2.jpg) — Daniel Schwen — Public domain
+- chip: [Bowl of Terra Chips.jpg](https://commons.wikimedia.org/wiki/File:Bowl_of_Terra_Chips.jpg) — Jay Cross — CC BY 2.0
+- fold: [Cranes made by Origami paper.jpg](https://commons.wikimedia.org/wiki/File:Cranes_made_by_Origami_paper.jpg) — Laitche — Public domain
+- antique: [Antique clock - Museum of the Shenandoah Valley.jpg](https://commons.wikimedia.org/wiki/File:Antique_clock_-_Museum_of_the_Shenandoah_Valley.jpg) — APK — CC BY 4.0
+- wink: [Little girl winking in the sunshine in Laos.jpg](https://commons.wikimedia.org/wiki/File:Little_girl_winking_in_the_sunshine_in_Laos.jpg) — Basile Morin — CC BY-SA 4.0
+- frown: [Frown.JPG](https://commons.wikimedia.org/wiki/File:Frown.JPG) — Richard Kelly — CC BY-SA 4.0
+- grin: [Grinning young boy of Laos.jpg](https://commons.wikimedia.org/wiki/File:Grinning_young_boy_of_Laos.jpg) — Basile Morin — CC BY-SA 4.0
+- priest: [Catholic Priest 01.jpg](https://commons.wikimedia.org/wiki/File:Catholic_Priest_01.jpg) — Amuzujoe — CC BY-SA 4.0
+- wedding: [Couple from a Belarus wedding.jpg](https://commons.wikimedia.org/wiki/File:Couple_from_a_Belarus_wedding.jpg) — Mikhail Kapychka — CC BY-SA 4.0
+- sniff: [Fido Sniffing Flower Pot 2023-06-23.jpg](https://commons.wikimedia.org/wiki/File:Fido_Sniffing_Flower_Pot_2023-06-23.jpg) — Salisburymistake — CC BY-SA 4.0
+- marriage: [Signet and Wedding rings.jpg](https://commons.wikimedia.org/wiki/File:Signet_and_Wedding_rings.jpg) — Timothy Titus — CC BY-SA 4.0
+- pat: [SAKURAKO pat a dog on the head. (6110335506).jpg](https://commons.wikimedia.org/wiki/File:SAKURAKO_pat_a_dog_on_the_head._(6110335506).jpg) — MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN — CC BY 2.0
+- hug: [Human–canine friendship - girl hugging her dog tightly at golden hour in Laos.jpg](https://commons.wikimedia.org/wiki/File:Human%E2%80%93canine_friendship_-_girl_hugging_her_dog_tightly_at_golden_hour_in_Laos.jpg) — Basile Morin — CC BY-SA 4.0
+- kneel: [A person kneeling around a talking circle (53013127025).jpg](https://commons.wikimedia.org/wiki/File:A_person_kneeling_around_a_talking_circle_(53013127025).jpg) — BLMUtah — Public domain
+- squat: [Squat, baithak, Hindu squat, possibly 'The Great Gamma'.png](https://commons.wikimedia.org/wiki/File:Squat,_baithak,_Hindu_squat,_possibly_%27The_Great_Gamma%27.png) — AnonymousUnknown author — CC0
+- prison: [Burlington County Prison (EXTERIOR - MAIN ENTRANCE).jpg](https://commons.wikimedia.org/wiki/File:Burlington_County_Prison_(EXTERIOR_-_MAIN_ENTRANCE).jpg) — Library of Congress - Historic American Engineering Record - Nathaniel R. Ewan — Public domain
+- crawl: [Baby learning to crawl, Moscow, Russia.jpg](https://commons.wikimedia.org/wiki/File:Baby_learning_to_crawl,_Moscow,_Russia.jpg) — Vyacheslav Argenberg — CC BY 4.0
+- spin: [Beigoma 01.jpg](https://commons.wikimedia.org/wiki/File:Beigoma_01.jpg) — Σ64 — CC BY 3.0
+- botanical: [2019 Botanical garden moscow greenhouse 01.jpg](https://commons.wikimedia.org/wiki/File:2019_Botanical_garden_moscow_greenhouse_01.jpg) — Andrey Korzun — CC BY-SA 4.0
+- drag: [CB Luggage drag 38 St 6 Av jeh.jpg](https://commons.wikimedia.org/wiki/File:CB_Luggage_drag_38_St_6_Av_jeh.jpg) — Jim.henderson — CC BY-SA 4.0
+- ballot: [Ballot dropped into ballot box 2024 Swedish EU election at Stångenässkolan, Brastad.jpg](https://commons.wikimedia.org/wiki/File:Ballot_dropped_into_ballot_box_2024_Swedish_EU_election_at_St%C3%A5ngen%C3%A4sskolan,_Brastad.jpg) — W.carter — CC BY-SA 4.0
+- grate: [Fine Microplane Grating Hard Cheese.jpg](https://commons.wikimedia.org/wiki/File:Fine_Microplane_Grating_Hard_Cheese.jpg) — Didriks — CC BY 2.0
+- trap: [Victor-Mousetrap.jpg](https://commons.wikimedia.org/wiki/File:Victor-Mousetrap.jpg) — Evan-Amos — Public domain
+- solar power: [Field of Solar Panels near Ogwell.jpg](https://commons.wikimedia.org/wiki/File:Field_of_Solar_Panels_near_Ogwell.jpg) — Partonez — CC BY-SA 4.0
+- wind power: [Afsluitdijk - wind turbines.jpg](https://commons.wikimedia.org/wiki/File:Afsluitdijk_-_wind_turbines.jpg) — Denkrahm — CC BY 4.0
+- nuclear power: [Cooling towers of a nuclear power plant.jpg](https://commons.wikimedia.org/wiki/File:Cooling_towers_of_a_nuclear_power_plant.jpg) — Vsatinet — CC BY-SA 4.0
+- fossil fuel: [Pumpjack operating at an oil well in Natchez, Mississippi.jpg](https://commons.wikimedia.org/wiki/File:Pumpjack_operating_at_an_oil_well_in_Natchez,_Mississippi.jpg) — Calstanhope — CC BY-SA 4.0
+- sew: [Woman sewing a face mask with a Singer machine 09.jpg](https://commons.wikimedia.org/wiki/File:Woman_sewing_a_face_mask_with_a_Singer_machine_09.jpg) — Tadeáš Bednarz — CC BY-SA 4.0
+- mend: [Samuel McCloy - A Lady Mending Clothes with Sewing Basket besides.jpg](https://commons.wikimedia.org/wiki/File:Samuel_McCloy_-_A_Lady_Mending_Clothes_with_Sewing_Basket_besides.jpg) — Samuel McCloy — Public domain
+- cotton: [Cotton boll begins to open as plant matures during 2010 crop year -- Lubbock, Texas. (24749585999).jpg](https://commons.wikimedia.org/wiki/File:Cotton_boll_begins_to_open_as_plant_matures_during_2010_crop_year_--_Lubbock,_Texas._(24749585999).jpg) — USDA NRCS Texas — Public domain
+- leather: [Leather bag.jpg](https://commons.wikimedia.org/wiki/File:Leather_bag.jpg) — ALHASSAN MOHAMED NURIDEEN — CC BY-SA 4.0
+- steel: [CR510 steel bridge.jpg](https://commons.wikimedia.org/wiki/File:CR510_steel_bridge.jpg) — Imzadi1979 — CC BY-SA 2.5
+- mop: [Mopping the floor - Flickr - pinemikey.jpg](https://commons.wikimedia.org/wiki/File:Mopping_the_floor_-_Flickr_-_pinemikey.jpg) — Michael Martin from Cypress, Texas — CC BY-SA 2.0
+- iceberg: [.00 1008 Iceberg in Antarctica.jpg](https://commons.wikimedia.org/wiki/File:.00_1008_Iceberg_in_Antarctica.jpg) — W. Bulach — CC BY-SA 4.0
+- vacuum: [2007-09-02 Small vacuum cleaner.jpg](https://commons.wikimedia.org/wiki/File:2007-09-02_Small_vacuum_cleaner.jpg) — Gophi — CC BY-SA 3.0
+- stream: [Mountain Stream, Mt Hood National Forest (36796004580).jpg](https://commons.wikimedia.org/wiki/File:Mountain_Stream,_Mt_Hood_National_Forest_(36796004580).jpg) — U.S. Forest Service- Pacific Northwest Region — Public domain
+- sunlight: [Shafts of sunlight through trees above Dimples, Macclesfield Forest - geograph.org.uk - 6711872.jpg](https://commons.wikimedia.org/wiki/File:Shafts_of_sunlight_through_trees_above_Dimples,_Macclesfield_Forest_-_geograph.org.uk_-_6711872.jpg) — Colin Park — CC BY-SA 2.0
+- universe: [30 Doradus, Tarantula Nebula.jpg](https://commons.wikimedia.org/wiki/File:30_Doradus,_Tarantula_Nebula.jpg) — NASA, ESA, ESO, D. Lennon and E. Sabbi (ESA/STScI), J. Anderson, S. E. de Mink, R. van der Marel, T. Sohn, and N. Walborn (STScI), N. Bastian (Excellence Cluster, Munich), L. Bedin (INAF, Padua), E. Bressert (ESO), P. Crowther (Sheffield), A. de Koter (Amsterdam), C. Evans (UKATC/STFC, Edinburgh), A. Herrero (IAC, Tenerife), N. Langer (AifA, Bonn), I. Platais (JHU) and H. Sana (Amsterdam) — Public domain
+- telescope: [Astronomical Telescope at Griffith Observatory - 54083861001.jpg](https://commons.wikimedia.org/wiki/File:Astronomical_Telescope_at_Griffith_Observatory_-_54083861001.jpg) — The Fun Chronicles — CC0
+- habitat: [File:Odonata habitat.jpg](https://commons.wikimedia.org/wiki/File:Odonata_habitat.jpg) — Vivek Chandran A — CC BY 4.0
+- endangered species: [File:Endangered species Iguana Iguana from Margarita Island.jpg](https://commons.wikimedia.org/wiki/File:Endangered_species_Iguana_Iguana_from_Margarita_Island.jpg) — Wilfredor — CC0
+- rainforest: [File:Cheow Lan Lake, Rainforest, Khao Sok, Thailand.jpg](https://commons.wikimedia.org/wiki/File:Cheow_Lan_Lake,_Rainforest,_Khao_Sok,_Thailand.jpg) — Vyacheslav Argenberg — CC BY 4.0
+- coral reef: [File:Coral Outcrop Flynn Reef.jpg](https://commons.wikimedia.org/wiki/File:Coral_Outcrop_Flynn_Reef.jpg) — Toby Hudson — CC BY-SA 3.0
+- wetland: [File:Travis Wetland panorama, Christchurch, New Zealand.jpg](https://commons.wikimedia.org/wiki/File:Travis_Wetland_panorama,_Christchurch,_New_Zealand.jpg) — Michal Klajban — CC BY-SA 4.0
+- recycling: [File:Bales of PET bottles closeup.jpg](https://commons.wikimedia.org/wiki/File:Bales_of_PET_bottles_closeup.jpg) — Grendelkhan — CC BY-SA 4.0
+- solar panel: [File:Ground mounted solar panels.gk.jpg](https://commons.wikimedia.org/wiki/File:Ground_mounted_solar_panels.gk.jpg) — Grendelkhan — CC BY-SA 4.0
+- wind turbine: [File:Roscoe Wind Farm in West Texas.jpg](https://commons.wikimedia.org/wiki/File:Roscoe_Wind_Farm_in_West_Texas.jpg) — Matthew T Rader — CC BY-SA 4.0
+- electric vehicle: [File:Alwayz AW9060 electric passenger vehicle in Moscow 2.jpg](https://commons.wikimedia.org/wiki/File:Alwayz_AW9060_electric_passenger_vehicle_in_Moscow_2.jpg) — Dmitry Ivanov.. — CC BY-SA 4.0
+- hybrid car: [File:Solon-Hybrid car.jpg](https://commons.wikimedia.org/wiki/File:Solon-Hybrid_car.jpg) — Jan Ainali — CC BY-SA 3.0
+- pesticide: [File:Cropduster spraying pesticides.jpg](https://commons.wikimedia.org/wiki/File:Cropduster_spraying_pesticides.jpg) — USDA Photo by: Charles O'Rear — Public domain
+- fertilizer: [File:Ammonium nitrate 33,5 EC-fertilizer by Borealis.jpg](https://commons.wikimedia.org/wiki/File:Ammonium_nitrate_33,5_EC-fertilizer_by_Borealis.jpg) — Cjp24 — CC BY-SA 4.0
+- livestock: [File:Flock of sheep.jpg](https://commons.wikimedia.org/wiki/File:Flock_of_sheep.jpg) — Keith Weller — Public domain
+- fisheries: [File:Fishing boats, SAFMA Fisheries Complex, 2024 (01).jpg](https://commons.wikimedia.org/wiki/File:Fishing_boats,_SAFMA_Fisheries_Complex,_2024_(01).jpg) — Bahnfrend — CC BY-SA 4.0
+- deforestation: [File:Deforestation central Europe - Rodungen Mitteleuropa.jpg](https://commons.wikimedia.org/wiki/File:Deforestation_central_Europe_-_Rodungen_Mitteleuropa.jpg) — Alexander Gerst — CC BY-SA 2.0
+- acid rain: [File:Acid rain woods1.JPG](https://commons.wikimedia.org/wiki/File:Acid_rain_woods1.JPG) — Lovecz — Public domain
+- air pollution: [File:Air pollution banner Smog in Warsaw.jpg](https://commons.wikimedia.org/wiki/File:Air_pollution_banner_Smog_in_Warsaw.jpg) — Radek Kołakowski from Warszawa, Poland — CC BY 2.0
+- water pollution: [File:Water pollution fish kill.jpg](https://commons.wikimedia.org/wiki/File:Water_pollution_fish_kill.jpg) — French, WL, U.S. Fish and Wildlife Service — Public domain
+- food waste: [File:Food waste in a blue waste container.jpg](https://commons.wikimedia.org/wiki/File:Food_waste_in_a_blue_waste_container.jpg) — Nick Saltmarsh — CC BY 2.0
+- lung: [File:Anatomytool Lungs and chest wall English.jpg](https://commons.wikimedia.org/wiki/File:Anatomytool_Lungs_and_chest_wall_English.jpg) — Cenveo — CC BY 4.0
+- kidney: [File:Kidney section vertical.png](https://commons.wikimedia.org/wiki/File:Kidney_section_vertical.png) — Henry Vandyke Carter — Public domain
+- virus: [File:SARS-CoV-2 without background.png](https://commons.wikimedia.org/wiki/File:SARS-CoV-2_without_background.png) — Alissa Eckert, MS; Dan Higgins, MAM — Public domain
+- wound: [File:Wound Healing.jpg](https://commons.wikimedia.org/wiki/File:Wound_Healing.jpg) — Raquel Baranow — CC BY-SA 4.0
+- surgery: [File:Surgery – Panorama (Oliksiy Yakovlyev via Poly Haven).jpg](https://commons.wikimedia.org/wiki/File:Surgery_%E2%80%93_Panorama_(Oliksiy_Yakovlyev_via_Poly_Haven).jpg) — Oliksiy Yakovlyev — CC0
+- vitamin: [File:B vitamin supplement tablets.jpg](https://commons.wikimedia.org/wiki/File:B_vitamin_supplement_tablets.jpg) — Ragesoss — CC BY-SA 3.0
+- vaccine: [File:Several vaccines (2021).jpg](https://commons.wikimedia.org/wiki/File:Several_vaccines_(2021).jpg) — Prefeitura de Itapevi — Public domain
+- blood test: [File:Blood test samples.jpg](https://commons.wikimedia.org/wiki/File:Blood_test_samples.jpg) — Fumikas Sagisavas — CC0
+- x-ray: [File:First medical X-ray by Wilhelm Röntgen of his wife Anna Bertha Ludwig's hand - 18951222.jpg](https://commons.wikimedia.org/wiki/File:First_medical_X-ray_by_Wilhelm_R%C3%B6ntgen_of_his_wife_Anna_Bertha_Ludwig%27s_hand_-_18951222.jpg) — Wilhelm Röntgen — Public domain
+- checkup: [File:Child receives checkup from doctor in a clinic.jpg](https://commons.wikimedia.org/wiki/File:Child_receives_checkup_from_doctor_in_a_clinic.jpg) — Shixart1985 — CC BY 2.0
+- first aid: [File:First Aid Kit (Frankfurt am Main, 18.02.2012).jpg](https://commons.wikimedia.org/wiki/File:First_Aid_Kit_(Frankfurt_am_Main,_18.02.2012).jpg) — Christian Düringer — CC BY-SA 3.0
+- cottage: [File:Cottage, 259 Williams Street.JPG](https://commons.wikimedia.org/wiki/File:Cottage,_259_Williams_Street.JPG) — Kiwi05 — CC BY-SA 4.0
+- wheelchair: [File:Wheelchair from Wheelchair Foundation in Russia,.jpg](https://commons.wikimedia.org/wiki/File:Wheelchair_from_Wheelchair_Foundation_in_Russia,.jpg) — Davronov Alexander — CC BY-SA 4.0
+- ointment: [File:Diprosalic ointment tube.jpeg](https://commons.wikimedia.org/wiki/File:Diprosalic_ointment_tube.jpeg) — Cnbrb — CC BY-SA 4.0
+- capsule: [File:Arranging capsules.jpg](https://commons.wikimedia.org/wiki/File:Arranging_capsules.jpg) — M Joko Apriyo Putro — CC BY 4.0
+- syrup: [File:Chest congestion syrups.jpg](https://commons.wikimedia.org/wiki/File:Chest_congestion_syrups.jpg) — Rwebogora — CC BY-SA 4.0
+- smoking: [File:Girl Smoking Cigarette (50720214872).jpg](https://commons.wikimedia.org/wiki/File:Girl_Smoking_Cigarette_(50720214872).jpg) — Revival Vape — CC BY 2.0
+- walking: [File:Girl walking dog 001.jpg](https://commons.wikimedia.org/wiki/File:Girl_walking_dog_001.jpg) — Sardaka — CC BY-SA 4.0
+- crystalline: [File:Quartz, Tibet.jpg](https://commons.wikimedia.org/wiki/File:Quartz,_Tibet.jpg) — JJ Harrison — CC BY-SA 2.5
+- curly: [File:Smiling senior woman with curly hair portrait.jpg](https://commons.wikimedia.org/wiki/File:Smiling_senior_woman_with_curly_hair_portrait.jpg) — Shixart1985 — CC BY 2.0
+- sanitizer: [File:Hand sanitizer bottle.jpg](https://commons.wikimedia.org/wiki/File:Hand_sanitizer_bottle.jpg) — Wikibantu — CC BY-SA 4.0
+- gloves: [File:Colour-blocking with burgundy gloves and tights to contrast with an amber dress.jpg](https://commons.wikimedia.org/wiki/File:Colour-blocking_with_burgundy_gloves_and_tights_to_contrast_with_an_amber_dress.jpg) — Tobias ToMar Maier — CC BY-SA 4.0
+- laptop: [File:IBM Thinkpad R51.jpg](https://commons.wikimedia.org/wiki/File:IBM_Thinkpad_R51.jpg) — André Karwath aka Aka — CC BY-SA 4.0
+- keyboard: [File:QWERTY keyboard.jpg](https://commons.wikimedia.org/wiki/File:QWERTY_keyboard.jpg) — MichaelMaggs — CC BY-SA 3.0
+- screen: [File:Code on computer monitor (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Code_on_computer_monitor_(Unsplash).jpg) — Markus Spiske — CC0
+- printer: [File:Epson-inkjet-printer.jpg](https://commons.wikimedia.org/wiki/File:Epson-inkjet-printer.jpg) — Somebody in the WWW at English Wikipedia — CC BY-SA 3.0
+- scanner: [File:Trust Flat Scan USB 19200.jpg](https://commons.wikimedia.org/wiki/File:Trust_Flat_Scan_USB_19200.jpg) — Bultro — CC BY-SA 4.0
+- robot: [File:Humanoider-Roboter-DASA.JPG](https://commons.wikimedia.org/wiki/File:Humanoider-Roboter-DASA.JPG) — Sven Volkens — CC BY-SA 4.0
+- drone: [File:Quadcopter Drone in flight.jpg](https://commons.wikimedia.org/wiki/File:Quadcopter_Drone_in_flight.jpg) — Project Kei — CC BY-SA 4.0
+- server: [File:Servers in a Rack.jpg](https://commons.wikimedia.org/wiki/File:Servers_in_a_Rack.jpg) — Abigor — CC BY-SA 3.0
+- archaeology: [File:Archaeological Excavation Roman Villa Area Rabat 11.jpg](https://commons.wikimedia.org/wiki/File:Archaeological_Excavation_Roman_Villa_Area_Rabat_11.jpg) — Godwin Borg — CC BY-SA 4.0
+- astronomy: [File:Night sky over the McMath-Pierce Solar Telescope (noirlab-img-1859).jpg](https://commons.wikimedia.org/wiki/File:Night_sky_over_the_McMath-Pierce_Solar_Telescope_(noirlab-img-1859).jpg) — KPNO/NOIRLab/ NSF /AURA/P. Marenfeld — CC BY 4.0
+- geology: [File:Layers of sedimentary rock in Makhtesh Ramon (50749).jpg](https://commons.wikimedia.org/wiki/File:Layers_of_sedimentary_rock_in_Makhtesh_Ramon_(50749).jpg) — Rhododendrites — CC BY-SA 4.0
+- architecture: [File:Ray and Maria Stata Center (MIT).JPG](https://commons.wikimedia.org/wiki/File:Ray_and_Maria_Stata_Center_(MIT).JPG) — Lucy Li — CC BY-SA 3.0
+- university: [File:Main Quadrangle, University of Sydney (cropped).jpg](https://commons.wikimedia.org/wiki/File:Main_Quadrangle,_University_of_Sydney_(cropped).jpg) — Jason Tong — CC BY 2.0
+- high school: [File:Licking Heights High School 1.jpg](https://commons.wikimedia.org/wiki/File:Licking_Heights_High_School_1.jpg) — Sixflashphoto — CC BY-SA 4.0
+- elementary school: [File:Elementary school in Sansac-de-Marmiesse (1).jpg](https://commons.wikimedia.org/wiki/File:Elementary_school_in_Sansac-de-Marmiesse_(1).jpg) — Tournasol7 — CC BY 4.0
+- kindergarten: [File:Hausdülmen, St.-Mauritius-Kindergarten -- 2013 -- 00147.jpg](https://commons.wikimedia.org/wiki/File:Hausd%C3%BClmen,_St.-Mauritius-Kindergarten_--_2013_--_00147.jpg) — Dietmar Rabich — CC BY-SA 4.0
+- nursery school: [File:Mace Montessori Nursery School, North Chiswick - geograph.org.uk - 3418623.jpg](https://commons.wikimedia.org/wiki/File:Mace_Montessori_Nursery_School,_North_Chiswick_-_geograph.org.uk_-_3418623.jpg) — David Anstiss — CC BY-SA 2.0
+- auditorium: [File:Katowice Silesian Theatre auditorium 2022.jpg](https://commons.wikimedia.org/wiki/File:Katowice_Silesian_Theatre_auditorium_2022.jpg) — Adrian Tync — CC BY-SA 4.0
+- dormitory: [File:Dormitory of SUSTech.jpg](https://commons.wikimedia.org/wiki/File:Dormitory_of_SUSTech.jpg) — User1779637 — CC BY-SA 4.0
+- entrance exam: [File:Students of Notre Dame College Dhaka in uniform at Siddheswari College exam centre 20250828.jpg](https://commons.wikimedia.org/wiki/File:Students_of_Notre_Dame_College_Dhaka_in_uniform_at_Siddheswari_College_exam_centre_20250828.jpg) — Tanvir Siddique — CC BY-SA 4.0
+- diploma: [File:SheepskinDiploma.jpg](https://commons.wikimedia.org/wiki/File:SheepskinDiploma.jpg) — Millermz at English Wikipedia — CC BY-SA 3.0
+- license: [File:Permis de conduire français 2019 recto 01.jpg](https://commons.wikimedia.org/wiki/File:Permis_de_conduire_fran%C3%A7ais_2019_recto_01.jpg) — Celestin92 — CC BY-SA 4.0
+- workshop: [File:Cobbler repairing shoes in old workshop (Bazaar in Bitola, Macedonia, 2025).jpg](https://commons.wikimedia.org/wiki/File:Cobbler_repairing_shoes_in_old_workshop_(Bazaar_in_Bitola,_Macedonia,_2025).jpg) — Petar Milošević — CC BY-SA 4.0
+- dotted: [File:Polka Dot Door.jpg](https://commons.wikimedia.org/wiki/File:Polka_Dot_Door.jpg) — Travisdoucette — CC BY-SA 3.0
+- doughy: [File:Risen bread dough.jpg](https://commons.wikimedia.org/wiki/File:Risen_bread_dough.jpg) — Gageills — CC0
+- downhill: [File:Downhill Skiing (5322740587).jpg](https://commons.wikimedia.org/wiki/File:Downhill_Skiing_(5322740587).jpg) — Timo Newton-Syms from Helsinki, Finland & Maidenhead, Berkshire, UK — CC BY-SA 2.0
+- downstream: [File:Volkhov River view downstream.jpg](https://commons.wikimedia.org/wiki/File:Volkhov_River_view_downstream.jpg) — Александр Байдуков — CC BY-SA 4.0
+- credit card: [File:Credit-cards.jpg](https://commons.wikimedia.org/wiki/File:Credit-cards.jpg) — Lotus Head from Johannesburg, Gauteng, South Africa — CC BY-SA 2.5
+- saving: [File:Deposit Into Piggy Bank Savings Account (6093700157).jpg](https://commons.wikimedia.org/wiki/File:Deposit_Into_Piggy_Bank_Savings_Account_(6093700157).jpg) — Ken Teegardin from Boulder, Boulder — CC BY-SA 2.0
+- consumer: [File:A woman choosing canned food at Lotus Supermarket, GR Shopping Mall, Beijing (20210730192423).jpg](https://commons.wikimedia.org/wiki/File:A_woman_choosing_canned_food_at_Lotus_Supermarket,_GR_Shopping_Mall,_Beijing_(20210730192423).jpg) — N509FZ — CC BY-SA 4.0
+- dried: [File:Dried Star Anise Fruit Seeds.jpg](https://commons.wikimedia.org/wiki/File:Dried_Star_Anise_Fruit_Seeds.jpg) — Sanjay Acharya — CC BY-SA 4.0
+- dripping: [File:Dripping faucet 1.jpg](https://commons.wikimedia.org/wiki/File:Dripping_faucet_1.jpg) — User:Dschwen — CC BY-SA 2.5
+- industry: [File:Continental AG tire factory Mittellandkanal Stoecken Hannover Germany 02.jpg](https://commons.wikimedia.org/wiki/File:Continental_AG_tire_factory_Mittellandkanal_Stoecken_Hannover_Germany_02.jpg) — Christian A. Schröder (ChristianSchd) — CC BY-SA 4.0
+- job interview: [File:Job interview 0001.jpg](https://commons.wikimedia.org/wiki/File:Job_interview_0001.jpg) — bpsusf — CC BY 2.0
+- dummy: [File:IIHS crash test dummy in Hyundai Tucson.jpg](https://commons.wikimedia.org/wiki/File:IIHS_crash_test_dummy_in_Hyundai_Tucson.jpg) — Brady Holt — CC BY 3.0
+- dusty: [File:A lonely dusty road to Ladakh.jpg](https://commons.wikimedia.org/wiki/File:A_lonely_dusty_road_to_Ladakh.jpg) — Sneha G Gupta — CC BY-SA 4.0
+- contract: [File:Contract for motorbike rental in Rhodes island, Greece.jpg](https://commons.wikimedia.org/wiki/File:Contract_for_motorbike_rental_in_Rhodes_island,_Greece.jpg) — Pittigrilli — CC BY-SA 4.0
+- office worker: [File:Office workers in the 1970's (9717154582).jpg](https://commons.wikimedia.org/wiki/File:Office_workers_in_the_1970%27s_(9717154582).jpg) — Tyne & Wear Archives & Museums — No restrictions
+- edible: [File:Edible fungi in basket 2012 G1.jpg](https://commons.wikimedia.org/wiki/File:Edible_fungi_in_basket_2012_G1.jpg) — George Chernilevsky — Public domain
+- head office: [File:Bell Telephone Company of Pennsylvania Western Headquarters Building, 2023-12-26, 01.jpg](https://commons.wikimedia.org/wiki/File:Bell_Telephone_Company_of_Pennsylvania_Western_Headquarters_Building,_2023-12-26,_01.jpg) — Cbaile19 — CC0
+- factory worker: [File:Sandakan Sabah Plywood-Factory-23.jpg](https://commons.wikimedia.org/wiki/File:Sandakan_Sabah_Plywood-Factory-23.jpg) — CEphoto, Uwe Aranas — CC BY-SA 3.0
+- retail: [File:Retail checkout area at the Vermont Teddy Bear Company store.jpg](https://commons.wikimedia.org/wiki/File:Retail_checkout_area_at_the_Vermont_Teddy_Bear_Company_store.jpg) — Tessa Bury — CC BY 4.0
+- wholesale: [File:Birmingham Wholesale Markets.jpg](https://commons.wikimedia.org/wiki/File:Birmingham_Wholesale_Markets.jpg) — star-one — CC BY-SA 2.0
+- online shopping: [File:Woman online shopping concept. Woman in the green park with modern laptop. Bali island. (46933867545).jpg](https://commons.wikimedia.org/wiki/File:Woman_online_shopping_concept._Woman_in_the_green_park_with_modern_laptop._Bali_island._(46933867545).jpg) — Artem Beliaikin from Moscow, Russia — CC BY 2.0
+- delivery: [File:A Courier Delivering a Parcel.jpg](https://commons.wikimedia.org/wiki/File:A_Courier_Delivering_a_Parcel.jpg) — Meanwell Packaging — CC BY 2.0
+- shipping: [File:Container Ship.jpg](https://commons.wikimedia.org/wiki/File:Container_Ship.jpg) — Muhammad Mahdi Karim — GFDL 1.2
+- logistics: [File:Workers drive Forklifts laden with USAID goods inside a large warehouse - 20110826-FS-LSC-0138 - Flickr - USDAgov.jpg](https://commons.wikimedia.org/wiki/File:Workers_drive_Forklifts_laden_with_USAID_goods_inside_a_large_warehouse_-_20110826-FS-LSC-0138_-_Flickr_-_USDAgov.jpg) — U.S. Department of Agriculture — Public domain
+- transportation: [File:Malta Public Transport BUS 650.jpg](https://commons.wikimedia.org/wiki/File:Malta_Public_Transport_BUS_650.jpg) — Kk70088 — CC BY 4.0
+- vehicle: [File:DTM car mercedes2006 Haekkinen racing.jpg](https://commons.wikimedia.org/wiki/File:DTM_car_mercedes2006_Haekkinen_racing.jpg) — user:AngMoKio — CC BY-SA 2.5
+- pedestrian: [File:CrossWalk (5465840138).jpg](https://commons.wikimedia.org/wiki/File:CrossWalk_(5465840138).jpg) — Alex Proimos from Sydney, Australia — CC BY 2.0
+- port: [File:Puerto de Vestmannaeyjar, Heimaey, Islas Vestman, Suðurland, Islandia, 2014-08-17, DD 017-019 PAN.JPG](https://commons.wikimedia.org/wiki/File:Puerto_de_Vestmannaeyjar,_Heimaey,_Islas_Vestman,_Su%C3%B0urland,_Islandia,_2014-08-17,_DD_017-019_PAN.JPG) — Diego Delso — CC BY-SA 4.0
+- traffic jam: [File:Mors, B 1801, London to Brighton Veteran Car Run 2009, 15 CV 1902 - Traffic jam in High Street, Croydon - geograph.org.uk - 1566840.jpg](https://commons.wikimedia.org/wiki/File:Mors,_B_1801,_London_to_Brighton_Veteran_Car_Run_2009,_15_CV_1902_-_Traffic_jam_in_High_Street,_Croydon_-_geograph.org.uk_-_1566840.jpg) — Peter Trimming — CC BY-SA 2.0
+- highway: [File:Aerial view of Autobahnkreuz Köln-Nord.jpg](https://commons.wikimedia.org/wiki/File:Aerial_view_of_Autobahnkreuz_K%C3%B6ln-Nord.jpg) — El Grafo — CC BY-SA 3.0
+- parking lot: [File:Parking lot, Gross-Gerau (P1090665).jpg](https://commons.wikimedia.org/wiki/File:Parking_lot,_Gross-Gerau_(P1090665).jpg) — Matti Blume — CC BY-SA 4.0
+- gas station: [File:HP Petrol Bunk 31102016.jpg](https://commons.wikimedia.org/wiki/File:HP_Petrol_Bunk_31102016.jpg) — Nikhilb239 — CC BY-SA 4.0
+- train station: [File:Jeseník train station 2025.01.jpg](https://commons.wikimedia.org/wiki/File:Jesen%C3%ADk_train_station_2025.01.jpg) — Pudelek — CC BY-SA 4.0
+- subway: [File:Man at Dundas subway station, Toronto, 2008-05-06.jpg](https://commons.wikimedia.org/wiki/File:Man_at_Dundas_subway_station,_Toronto,_2008-05-06.jpg) — Radomianin — CC BY-SA 4.0
+- beam: [File:Where Light Breaks Through the Silence.jpg](https://commons.wikimedia.org/wiki/File:Where_Light_Breaks_Through_the_Silence.jpg) — Maipraewa — CC BY-SA 4.0
+- boarding pass: [File:China Eastern - Boarding pass MU219 - 2024-06-02.jpg](https://commons.wikimedia.org/wiki/File:China_Eastern_-_Boarding_pass_MU219_-_2024-06-02.jpg) — China Eastern — Public domain
+- check-in counter: [File:Kualanamu Airport check-in counter (2).jpg](https://commons.wikimedia.org/wiki/File:Kualanamu_Airport_check-in_counter_(2).jpg) — Sam Hidayat — CC BY-SA 4.0
+- departure gate: [File:Departure gates 5 and 6 at Nadi International Airport.jpg](https://commons.wikimedia.org/wiki/File:Departure_gates_5_and_6_at_Nadi_International_Airport.jpg) — Grendelkhan — CC BY-SA 3.0
+- arrival hall: [File:Suvarnabhumi Airport, Arrival Hall 2.JPG](https://commons.wikimedia.org/wiki/File:Suvarnabhumi_Airport,_Arrival_Hall_2.JPG) — Terence Ong — CC BY 2.5
+- flavor: [File:Ice cream dish - superman flavor.jpg](https://commons.wikimedia.org/wiki/File:Ice_cream_dish_-_superman_flavor.jpg) — Carl Lender — CC BY 2.0
+- wheat: [File:Sunset-over-the-wheat-field-featured.jpg](https://commons.wikimedia.org/wiki/File:Sunset-over-the-wheat-field-featured.jpg) — Dreamy Pixel — CC BY 4.0
+- bloom: [File:Meguro River Cherry Blossom Illumination.png](https://commons.wikimedia.org/wiki/File:Meguro_River_Cherry_Blossom_Illumination.png) — Manish Prabhune — CC BY 2.0
+- garlic: [File:Garlic bulbs and cloves.jpg](https://commons.wikimedia.org/wiki/File:Garlic_bulbs_and_cloves.jpg) — Ivar Leidus — CC BY-SA 4.0
+- convenience store: [File:Convenience Store Shelf, Tokyo 2014.jpg](https://commons.wikimedia.org/wiki/File:Convenience_Store_Shelf,_Tokyo_2014.jpg) — Martin Falbisoner — CC BY-SA 4.0
+- grocery store: [File:A grocery store bus in western Finland (interior 1).jpg](https://commons.wikimedia.org/wiki/File:A_grocery_store_bus_in_western_Finland_(interior_1).jpg) — Veikk0.ma — CC BY-SA 4.0
+- fast food: [File:Wendy's Hamburger Fast Food Restaurant.jpg](https://commons.wikimedia.org/wiki/File:Wendy%27s_Hamburger_Fast_Food_Restaurant.jpg) — Mike Mozart — CC BY-SA 4.0
+- bolt: [File:Thunderstorm And Bolt Lightning (224254879).jpeg](https://commons.wikimedia.org/wiki/File:Thunderstorm_And_Bolt_Lightning_(224254879).jpeg) — Sue Corbisez — CC BY 3.0
+- school lunch: [File:Japanese school lunch in the Showa period.jpg](https://commons.wikimedia.org/wiki/File:Japanese_school_lunch_in_the_Showa_period.jpg) — Project Kei — CC BY-SA 4.0
+- bento box: [File:Bento at Hanabishi, Koyasan.jpg](https://commons.wikimedia.org/wiki/File:Bento_at_Hanabishi,_Koyasan.jpg) — Blue Lotus — CC BY 2.0
+- referee: [File:Fußballländerspiel Österreich-Ukraine (01.06.2012) 43.jpg](https://commons.wikimedia.org/wiki/File:Fu%C3%9Fballl%C3%A4nderspiel_%C3%96sterreich-Ukraine_(01.06.2012)_43.jpg) — Taxiarchos228 — FAL
+- journalist: [File:Journalist during interview.jpg](https://commons.wikimedia.org/wiki/File:Journalist_during_interview.jpg) — NikosLikomitros — CC0
+- parade: [File:30. Street Parade in Zürich c.jpg](https://commons.wikimedia.org/wiki/File:30._Street_Parade_in_Z%C3%BCrich_c.jpg) — Peter Arnold — CC BY-SA 4.0
+- instrument: [File:Cello study.jpg](https://commons.wikimedia.org/wiki/File:Cello_study.jpg) — MichaelMaggs — CC BY-SA 3.0
+- choir: [File:Soul Sanctuary Gospel Choir singing outside at St James's Church Piccadilly 2018.jpg](https://commons.wikimedia.org/wiki/File:Soul_Sanctuary_Gospel_Choir_singing_outside_at_St_James%27s_Church_Piccadilly_2018.jpg) — Matt68~enwiki — CC BY-SA 4.0
+- ticket office: [File:Ticket office at Spital railway station.jpg](https://commons.wikimedia.org/wiki/File:Ticket_office_at_Spital_railway_station.jpg) — Rodhullandemu — CC BY-SA 4.0
+- furniture: [File:Living Room 1998 NOLA.jpg](https://commons.wikimedia.org/wiki/File:Living_Room_1998_NOLA.jpg) — Infrogmation of New Orleans — CC BY 2.0
+- appliance: [File:Panasonic HOME REFRIGERATOR NR-C320WP-N.jpg](https://commons.wikimedia.org/wiki/File:Panasonic_HOME_REFRIGERATOR_NR-C320WP-N.jpg) — Dinkun Chen — CC BY-SA 4.0
+- shelf: [File:Salle de lecture vue d'ensemble.jpg](https://commons.wikimedia.org/wiki/File:Salle_de_lecture_vue_d%27ensemble.jpg) — BHVP — CC BY-SA 3.0
+- bathtub: [File:A bathroom with a bathtub and shower in Mexico City.jpg](https://commons.wikimedia.org/wiki/File:A_bathroom_with_a_bathtub_and_shower_in_Mexico_City.jpg) — Bruno Rijsman — CC BY-SA 2.0
+- handbag: [File:Kelly Bag.jpg](https://commons.wikimedia.org/wiki/File:Kelly_Bag.jpg) — Wen-Cheng Liu — CC BY-SA 2.0
+- crumple: [File:Paperball.png](https://commons.wikimedia.org/wiki/File:Paperball.png) — Army1987 — CC BY-SA 3.0
+- cultivate: [File:Cultivating near Manor Wold Farm - geograph.org.uk - 1992233.jpg](https://commons.wikimedia.org/wiki/File:Cultivating_near_Manor_Wold_Farm_-_geograph.org.uk_-_1992233.jpg) — David Wright — CC BY-SA 2.0
+- cushion: [File:Donut Pillow 1.jpg](https://commons.wikimedia.org/wiki/File:Donut_Pillow_1.jpg) — Sciencia58 — CC0
+- public transportation: [File:Pasco County Public Transportation GOPASCO bus front.jpg](https://commons.wikimedia.org/wiki/File:Pasco_County_Public_Transportation_GOPASCO_bus_front.jpg) — Ryan Watern — CC BY-SA 4.0
+- a piece of cake: [File:Piece of chocolate cake on a white plate decorated with chocolate sauce.jpg](https://commons.wikimedia.org/wiki/File:Piece_of_chocolate_cake_on_a_white_plate_decorated_with_chocolate_sauce.jpg) — Daria Yakovleva — CC0
+- school uniform: [File:Japanese school uniform 0868.jpg](https://commons.wikimedia.org/wiki/File:Japanese_school_uniform_0868.jpg) — Gorgo — Public domain
+- dart: [File:Dart board.jpg](https://commons.wikimedia.org/wiki/File:Dart_board.jpg) — Kurt Kaiser — CC0
+- homeroom: [File:Classroom2.jpg](https://commons.wikimedia.org/wiki/File:Classroom2.jpg) — Darklanlan — CC0
+- graduation ceremony: [File:AnnapolisGraduation.jpg](https://commons.wikimedia.org/wiki/File:AnnapolisGraduation.jpg) — U.S. Navy Photographer's Mate 2nd Class Daniel J. McLain — Public domain
+- deflate: [File:Ground-orange-balloon-deflated (24300687946).jpg](https://commons.wikimedia.org/wiki/File:Ground-orange-balloon-deflated_(24300687946).jpg) — www.Pixel.la Free Stock Photos — CC0
+- demolish: [File:Demolition of part of the NBP building 8-2025 (3).jpg](https://commons.wikimedia.org/wiki/File:Demolition_of_part_of_the_NBP_building_8-2025_(3).jpg) — Wistula — CC BY-SA 4.0
+- comic book: [File:ZIP Code comic book "Mail moves the country, ZIP Code moves the mail" (1968) 1.jpg](https://commons.wikimedia.org/wiki/File:ZIP_Code_comic_book_%22Mail_moves_the_country,_ZIP_Code_moves_the_mail%22_(1968)_1.jpg) — Government Publishing Office — CC0
+- picture book: [File:Woman reading picture book to children.jpg](https://commons.wikimedia.org/wiki/File:Woman_reading_picture_book_to_children.jpg) — Kids association — CC BY-SA 4.0
+- science fiction: [File:The Magazine of Fantasy & Science Fiction November 1959.jpg](https://commons.wikimedia.org/wiki/File:The_Magazine_of_Fantasy_%26_Science_Fiction_November_1959.jpg) — Ed Emshwiller — Public domain
+- author: [File:Portrait of a Charles F. Lummis sitting and writing at a roll-top desk, ca.1902 (CHS-1337).jpg](https://commons.wikimedia.org/wiki/File:Portrait_of_a_Charles_F._Lummis_sitting_and_writing_at_a_roll-top_desk,_ca.1902_(CHS-1337).jpg) — Charles F. Lummis — Public domain
+- illustrator: [File:US Navy 030402-N-9109V-003 Illustrator Draftsman 1st Class Sean Galvin from Belle Plain, Iowa, creates a logo on his illuminated drawing table.jpg](https://commons.wikimedia.org/wiki/File:US_Navy_030402-N-9109V-003_Illustrator_Draftsman_1st_Class_Sean_Galvin_from_Belle_Plain,_Iowa,_creates_a_logo_on_his_illuminated_drawing_table.jpg) — U.S. Navy photo by Photographer's Mate Airman Kyle T. Voigt — Public domain
+- detour: [File:Pedestrian Detour Sign, Minneapolis (41329883000).jpg](https://commons.wikimedia.org/wiki/File:Pedestrian_Detour_Sign,_Minneapolis_(41329883000).jpg) — Tony Webster — CC BY 2.0
+- podcast: [File:Microphone in SPNN Podcast studio.jpg](https://commons.wikimedia.org/wiki/File:Microphone_in_SPNN_Podcast_studio.jpg) — Myotus — CC BY 4.0
+- folder: [File:Folder-dynamic-color.png](https://commons.wikimedia.org/wiki/File:Folder-dynamic-color.png) — Vijay Verma — CC0
+- spreadsheet: [File:ASC Leiden - Rwanda 2021 - 037 - Screen shot of a spreadsheet for books with their price - Kigali.jpg](https://commons.wikimedia.org/wiki/File:ASC_Leiden_-_Rwanda_2021_-_037_-_Screen_shot_of_a_spreadsheet_for_books_with_their_price_-_Kigali.jpg) — Gerard van de Bruinhorst — CC BY-SA 4.0
+- traffic accident: [File:Traffic accident scene involving two cars and emergency services on Śliwki Street, Gliwice, Silesian Voivodeship, Poland, March 2026.jpg](https://commons.wikimedia.org/wiki/File:Traffic_accident_scene_involving_two_cars_and_emergency_services_on_%C5%9Aliwki_Street,_Gliwice,_Silesian_Voivodeship,_Poland,_March_2026.jpg) — MichalPL — CC BY-SA 4.0
+- seat belt: [File:Car seat belt.jpg](https://commons.wikimedia.org/wiki/File:Car_seat_belt.jpg) — Santeri Viinamäki — CC BY-SA 4.0
+- helmet: [File:Bicycle white helmet from bikemate.jpg](https://commons.wikimedia.org/wiki/File:Bicycle_white_helmet_from_bikemate.jpg) — Afifa Afrin — CC BY-SA 4.0
+- evacuation shelter: [File:Evacuation Shelter sign on Pingxi Civic Center 20190908.jpg](https://commons.wikimedia.org/wiki/File:Evacuation_Shelter_sign_on_Pingxi_Civic_Center_20190908.jpg) — Solomon203 — CC BY-SA 4.0
+- emergency exit: [File:Emergency exit sign 01.jpg](https://commons.wikimedia.org/wiki/File:Emergency_exit_sign_01.jpg) — Kritzolina — CC BY-SA 4.0
+- fire extinguisher: [File:Estintori.jpg](https://commons.wikimedia.org/wiki/File:Estintori.jpg) — Anna.Massini — CC BY 4.0
+- sign language: [File:Sign language alphabet (59).png](https://commons.wikimedia.org/wiki/File:Sign_language_alphabet_(59).png) — Raziakhatun12 — CC BY-SA 4.0
