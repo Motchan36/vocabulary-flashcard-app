@@ -90,7 +90,8 @@ Images are from Wikimedia Commons (freely licensed) unless noted as AI-generated
 ## 準2級
 - harvest: [File:Blond and green rice fields.jpg](https://commons.wikimedia.org/wiki/File:Blond_and_green_rice_fields.jpg) — Basile Morin — CC BY-SA 4.0
 - volcano: [File:Stromboli Eruption.jpg](https://commons.wikimedia.org/wiki/File:Stromboli_Eruption.jpg) — Wolfgang Beyer — CC BY-SA 3.0
-- desert: [File:Towering cactus in the Sonoran Desert National Monument (53723544491).jpg](https://commons.wikimedia.org/wiki/File:Towering_cactus_in_the_Sonoran_Desert_National_Monument_(53723544491).jpg) — BLMArizona — Public domain
+- desert: [File:Mesquite Sand Dunes in Death Valley.jpg](https://commons.wikimedia.org/wiki/File:Mesquite_Sand_Dunes_in_Death_Valley.jpg) — Brocken Inaglory — CC BY-SA 3.0
+- cactus: [File:Towering cactus in the Sonoran Desert National Monument (53723544491).jpg](https://commons.wikimedia.org/wiki/File:Towering_cactus_in_the_Sonoran_Desert_National_Monument_(53723544491).jpg) — BLMArizona — Public domain
 - wave: [File:Big wave breaking in Santa Cruz.jpg](https://commons.wikimedia.org/wiki/File:Big_wave_breaking_in_Santa_Cruz.jpg) — Brocken Inaglory — CC BY-SA 3.0
 - cave: [File:Berdorf (LU), Hohllay -- 2015 -- 6097-101.jpg](https://commons.wikimedia.org/wiki/File:Berdorf_(LU),_Hohllay_--_2015_--_6097-101.jpg) — Dietmar Rabich — CC BY-SA 4.0
 - feather: [File:A single white feather closeup.jpg](https://commons.wikimedia.org/wiki/File:A_single_white_feather_closeup.jpg) — Joao Estevao Andrade de Freitas — Public domain
