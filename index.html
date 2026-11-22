@@ -103,6 +103,8 @@
   .gsearch input { flex: 1; min-width: 0; padding: 12px 14px; font: inherit; font-size: 1rem; color: var(--ink); background: #fffdf6; border: 2px solid var(--ink); border-radius: 12px; box-shadow: 3px 3px 0 rgba(20,51,46,.9); }
   .gsearch input:focus { outline: 3px solid var(--accent); outline-offset: 1px; }
   .gsearch-count { font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
+  .ggrade-bar { margin-top: 10px; }
+  .ggrade-bar.hidden { display: none; }
   .gitem { background: var(--card); border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; cursor: pointer; box-shadow: 3px 3px 0 rgba(20,51,46,.8); transition: transform .12s ease; }
   .gitem:nth-child(odd) { transform: rotate(-.7deg); }
   .gitem:nth-child(even) { transform: rotate(.6deg); }
@@ -455,6 +457,7 @@
     <input id="gallerySearch" type="search" placeholder="単語を検索（英語・日本語）" autocomplete="off">
     <span id="gallerySearchCount" class="gsearch-count"></span>
   </div>
+  <div id="galleryGradeBar" class="count-chips ggrade-bar hidden"></div>
   <div class="gallery" id="gallery"></div>
 
 
@@ -12087,6 +12090,7 @@ try { localStorage.removeItem(KEY); } catch (e) {}
 let index = 0;
 let mode = "study"; // study | quiz | output | gallery
 let galleryQuery = "";
+let galleryGrade = "all";
 let revealed = false;
 // アウトプット（単語→絵を選ぶ）の状態
 let outQuestion = null;
@@ -12118,6 +12122,7 @@ function setMode(m) {
   if (m === "board") renderBoard();
   $("gallery").classList.toggle("show", m === "gallery");
   $("gallerySearchBar").classList.toggle("hidden", m !== "gallery");
+  $("galleryGradeBar").classList.toggle("hidden", m !== "gallery");
   if (m === "test") showTestHome();
   $("promptText").textContent = m === "quiz"
     ? "この絵が表す単語はどれ？ 選んでください。"
@@ -12412,8 +12417,9 @@ function render() {
   // ギャラリー（検索つき）※ギャラリー表示中だけ描画して軽く保つ
   if (mode !== "gallery") return;
   const gq = galleryQuery.trim();
-  const glist = gq ? list.filter(w => w.word.toLowerCase().includes(gq.toLowerCase()) || (w.meaning || "").includes(gq)) : list;
-  $("gallerySearchCount").textContent = gq ? glist.length + "件" : "全" + list.length + "語";
+  const gbase = galleryGrade === "all" ? list : list.filter(w => w.eiken === galleryGrade);
+  const glist = gq ? gbase.filter(w => w.word.toLowerCase().includes(gq.toLowerCase()) || (w.meaning || "").includes(gq)) : gbase;
+  $("gallerySearchCount").textContent = gq ? glist.length + "件" : (galleryGrade === "all" ? "全" + list.length + "語" : galleryGrade + " " + gbase.length + "語");
   $("gallery").innerHTML = glist.map(w =>
     '<div class="gitem" data-word="' + escapeHtml(w.word) + '"><div class="gvisual" style="--c1:' + escapeHtml(w.c1 || "#dcefe0") + ';--c2:' + escapeHtml(w.c2 || "#f6ecd2") + '">' +
     (w.image ? '<img loading="lazy" src="' + escapeHtml(w.image) + '" alt="">' : escapeHtml(w.emoji || "🖼️")) +
@@ -12659,6 +12665,20 @@ $("revealBtn").addEventListener("click", () => { revealed = !revealed; const c =
 $("nextBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index + 1) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
 $("prevBtn").addEventListener("click", () => { const n = filtered().length; if (n) { index = (index - 1 + n) % n; revealed = false; $("revealBtn").textContent = "単語を見る"; render(); } });
 $("shuffleBtn").addEventListener("click", () => { words.sort(() => Math.random() - 0.5); index = 0; revealed = false; render(); });
+function renderGalleryGradeChips() {
+  const bar = $("galleryGradeBar");
+  const mk = (g, label) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "count-chip" + (galleryGrade === g ? " active" : "");
+    b.textContent = label;
+    b.addEventListener("click", () => { galleryGrade = g; renderGalleryGradeChips(); render(); });
+    return b;
+  };
+  bar.innerHTML = "";
+  bar.appendChild(mk("all", "すべて " + words.length));
+  GRADES.forEach(g => bar.appendChild(mk(g, g + " " + words.filter(w => w.eiken === g).length)));
+}
+renderGalleryGradeChips();
 $("gallerySearch").addEventListener("input", e => { galleryQuery = e.target.value; render(); });
 $("gallery").addEventListener("click", e => {
   const g = e.target.closest("[data-word]");
